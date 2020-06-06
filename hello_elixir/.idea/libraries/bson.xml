@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="bson" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/test/lib/bson/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/bson/lib" />
+    </SOURCES>
+  </library>
+</component>

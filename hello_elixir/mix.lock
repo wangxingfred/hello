@@ -1,0 +1,3 @@
+%{
+  "bson": {:hex, :bson, "0.4.4", "175ad645cc492349a4cefa0bdff612178a0db611adf38dabe2bbfad2aa25627a", [:mix], [], "hexpm", "69cbda1d27fd0f500f306c99e609593132c66b521b92a21ce6f21fea88dc3d27"},
+}
