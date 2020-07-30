@@ -1,0 +1,2253 @@
+syntax = "proto3";
+package all_in_one;
+
+
+
+// 通用消息
+message data{
+    int32 proto = 1;
+    bytes bin = 2;
+}
+
+//错误信息
+message net_err {
+    sint32 err = 1;
+    bytes why = 2;
+    bytes vars = 3;
+    string stacktrace = 4;
+}
+
+message c2s {
+    int32 seq = 1;
+    int32 type = 2;
+    bytes data = 3;
+}
+
+message s2c {
+    int32 seq = 1;
+    int32 type = 2;
+    net_err err = 3;
+    bytes data = 4;
+}
+
+message login_dev {
+    login login = 1;
+    int64 uid_base = 2;
+    int64 random_seed = 3;
+}
+// 登录请求
+message login {
+    string channel_id = 1;              	// 渠道编号
+    string channel_uid = 2;             	// 玩家账号
+    int64 role_id = 3;                	    // 角色ID
+    string verify_code = 4;             	// 认证码
+    int32 server_id = 5;                	// 要登录的服务器编号
+    uint32 os_type = 6;                 	// 操作系统类型
+    string app_ver = 7;                 	// 应用版本号
+    string res_ver = 8;                 	// 资源版本号
+    device device = 9;               		// 设备信息
+    string channel_extra = 10;              // 渠道额外信息
+}
+
+// 设备信息
+message device {
+    string device_label             = 1;    // 设备标识
+    string device_model             = 2;    // 设备名称
+    string device_os_info           = 3;    // 设备系统信息
+    string device_cpu               = 4;    // 设备处理器
+    string device_cpu_count         = 5;    // 设备处理器核心数
+    string device_memory            = 6;    // 设备内存
+    string device_graphic           = 7;    // 设备显卡
+    string device_graphic_type      = 8;    // 设备显卡类型
+    string device_graphic_memory    = 9;    // 设备显存内存
+    string device_shader_level      = 10;    // 设备显卡着色器
+    string device_recommend_level   = 11;    // 设备质量分级
+    string device_mac               = 12;   // 设备mac地址
+    string device_ip                = 13;   // 设备ip地址
+}
+
+// 玩家设备信息
+message role_device {
+    string label = 1; // 设备标识
+    string model = 2; // 设备名称
+}
+
+// 注意： 修改此处基础数据结构(rd_base,rd_device,rd_render,rd_ui,rd_net,rd_extend)时，
+// 注意： 需对应修改RuntimeDataNetMgr.lua中的fn.CutData方法逻辑，还涉及到C#层逻辑，慎重修改
+// 运行时统计基础数据
+message rd_base {
+    string game_time = 1;
+    string time = 2;
+    string client_version = 3;
+}
+
+// 运行时设备状态数据
+message rd_device {
+    int32 opt_type = 1;
+    int32 battery_level = 2;
+    int32 battery_status = 3;
+    bool free_state = 4;
+    int32 persist_time = 5;
+    string device_name = 6;
+}
+
+// 运行时渲染数据
+message rd_render {
+    string scene_name = 1;
+    int32 fps = 2;
+}
+
+// 运行时统计UI操作数据
+message rd_ui {
+    string name = 1;
+    int32 opt_type = 2;
+    int32 remain_time = 3;
+}
+
+// 运行时统计网络通信数据
+message rd_net {
+    int32 opt_type = 1;
+    string port_name = 2;
+    int32 error_num = 3;
+    int32 size = 4;
+    int32 state = 5;
+    int32 delay = 6;
+}
+
+// 运行时统计扩展数据
+message rd_extend {
+    int32 type     = 1;
+    string content = 2;
+}
+
+// 设备状态数据结构
+message rd_device_data {
+    rd_base base = 1;
+    rd_device device_data = 2;
+}
+
+// 网络状态数据结构
+message rd_net_data {
+    rd_base base = 1;
+    rd_net net_data = 2;
+}
+
+// 渲染数据结构
+message rd_render_data {
+    rd_base base = 1;
+    rd_render render_data = 2;
+}
+
+// UI操作数据结构
+message rd_ui_data {
+    rd_base base = 1;
+    rd_ui ui_data = 2;
+}
+
+// 扩展数据结构
+message rd_extend_data {
+    rd_base base = 1;
+    rd_extend extend_data = 2;
+}
+
+// 运行时统计数据结构
+message rd_data_list {
+    repeated rd_device_data rd_device_list = 1;
+    repeated rd_ui_data rd_ui_list = 2;
+    repeated rd_net_data rd_net_list = 3;
+    repeated rd_render_data rd_render_list = 4;
+    repeated rd_extend_data rd_extend_list = 5;
+}
+
+
+
+//成就全服奖励领取返回数据
+message achievement_receive_data{
+    repeated uint32 receive_achievements = 1; //已领取奖励的成就
+    res_change res = 2; //资源改变
+}
+
+//成就获取排行榜返回数据
+message achievement_get_rank_info{
+    repeated common_simple_play_info rank_infos = 1;          //排行榜信息
+    repeated uint32 achievement_tids = 2;                    //成就tid列表
+}
+
+//竞技场对战记录信息
+message arena_fight_info{
+    int64 role_id = 1;                           //玩家ID
+    uint32 server_id = 2;                        //玩家服务器ID
+    uint32 power = 3;                            //玩家战力
+    uint32 level = 4;                            //玩家等级
+    uint64 fight_id = 5;                         //战斗录像ID
+    sint32 score_change = 6;                      //分数改变
+    uint32 time = 7;                             //时间
+    bytes robot_name = 8;                       //机器人名字
+    uint32 old_score = 9;                       //原积分
+}
+
+
+
+
+
+//通信返给前台的登录信息
+message arena_login_info{
+    uint32 season_start_day = 1;          //赛季开始日期
+    uint32 last_day = 2;                 //上次每日结算日期
+    uint32 ref_free_num = 3;              //免费刷新次数
+    uint32 highest_rank = 4;             //历史最高排名
+    uint32 self_score = 5;               //自身积分
+}
+
+//通信返给前台的匹配对手信息
+message arena_match_player_info{
+    repeated common_play_info arena_player_infos = 1;
+}
+
+//通信返给前台的战斗结果信息
+message arena_fight_back_info{
+    uint32 rank = 1;            //排名
+    uint32 self_score = 2;       //自身积分
+    uint32 target_score = 3;     //目标积分
+    uint32 highest_rank = 4;     //历史最高排名
+    res_change res = 5;			//资源改变
+    role_daily_state daily = 6; // 每日状态
+    repeated arena_record_info record_infos = 7;  //对战信息
+}
+
+//推送前台对战记录信息
+message rev_arena_record_infos{
+    repeated arena_record_info record_infos = 1;  //对战信息
+}
+
+//竞技场对战记录信息
+message arena_record_info{
+    arena_fight_info info = 1;
+    bytes name = 2;
+    bytes alliance_info = 3;                    //联盟信息
+    int32 icon_tid = 5;                      //头像id
+}
+
+// 挂机加成信息
+message produce_addition{
+    int64 tid = 1;          //加成tid
+    int64 start_time = 2;      //开始时间
+}
+
+// 挂机附加信息
+message produce_extra{
+    int64 global_produce_tid = 1;          //全局产出tid
+    int64 produce_equip_rate = 2;           //装备产出概率
+    int64 last_reap_time = 3;                    //全局产出上次收获时间
+}
+
+
+
+
+
+//通信返回给前台的数据
+message auto_produce_to_client{
+    repeated item awards = 1;          //挂机奖励信息
+    repeated produce_addition produce_additions = 2;             //挂机加成列表信息
+    produce_extra produce_extra = 3;                     //挂机额外数据
+    res_change res = 4;									//资源改变
+    uint32 last_gather_time = 5;                          //上次收获时间
+    role_daily_state daily = 6; // 每日状态
+}
+
+
+//聊天链接参数结构，用于客户端参数传递，不参与网络通信
+message chat_link_param{
+    string id = 1;  //参数ID
+    int32 type = 2; //参数类型  1.道具  2.装备  3. 英雄  4.战报
+    bytes data = 3; //参数数据
+}
+
+//聊天链接参数结构，参与网络通信
+message simple_chat_link_param{
+    int32 type = 1 ; //参数类型 1.道具  2.装备  3. 英雄  4.战报
+    bytes data = 3; //参数数据
+}
+
+//单条聊天数据
+message single_msg_data{
+    int64 sender_role_id = 1;  //发送者角色ID
+    int32 time = 2;            //发送时间
+    int32 index = 3;           //消息对应下标
+    chat_msg_content content = 4;     //消息内容
+}
+
+//频道的消息列表(用于登陆数据推送)
+message channel_msg_list{
+    int64 channel_id = 1;  //频道ID
+    int32 start_idx = 2;   //开始下标
+    int32 end_idx = 3;     //结束下标
+    repeated single_msg_data msg_list = 4;  //消息列表
+}
+
+//私聊频道消息列表
+message private_channel_msg_list{
+    int64 role_id =1; //角色ID
+    channel_msg_list data = 2; //消息列表数据
+}
+
+
+//聊天消息内容
+message chat_msg_content{
+    string text_content = 1;       //文本内容
+    bytes voice_content = 2;      //语音内容
+    int64 at_role_id = 3;         //@的角色ID
+    repeated simple_chat_link_param link_params = 4;  //链接参数
+}
+
+
+//聊天玩家显示基本信息
+message chat_role_base_info {
+    int64 role_id = 1; //角色ID
+    int32 head = 2; //头像ID
+    int32 level = 3; //等级
+    int32 vip = 4; //vip等级
+    int32 title = 5; //头衔
+    string name = 6; //角色名
+}
+
+
+
+
+//聊天登陆消息
+message res_chat_login_data {
+    int64 world_channel_id = 1; //世界频道ID
+    int64 guild_channel_id = 2; //公会频道ID
+    bool is_banned = 3; //是否被关小黑屋
+    int32 release_time = 4; //被释放出小黑屋的时间
+    repeated int32 black_list = 5; //黑名单列表
+}
+
+//聊天初始化数据
+message res_chat_init_data{
+    repeated channel_msg_list msg_data = 6; //频道消息列表
+    repeated private_channel_msg_list private_msg_data = 7; //私聊频道消息列表
+    repeated chat_role_base_info role_info_list = 8; //玩家基础信息列表
+}
+
+//新消息推送
+message res_receive_chat_msg {
+    int32 index = 1; //新消息在消息列表中的序号
+    int64 channel_id = 2; //频道ID
+    single_msg_data msg_data = 3; //消息内容
+    bool with_role_info = 4; //是否携带发送者角色数据
+    bytes sender_role_info = 5; //发送者角色数据
+}
+
+//空消息
+message empty_msg{
+    int64 sender_role_id = 1; //发送者
+    int64 channel_id = 2; //频道ID
+    int64 at_role_id = 3; //@的玩家ID，没有则为0
+}
+
+//空消息推送
+message res_receive_empty_msg {
+    repeated empty_msg msg_list = 1;//空消息列表
+}
+
+//请求消息列表回调
+message res_chat_msg_list {
+    channel_msg_list msg_list = 1; //消息列表
+    repeated chat_role_base_info role_info_list = 2; //玩家基础信息列表
+}
+
+//请求发送私聊消息
+message req_send_chat_msg_to_role {
+    int64 target_role_id = 1; //目标角色ID
+    chat_msg_content content = 2; //消息内容
+}
+
+
+// 主角货币
+message currency {
+    int64 tid = 1;
+    bool state = 2;
+    int64 count = 3; //总数量
+    int64 recharge_count = 4; //付费所得数量
+}
+
+
+
+// 日常副本信息
+message daily_dungeon_info {
+    repeated uint32 progress_list = 1;          // 进度列表
+    uint32 flush_time = 2;                      // 状态上次刷新时间
+    repeated uint32 attack_count_list = 3;      // 讨伐次数列表
+}
+
+
+
+// 日常副本讨伐返回数据
+message daily_dungeon_attack_back {
+    res_change res = 1;             // 改变的资源
+    uint32 new_flush_time = 2;      // 新的刷新时间
+    uint32 new_progress = 3;        // 新的讨伐进度
+    uint32 new_count = 4;           // 新的讨伐次数
+    bool is_double = 5;             // 是否翻倍
+}
+
+// 日常副本扫荡返回数据
+message daily_dungeon_mop_up_back {
+    res_change res = 1;             // 改变的资源
+    uint32 new_flush_time = 2;      // 新的刷新时间
+    uint32 new_count = 3;           // 新的讨伐次数
+    bool is_double = 4;             // 是否翻倍
+}
+
+// 日常副本购买次数返回数据
+message daily_dungeon_buy_count_back {
+    res_change res = 1;             // 改变的资源
+    uint32 new_flush_time = 2;      // 新的刷新时间
+    uint32 new_buy_count = 3;       // 新的购买次数
+}
+
+
+// 装备信息
+message equip_info {
+    repeated hero_equip_info role_equips = 1;
+}
+
+// 英雄装备信息
+message hero_equip_info {
+    int64 hero_uid = 1;
+    repeated equipment equip_list = 2;
+}
+
+// 装备参数（作为装备的唯一标识）
+message equip_param {
+    int64 tid = 1; //tid
+    int32 star = 2; //星级
+    int32 exp = 3; //经验
+}
+
+
+
+
+
+
+
+
+
+
+
+// 装备的归属信息
+message equip_holder_info {
+    int64 holder_uid = 1; //所属英雄uid
+    equip_param equip_param = 2; // 装备参数
+}
+
+// 请求穿/替换/脱装备
+message wear_equip_req {
+    int64 hero_uid = 1; // 英雄uid
+    repeated equip_holder_info equip_list = 2; // 要穿/替换的装备uid列表
+}
+
+// 穿/脱装备返回前台
+message wear_equip_back {
+    res_change res = 1; // 改变的资源
+}
+
+// 装备强化请求参数
+message enhance_equip {
+    int64 hero_uid = 1; // 英雄uid
+    equip_param equip_param = 2; // 装备的参数
+    repeated equipment mat_equip_list = 3; // 材料装备列表
+}
+
+// 装备强化返回
+message enhance_equip_back {
+    res_change res = 1; // 资源改变列表
+    int32 new_exp = 2; // 强化后的新的经验值
+    int64 new_star = 3; // 强化后新的装备star
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 战斗者基础数据
+message fighter_base_info {
+    int64 id = 1; // 战斗者ID
+    int64 tid = 2; //战斗者配置TID
+    int32 type = 3; //战斗者类型
+    int64 uid = 4; //英雄唯一id
+    int64 role = 5; //角色【英雄表Tid|NP
+    int32 team = 6; //队伍
+    int32 loc = 7; //站位
+    int32 star = 8; //卡牌星级
+    int32 level = 9; //战斗者等级
+    int64 hp = 10; //气血
+    int64 max_hp = 11; // 气血上限
+    int64 anger = 12; //怒气
+    int64 max_anger = 13; // 怒气上限
+    bool enable = 14; // 是否激活
+}
+
+// 战斗者初始数据
+message fighter_info {
+    int64 tid = 1; //  战斗者配置TID
+    int32 type = 2; //  战斗者类型
+    int64 uid = 3; //  英雄唯一id
+    int32 role = 4; //  角色【英雄表Tid|NPC表Tid】，按照战斗者类型来区分
+    int32 style = 5; //  形象
+    int32 name = 6; //  名字
+    int32 camp = 7; //  阵营
+    int32 profession = 8; //  职业
+    int32 team = 9; // 队伍
+    int32 loc = 10; //  站位
+    int32 star = 11; //  卡牌星级
+    int32 level = 12; //  战斗者等级
+    int64 attack = 13; //攻击
+    int64 defense = 14; //防御
+    int64 hp = 15; //气血
+    int32 speed = 16; //出手速度
+    float atk_pp = 17; //百分比攻击
+    float defense_pp = 18; //护甲百分比
+    float hp_pp = 19; //百分比生命
+    float ab_deepen = 20; //技能增伤率
+    float dodge = 21; //闪避
+    float hit = 22; //命中
+    float wreck = 23; //破击
+    float parry = 24; //格挡
+    float parry_reduce = 25; //格挡免伤率
+    float crit = 26; //暴击几率
+    float crit_resist = 27; //韧性
+    float crit_ratio = 28; //爆伤率
+    float crit_harm = 29; //暴击伤害
+    float breaking = 30; //破甲率
+    float ctrl_resist = 31; //免控率
+    float reduce = 32; //减伤率
+    float rel_harm = 33; //真实伤害
+    int32 normal_ab = 34; //  普通技能
+    int32 anger_ab = 35; //  怒气技能
+    int32 attr_ab = 36; //  属性被动
+    int32 passive_ab = 37; //  被动技能
+    int32 genius_ab = 38; //  天赋被动
+}
+
+// 数据池战斗者Key
+message pool_fighter_key {
+    int64 role_id = 1; // 主角ID【神国试炼中，地方有可能是玩家镜像数据】
+    int64 uid = 2; // 英雄Uid
+    int64 tid = 3; // Npc的fighter表tid
+    int32 team = 4;
+    int32 loc = 5;
+    int64 fight_tid = 6; // 战斗表TID
+}
+
+// 数据池战斗者
+message pool_fighter {
+    pool_fighter_key key = 1;
+    int32 hp = 3; // 百分比血量
+    int32 anger = 5; // 百分比能量
+}
+
+// 布阵战斗者
+message formation_fighter {
+    int64 uid = 1; // 唯一id
+    int64 tid = 2; // fighter表配置tid
+    int32 type = 3; // 战斗者类型
+    int32 loc = 4; // 站位
+}
+
+// 阵型数据
+message formation {
+    int32 fight_type = 1;
+    int32 power = 2; // 当前战力
+    int32 max_power = 3; // 历史最大战力
+    repeated formation_fighter team = 4; // 当前上阵队伍
+    int64 warcraft_id = 5; // 上阵魔兽
+}
+
+// 阵型数据池
+message formation_pool {
+    int32 fight_type = 1;
+    repeated pool_fighter pool = 2; // 英雄数据池
+    repeated int64 passive_ab = 3; // 进攻方队伍被动
+    repeated int64 passive_def = 4; // 防守方队伍被动
+}
+
+// 阵型存储
+message formation_data {
+    repeated formation atk_formations = 1; // 进攻阵型列表
+    repeated formation def_formations = 2; // 防守阵型列表
+    repeated formation_pool pool = 3; // 数据池列表
+}
+
+//  战斗数据镜像
+message fight_mirror {
+    int64 role_id = 1; // 角色ID
+    int32 power = 2; //  战力
+    int32 type = 3; // 战斗类型
+    repeated fighter_info fighter_list = 4; // 战斗者列表
+    int32 warcraft_tid = 5; // 魔兽tid
+    int32 warcraft_star = 6; // 魔兽星级
+    int32 warcraft_level = 7; // 魔兽等级
+}
+
+// 战报信息
+message fight_report {
+    int64 role_id = 1; // 角色Id
+    int64 enemy_id = 2; // 敌方角色Id
+    int64 id = 3; // 战斗Id
+    int64 tid = 4; // 战斗Tid
+    int32 type = 5; // 战斗类型
+    repeated fighter_base_info fighter_list = 6; // 战斗者列表
+    repeated bytes action_list = 7; // 战斗行为列表
+    int32 result = 8; // 战斗结果
+    repeated int32 over_fighter_id_list = 9; // 结束时剩余对象
+    int32 over_round = 10; // 结束回合
+    int64 time = 11; // 战报时间
+}
+
+//战报ID，用于聊天分享
+message fight_report_id {
+    int64 id = 1; //战报ID
+    string name = 2; //战报名字
+}
+
+// 战斗结果数据
+message fight_result_data {
+    int64 id = 1; // 战斗Id
+    int64 tid = 2; // 战斗Tid
+    int32 result = 3; // 结果
+    bool finish = 4; // 是否已结算
+    int32 atk_hp = 5; // 进攻方气血
+    int32 atk_max_hp = 6; // 进攻方气血上限
+    int32 def_hp = 7; // 防守方气血
+    int32 def_max_hp = 8; // 防守气血上限
+    int64 enemy_id = 9; // 敌方角色ID
+    repeated pool_fighter pool = 10; // 英雄数据池【结算的时候使用】
+}
+
+/// 战斗事件定义
+// 使用技能开始
+message fat_ab_before {
+    int32 type = 1; // 事件类型
+    int32 id = 2; // 当前技能唯一id
+    int64 src_id = 3; // 施法者
+    repeated int64 aim_list = 4; // 目标列表
+    int64 ab_tid = 5; // 技能tid
+    bool strike_back = 6; // 是否为反击
+}
+// 使用技能结束
+message fat_ab_after {
+    int32 type = 1; // 事件类型
+    int32 id = 2; // 当前技能唯一id
+}
+// buff对象
+message buff_obj {
+    int64 aim_id = 1; // 目标战斗者
+    int64 tid = 2; // buff表格tid
+    int32 overlay = 3; // Buff叠加的层数
+    bool sign = 4; // 符号标识，true:增加，false:移除
+}
+// buff变化
+message fat_buff_change {
+    int32 type = 1; // 事件类型
+    int32 id = 2; // 当前技能唯一id
+    repeated buff_obj buff_list = 3; // 当前增加的buff列表
+}
+
+// 战斗者死亡
+message fat_fighter_die {
+    int32 type = 1; // 事件类型
+    int32 id = 2; // 当前技能唯一id
+    int64 src_id = 3; // 施法者
+    int64 aim_id = 4; // 目标
+    int32 count = 5; // 击杀数量
+}
+// 伤害对象
+message harm_obj {
+    int64 aim_id = 1; // 伤害目标
+    int32 type = 2; // 伤害类型
+    int64 value = 3; // 伤害数值
+    int64 old_hp = 4; // 结算前的气血值
+    int64 hp = 5; // 结算后的气血值
+    int64 old_shield = 6; // 原有护盾值
+    int64 shield = 7; // 当前护盾值
+    bool passive = 8; // 是否为被动受伤【被动受伤前台不会有受击特效表现】
+}
+// 伤害
+message fat_harm {
+    int32 type = 1; // 事件类型
+    int32 id = 2; // 当前技能唯一id
+    int64 src_id = 3; // 进攻方Id
+    int32 index = 4; // 当前为第几段伤害
+    repeated harm_obj harm_list = 5; // 伤害列表
+}
+// 怒气变化
+message fat_anger_change {
+    int32 type = 1; // 事件类型
+    int32 id = 2; // 当前技能唯一id
+    int64 aim_id = 3; // 目标战斗者
+    int32 anger = 4; // 当前怒气
+}
+// 移除战斗者
+message fat_remove_fighter {
+    int32 type = 1; // 事件类型
+    repeated int64 aim_list = 2;
+}
+// 护盾变化
+message fat_shield {
+    int32 type = 1; // 事件类型
+    int32 id = 2; // 当前技能唯一id
+    int64 aim_id = 3; // 目标战斗者
+    int64 shield = 4; // 护盾值
+}
+// 形象变化
+message fat_change_style {
+    int32 type = 1; // 事件类型
+    int32 id = 2; // 当前技能唯一id
+    int64 aim_id = 3; // 目标战斗者
+    int64 style_tid = 4; // 形象tid
+}
+// 重置形象
+message fat_reset_style {
+    int32 type = 1; // 事件类型
+    int32 id = 2; // 当前技能唯一id
+    int64 aim_id = 3; // 目标战斗者
+    int64 style_tid = 4; // 形象tid
+}
+
+// 位置对象
+message location_obj {
+    int64 aim_id = 1; // 目标战斗者
+    int32 location = 2; // 目标位置
+}
+// 位置变化
+message fat_location_change {
+    int32 type = 1; // 事件类型
+    int32 id = 2; // 当前技能唯一id
+    repeated location_obj list = 3; // 位置变化列表
+}
+// 战斗者入场
+message fat_fighter_enter {
+    int32 type = 1; // 事件类型
+    int64 aim_id = 2;
+}
+// 战斗者离场
+message fat_fighter_out {
+    int32 type = 1; // 事件类型
+    int64 aim_id = 2;
+}
+// 魔兽怒气变化
+message fat_warcraft_anger {
+    int32 type = 1; // 事件类型
+    int64 aim_id = 2;
+    int32 round = 3; // 变化回合
+}
+// 回合准备
+message fat_round_ready {
+    int32 type = 1; // 事件类型
+    int32 round = 2; // 当前回合
+}
+
+// 战斗结束
+message fat_fight_over {
+    int32 type = 1; // 事件类型
+    int32 result = 2; // 战斗结果
+}
+//战斗记录
+message fight_record {
+    int64 role_id = 1; //角色id
+    int64 fight_id = 2; //战斗id
+}
+
+
+
+// 开始战斗
+message fight_start {
+    int64 fight_tid = 1;
+    formation formation = 2;
+    int64 enemy_id = 3; // 敌人的角色id
+    bytes ext_data = 4;
+}
+
+// 开始战斗返回数据
+message fight_start_rev {
+    repeated formation formations = 1; // 阵容变化数据
+    get_fight_report_res report_data = 2;
+    fight_result_data result = 3; // 战斗结果数据
+}
+
+// 战斗退出
+message fight_exit {
+    int64 fight_id = 1;
+    int64 fight_tid = 2;
+    bool over = 3; // 是否正常结束
+}
+
+// 战斗布阵
+message formation_change {
+    formation formation = 1;
+    int32 type = 2; // 防守还是进攻
+}
+
+// 布阵返回值
+message formation_change_rev {
+    repeated formation formations = 1;
+    int32 type = 2; // 防守还是进攻
+}
+
+// 布阵返回值
+message formation_pool_change_rev {
+    repeated formation_pool formations = 1;
+    int32 type = 2; // 防守还是进攻
+}
+
+// 获取战报
+message get_fight_report {
+    int64 fight_id = 1; // 战斗id
+}
+
+// 获取战报返回
+message get_fight_report_res {
+    bytes atk_name = 1; // 进攻方名称
+    int64 atk_head = 2; // 进攻方形象
+    int32 atk_level = 3; // 进攻方等级
+    bytes def_name = 4; // 防守方名称
+    int64 def_head = 5; // 防守方形象
+    int32 def_level = 6; // 防守方等级
+    fight_report report = 7; // 战报
+}
+
+// 战报分享
+message share_report{
+    int64 fight_id = 1;
+}
+
+//单条挑战记录
+message fight_record_item {
+    uint64 fight_id = 1;                        //战斗Id
+    common_simple_play_info player_info = 2;    //玩家信息
+}
+// 挑战记录
+message fight_record_back{
+    repeated fight_record_item fight_records = 1;         //记录列表
+}
+
+message friend{
+    int64 role_id = 1; //角色ID
+    int32 last_present_time = 2; //上一我给这位兄弟次送心的时间
+    bool present_to_me = 3;  //是否有送我的心
+}
+
+
+// 好友系统登陆数据推送
+message res_friend_login{
+    repeated friend friend_list = 1;  //好友列表
+    repeated int64 apply_list = 2;  //申请列表
+}
+
+
+//好友减少
+message res_friend_reduce{
+    int64 friend_role_id = 1; //好友的角色ID
+}
+
+//同意申请
+message res_agree_applies{
+    repeated int64 success_list = 1; //成功的列表
+    repeated int64 err_list = 2; //错误列表
+}
+
+//成长基金档位
+message fund {
+    int32 level = 1; //档位
+    int32 state = 2; //0.未解锁  1.已解锁 2.已购买 3.已失效 4.已领取完所有奖励
+    int32 unlock_time = 4; //解锁时间
+    bytes receive_state = 5; //领奖状态
+}
+
+
+
+//成长基金档位
+message res_fund_login {
+    repeated fund fund_list = 1;
+}
+
+
+//引导进度
+message guide_progress {
+    int32 guide_id = 1; //引导ID
+    int32 step_id = 2; //步骤ID
+}
+
+//商品信息
+message res_guide_login {
+    int32 saved_guide_id = 1; //保存的主线引导进度
+    int32 saved_step_id = 2; //保存的主线引导步骤进度
+    repeated guide_progress discrete_progress_list = 3; //离散引导进度列表
+}
+
+
+
+
+//公会成员结构
+message guild_member {
+    int64 role_id = 1; //角色ID
+    int32 job = 2; //职位
+    uint32 active = 3; //活跃度
+}
+
+// 公会信息
+message guild {
+    int64 id = 1; //公会ID
+    int32 level = 2; //公会等级
+    int32 exp = 3; //公会经验
+    int32 badge = 4; //公会徽章
+    string notice = 5; //公会公告
+    int32 active = 6; //公会活跃度
+    int64 chat_channel = 7; //公会聊天频道
+    repeated guild_member member_list = 8; //成员列表
+    int32 audit_type = 9; //审核方式
+    repeated int64 apply_list = 10; //申请列表
+    string name = 11; //公会名字
+    int32 server_id = 12; //服务器ID，以后可根据该服务器ID获取服务器组ID
+    int32 level_limit = 13; //最小等级限制
+}
+
+//公会简略信息
+message guild_simple_info {
+    int64 id = 1; //公会ID
+    int32 badge = 2; //公会徽章
+    int32 level = 3; //公会等级
+    int32 member_count = 4; //公会成员数量
+    int32 active = 5; //公会活跃度
+    string name = 6; //公会名字
+}
+
+
+//请求创建公会
+message req_create_guild {
+    string name = 1; //公会名称
+    int32 badge = 2; //公会徽章
+    string notice = 3; //公会公告
+}
+
+//处理加入公会请求
+message req_handle_join_apply {
+    repeated int64 applies = 1; //处理的角色ID列表
+    int64 guild_id = 2; //公会ID
+    bool agree = 3; //是否同意
+
+}
+
+//创建公会回调
+message res_create_guild {
+    guild guild = 1; //公会数据
+    res_change res_change = 2; //资源改变
+}
+
+//公会推荐列表请求回调
+message res_recommends {
+    repeated guild_simple_info guild_infos = 1; // 公会简略信息列表
+}
+
+//公会成员改变
+message res_guild_member_change {
+    repeated guild_member member_list = 1; //成员列表
+}
+
+//公会申请列表改变
+message res_guild_apply_list_change {
+    repeated int64 apply_list = 2; //申请列表
+}
+
+//公会加入条件改变
+message res_guild_join_limit_change {
+    int32 audit_type = 1; //审核类型
+    int32 level_limit = 2; //等级限制
+}
+
+//公会BOSS信息
+message guild_boss_info {
+    guild_boss_info_item daily_boss_info = 1; //每日BOSS信息
+}
+
+//公会BOSS信息项
+message guild_boss_info_item {
+    uint32 valid_time = 1; //数据有效时间
+    guild_boss_damage_info first_info = 2; //第一名信息
+    guild_boss_damage_info last_first_info = 3; //上次第一名信息
+}
+
+//公会BOSS伤害信息
+message guild_boss_damage_info {
+    uint64 role_id = 1; //玩家Id
+    uint32 damage = 2; //伤害
+    uint32 time = 3; //时间
+    int64 fight_id = 4; //战斗Id
+}
+
+//公会BOSS成员信息
+message guild_boss_member_info {
+    guild_boss_member_info_item daily_info = 1; //每日BOSS信息
+}
+
+//公会BOSS成员信息项
+message guild_boss_member_info_item {
+    bool can_mop_up = 1; //扫荡是否解锁
+    uint32 valid_time = 2; //数据有效时间
+    uint32 challenge_count = 3; //挑战次数
+    uint32 max_damage = 4; //最高伤害
+    uint32 last_damage = 6; //上次伤害
+    uint32 last_time = 7; //上次时间
+    int64 fight_id = 8; //战斗Id
+}
+
+
+
+
+
+//公会BOSS挑战、扫荡返回信息
+message req_guild_boss_back {
+    res_change res = 1; //挑战、扫荡获得的奖励
+    guild_boss_member_info_item new_member_info_item = 2; //新的成员信息
+    repeated guild_boss_box_award box_award_list = 3; //宝箱奖励列表
+}
+
+//公会BOSS宝箱奖励
+message guild_boss_box_award {
+    repeated guild_boss_award_item box_award = 1; //宝箱奖励
+}
+
+//公会BOSS奖励项
+message guild_boss_award_item {
+    int64 tid = 1; //物品Tid
+    int32 count = 2; //物品数量
+}
+
+// 公会BOSS成员展示信息
+message guild_boss_member_show_info {
+    repeated guild_boss_member_show_item member_show_info_list = 1; //成员展示信息列表
+}
+
+message guild_boss_member_show_item {
+    common_simple_play_info role_info = 1; //玩家信息
+    uint32 damage = 2; //伤害
+    int64 fight_id = 3; //战斗Id
+}
+
+// 英雄信息(所有类型tid、state、count数量位置必须保持一致)
+message hero{
+    int64 tid = 1;
+    bool state = 2;
+    int32 count = 3;
+    int64 uid = 4;			// 唯一id
+    int32 level = 5;		// 等级
+    int32 star = 6;			// 星级
+    int32 source = 7;       //来源id
+    int32 src_level = 8;    // 原始等级，共享之后存在
+}
+
+// 英雄信息
+message hero_info{
+    repeated hero hero_list = 1;     // 英雄列表
+    bool is_auto_exile = 2;         // 抽卡时是否自动流放2星及以下英雄
+    repeated int64 collect_hero_tid_list = 3;  // 收集过的英雄tid列表
+    int32 draw_count  = 4;                  // 高级抽卡次数，单抽算一次，十连抽算10次
+    int32 baodi_count = 5;                   // 保底高级抽卡次数
+    int32 baodi_camp_count = 6;             // 保底阵营抽卡次数
+    int32 baodi_friend_count = 7;           // 保底友情抽卡次数
+    int32 diamond_draw_count = 8;          // 钻石抽卡次数
+}
+
+
+
+
+
+
+
+// 抽卡请求
+message draw_hero {
+    int32 draw_lib = 1;             // 抽卡库  (普通、高级、爱心、能量抽)
+    int32 draw_type = 2;            // 抽卡类型（单抽or十连抽）
+}
+
+// 抽卡后返回前台数据
+message hero_draw_back {
+    res_change res = 1;             // 改变的资源
+    repeated hero new_add_hero = 2; // 增加的英雄
+    int32 now_time = 3;             // 当前时间
+    int32 is_free = 4;              // 是否免费
+    repeated hero exile_hero_list = 5; // 被自动流放掉的英雄
+    role_daily_state daily_state = 6;     // 每日状态
+}
+
+// 合成请求
+message hero_compose_req{
+    int64 hero_tid = 1;             // 英雄tid
+    int32 hero_star = 2;            // 英雄星级
+    repeated int64 mat_hero_uid_list = 3;   // 材料uid列表
+}
+
+// 分解请求
+message hero_discompose_req{
+    repeated int64 mat_hero_uid_list = 3;   // 材料uid列表
+}
+
+// 分解返回前台
+message hero_discompose_back {
+    res_change res = 1;             // 改变的资源
+}
+
+
+// 英雄重生返回前台
+message hero_rebirth_back {
+    res_change res = 1;             // 改变的资源
+}
+
+
+// 升星请求
+message hero_up_star_req{
+    int64 hero_uid = 1;             // 英雄uid
+    repeated int64 mat_hero_uid_list = 2;   // 材料uid列表
+}
+
+
+// 一键升星请求
+message hero_one_key_up_star_req{
+    repeated int64 hero_uid = 1;             // 英雄uid
+    repeated int64 mat_hero_uid_list = 2;   // 材料uid列表
+}
+
+
+// 升星返回前台数据
+message hero_up_star_back{
+    res_change res = 1;             // 改变的资源
+    hero new_hero = 2;              // 新产生的英雄
+}
+
+
+// 升级
+message hero_up_lv {
+    int64 hero_uid = 1;             // 英雄的uid
+    int32 up_lv_count = 2;          // 升级数量
+}
+
+// 升级返回前台数据
+message hero_up_lv_back {
+    res_change res = 1;             // 改变的资源
+    int32 new_lv = 2;               // 升级后的等级
+}
+
+// 升阶
+message hero_up_stage {
+    int64 hero_uid = 1;             // 英雄的uid
+}
+
+// 升阶后返回前台数据
+message hero_up_stage_back {
+    res_change res = 1;             // 改变的资源
+    int32 new_stage = 2;            // 升级后的品阶
+}
+
+// 聊天分享数据
+message hero_chat_data {
+    int32 type = 1;                         // 类型
+    repeated hero hero_list = 2;            // 分享的英雄列表
+}
+
+
+
+// 情报数据
+message intelli{
+    uint32 tid          = 1;    // 情报tid
+    int64  uid          = 2;    // 情报唯一id
+    uint32 finish_time  = 3;    // 情报完成时间(开始派遣后才有这个时间)
+    repeated int64 hero_uids = 4; // 情报派遣的英雄uids
+    repeated intelli_award_item award_list = 5;   // 情报奖励
+    bool is_get_award       = 6;        // 是否领取了奖励
+    repeated int64 hero_tids = 7; // 情报派遣的英雄tids
+    repeated int32 hero_stars = 8; // 派遣的英雄的星级
+}
+
+// 奖励信息
+message intelli_award_item {
+    uint32  tid = 1;    // item tid
+    uint32  num = 2;     // 奖励数量
+}
+
+
+// 情报总数据
+message intelli_info{
+    uint32 normal_flush_time                = 1;        // 普通情报刷新时间
+    repeated intelli intelli_list           = 3;        // 普通情报列表
+    repeated intelli_record record_list     = 4;        // 情报完成数量信息
+    uint32 level                            = 5;        // 情报等级
+}
+
+// 情报完成记录信息
+message intelli_record{
+    uint32 star = 1;    // 大于或等于star星
+    uint32 count = 2;   // 完成的数量
+}
+
+
+
+
+// 派遣请求数据
+message dispatch_request{
+    int64 dispatch_uid = 1;             // 派遣的情报uid
+    repeated int64 hero_uid_list = 2;   // 英雄uid列表
+}
+
+// 领取奖励后返回前台数据
+message get_intelli_award_back {
+    res_change res = 1;                             // 领取到的奖励
+    repeated intelli new_intelli_list = 2;          // 新刷新的情报
+    repeated int64 remove_intelli_uid_list = 3;     // 移除的情报Uid列表
+    uint32 new_lv = 4;                              // 新的情报等级
+    repeated intelli_record new_record_list = 5;    // 新的情报记录信息
+}
+
+// 手动刷新情报
+message flush_intelli_manual_back {
+    res_change res = 1;                         // 改变的资源
+    repeated intelli new_intelli_list = 2;      // 新刷新的情报
+}
+
+// 刷新特殊情报返回
+message flush_special_intelli_back {
+    repeated intelli new_intelli_list = 1;        // 新刷新的情报
+}
+
+
+
+// 物品信息(所有类型物品tid、state、count数量位置必须保持一致)
+message item{
+	int64 tid = 1;
+	bool state = 2;
+	int32 count = 3;
+}
+
+// 宝箱信息(所有类型物品tid、state、count数量位置必须保持一致)
+message box{
+	int64 tid = 1;
+	bool state = 2;
+	int32 count = 3;
+}
+
+// 装备信息(所有类型物品tid、state、count数量位置必须保持一致)
+message equipment{
+	int64 tid = 1;
+	bool state = 2;
+	int32 count = 3;
+	int32 exp = 4;
+	int32 star = 5;
+}
+
+// 通行证经验信息
+message permit_exp{
+	int64 tid = 1;
+	bool state = 2;
+	int32 count = 3;
+}
+
+
+
+//玩家资源变化信息
+message res_change{
+  int32 form = 1; //变化来源
+  repeated res_change_item items = 2;
+}
+
+//玩家资源变化每项信息
+message res_change_item{
+  int32 type = 1;
+  bytes value = 2;
+  int64 capacity = 3;
+  bytes extra = 4;
+}
+
+// 领取登录奖励返回数据
+message morrow_award_info {
+    int32 award_state = 2;          // 奖励领取状态
+    bool is_morrow_login = 3;       // 次日是否登录
+    bool is_patch_mail = 4;         // 是否补发奖励邮件
+}
+
+
+// 领取登录奖励返回数据
+message request_login_award_back {
+    res_change res = 1;             // 改变的资源
+    int32 new_award_state = 2;      // 新的奖励领取状态
+}
+
+// 次日登录奖励返回数据
+message morrow_login_award_back {
+    res_change res = 1;             // 改变的资源
+    int32 new_award_state = 2;      // 新的领奖状态
+}
+
+
+
+//奖励信息
+message mail_award {
+	uint64 id = 1;                             //ID
+	uint32 count = 2;                          //数量
+}
+
+
+
+
+//邮件简要信息
+message mail_simple_info {
+	uint64 id = 1;								//ID
+	bool is_read = 2;				   			//是否已读
+	bool is_receive = 3;                       	//是否已领取
+	uint32 send_time = 4;                       //发送时间
+}
+//邮件类型信息
+message mail_type_info {
+	uint32 type = 1;							//类型
+	repeated mail_simple_info mail_list = 2;	//邮件信息列表
+}
+
+
+
+//邮件主体信息
+message mail_part_info {
+	uint64 id = 1;								//ID
+	uint32 tid = 2;                             //tid
+	uint32 send_time = 3;                       //发送时间
+	bytes send_name = 4;                       //发送人
+	bytes title = 5;                           //标题
+	bytes content = 6;                         //内容
+	repeated mail_award award = 7;              //奖励
+	bytes params = 8;                           //附件参数
+}
+
+
+
+
+
+
+
+//邮件详细信息
+message mail_detail_info {
+	uint64 id = 1;								//ID
+	uint32 tid = 2;                             //tid
+	bool is_read = 3;               			//是否已读
+	bool is_receive = 4;                        //是否已领取
+	uint32 send_time = 5;                       //发送时间
+	bytes send_name = 6;                       //发送人
+	bytes title = 7;                           //标题
+	bytes content = 8;                         //内容
+	repeated mail_award award = 9;              //奖励
+	bytes params = 10;                          //附件参数
+}
+
+
+
+
+
+
+//群发邮件信息
+message mass_mail_info {
+	uint64 id = 1;								//ID
+	uint32 tid = 2;                             //tid
+	uint32 start_time = 3;                      //发送时间
+	uint32 end_time = 4;                        //截止时间
+	bytes send_name = 5;                        //发送人
+	bytes title = 6;                            //标题
+	bytes content = 7;                          //内容
+	repeated mail_award award = 8;              //奖励
+	repeated uint32 server_list = 9;           //服务器列表
+	uint32 min_level = 10;                      //最低境界
+	uint32 max_level = 11;                      //最高境界
+	uint32 min_ctime = 12;                      //最小创建时间
+	uint32 max_ctime = 13;                      //最大创建时间
+	repeated uint32 black_list = 14;            //黑名单列表
+	uint32 mass_type = 15;                      //群发类型  1.服务器群发  2.角色ID群发
+	repeated uint32 role_id_list = 16;          //群发的角色ID列表
+	uint32 send_time = 17; //发送时间（只用于发邮件时的参数传递）
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//登录
+message rev_login_mail_info {
+	repeated mail_detail_info mail_list = 1;		    			//邮件列表
+}
+
+
+
+//推送新邮件
+message rev_new_mail_info {
+	repeated mail_detail_info mail_list = 1;		    			//邮件列表
+	repeated uint64 del_list = 2;                                   //删除列表
+}
+
+
+
+
+//一键领取
+message rev_one_key_award_mail {
+	res_change res = 1;												//资源
+	repeated uint64 rev_id_list = 2;                                //领取的邮件ID
+}
+
+
+//已读
+message to_read_mail {
+	uint64 mailid = 1;												//邮件id
+}
+
+//领取
+message to_award_mail {
+	uint64 mailid = 1;												//邮件id
+}
+
+//领取
+message rev_award_mail {
+	res_change res = 1;												//资源
+}
+
+
+//删除
+message to_del_mail {
+	uint64 mailid = 1;												//邮件id
+}
+
+
+//幻境神殿职业限定信息
+message maze_limit_profession {
+    uint32 first_week = 1; //首次刷新周
+    uint32 limit_tid = 2; //限定的tid
+}
+
+//幻境神殿基础信息
+message maze_base {
+    uint32 open_time = 1; //玩法开启时间
+    uint32 open_n = 2; //玩法开启次数
+    uint32 difficulty_max = 3; //通过的最大难度
+    uint32 mission_max = 4; //通过最大难度的最大层数
+}
+
+//地图信息
+message maze_map_info {
+    uint32 difficulty = 1; //当前难度
+    uint32 layer = 2; //当前层数
+    repeated maze_map_mission maps = 3; //地图数据
+    repeated maze_event events = 4; //事件信息
+    bool appear_contract = 5; //是否出现契约
+}
+
+//地图关卡信息
+message maze_map_mission {
+    repeated maze_map_node map_nodes = 1; //关卡节点列表
+}
+
+//地图节点信息
+message maze_map_node {
+    uint32 event_tid = 1; //事件ID
+    uint32 state = 2; //节点状态
+    repeated uint32 next_idx_list = 3; //连接的下一关索引列表
+    uint32 number = 4; //编号
+}
+
+//幻境神殿英雄信息
+message maze_hero_info {
+    repeated maze_hero heros = 1; //英雄列表(前4关无限定,当前玩家的英雄状态,职业限定时将玩家所有英雄转换成限定职业{UID,TID})
+    repeated int64 hero_tid_list = 2; //解锁英雄tid列表(所有英雄能够转职的tid,初始化时会根据职业限定生成一份)
+}
+
+//幻境神殿英雄
+message maze_hero {
+    int64 tid = 1; //英雄tid
+    int64 uid = 2; //英雄uid
+}
+
+//幻境神殿契约信息
+message maze_agreement {
+    uint32 target = 1; //目标关卡
+    uint32 state = 2; //当前状态
+}
+
+//幻境神殿事件信息
+message maze_event {
+    uint32 number = 1; //编号
+    uint32 tid = 2; //事件tid
+    uint32 finish_tid = 3; //完成子事件的tid
+    bytes data = 4; //事件数据
+}
+
+//幻境神殿问号事件基础信息
+message maze_event_question_data {
+    uint32 tid = 1; //事件tid
+    repeated uint32 child_tid = 2; //子事件tid列表
+    bytes data = 3; //事件数据
+}
+
+//幻境神殿问号事件层信息
+message maze_event_question_layer {
+    repeated maze_event_question_data layer_data = 1; //层数据
+}
+
+//幻境神殿问号事件信息
+message maze_event_question {
+    repeated maze_event_question_layer event_data = 1; //事件信息
+}
+
+// 幻境之心
+message maze_heart {
+    uint32 progress = 1; // 女神进度（进度为2时就消失了）
+    repeated uint32 wish_list = 2; // 愿望列表
+    uint32 task_tid = 3; //  许愿后领取的任务
+    uint32 task_prog = 4; // 任务进度
+}
+
+// 幻境天赋
+message maze_talent {
+    repeated uint32 talent_list = 1; // 当前的当前的天赋列表
+}
+
+
+
+
+
+
+
+
+
+
+
+//触发事件
+message trigger_event{
+    uint32 number = 1; //编号
+    uint32 tid = 2; //事件tid
+    bytes param = 3; //事件参数
+}
+
+//通信返回前台的数据
+message maze_to_client {
+    maze_base base = 1;                     //基础信息
+    maze_map_info map_info = 2;             //地图信息
+    maze_hero_info hero_info = 3;           //英雄数据
+    repeated maze_agreement agreements = 4; //契约信息
+    res_change res = 5;			            //资源改变
+    uint32 profession_limit_tid = 6;        //职业限定tid
+    maze_heart maze_heart_info = 7;         // 幻境之心数据
+    maze_power_to_client maze_power_info = 8;       // 幻境天赋数据
+}
+
+//扫荡通信返回前台的数据
+message maze_raids_to_client{
+    repeated maze_raids raids_data_list = 1;        //扫荡数据
+    res_change res = 2;			//资源改变
+}
+
+//扫荡数据
+message maze_raids{
+    repeated maze_map_mission maps = 1; //地图数据
+    repeated uint32 way = 2;            //选择路径
+}
+
+// 幻境之力前台数据
+message maze_power_to_client{
+    uint32 talent_point = 1;           // 幻境天赋点
+    maze_talent talent_list = 2;       // 天赋
+}
+
+
+//关卡通关记录信息
+message mission_pass_info {
+    uint64 role_id = 1; //玩家ID
+    uint32 server_id = 2; //玩家服务器ID
+    uint32 power = 3; //玩家战力
+    uint32 level = 4; //玩家等级
+    uint64 fight_id = 5; //战斗录像ID
+}
+
+//章节任务信息记录
+message mission_chapter_task {
+    uint32 chapter = 1; //章节id
+    repeated mission_side_task side_tasks = 2; //支线任务列表
+    uint32 receive_state = 3;   //章节奖励领取状态
+}
+
+//支线任务结构
+message mission_side_task {
+    uint32 task_id = 1; //支线任务id
+    uint32 state = 2;   //支线任务状态
+    uint32 progress = 3;    //支线进度
+}
+
+
+
+//通信后台返回前台的关卡数据
+message mission_to_client{
+	uint32 past_chapter_tid = 1;						//已通过的关卡章
+	uint32 past_section_idx = 2;			    		//已通过的关卡节索引
+	repeated uint32 recover_build_tid_list = 3;			//已收复的世界建筑列表
+	res_change res = 4;									//资源改变
+	int64 fight_result = 5;								//战斗结果
+}
+
+//通信返给前台的关卡记录信息
+message mission_record_to_client{
+	repeated mission_record_info infos = 1;				//通关记录列表
+}
+
+//通关记录信息
+message mission_record_info{
+	mission_pass_info info = 1;
+	bytes name = 2;
+	bytes alliance_info = 3;                    //联盟信息
+	int32 icon_tid = 5;                      //头像id
+}
+
+//通信返回前台的章节任务信息
+message mchapter_task_to_client{
+	repeated mission_chapter_task chapter_tasks = 1;	//章节任务列表
+	res_change res = 2;									//资源改变
+}
+
+//新手礼包奖励结构
+message novice_gift_reward {
+    int32 id = 1; //礼包ID
+    int32 buy_times = 2; //已购买次数
+}
+
+//新手礼包结构
+message novice_gift {
+    int32 unlock_time = 1; //解锁时间
+    repeated novice_gift_reward reward_list = 2; //礼包奖励列表
+}
+
+
+//天极之塔记录数据
+message peak_tower_record {
+    uint64 role_id = 1;     //玩家ID
+    uint64 fight_id = 2;    //战斗录像ID
+}
+
+
+
+
+
+//天极之塔挑战后返回数据
+message peak_tower_challenge {
+    uint32 new_tower_tid = 1;   //新的天极之塔层数
+    res_change res = 2;         //资源改变
+}
+
+//天极之塔挑战后返回数据
+message peak_tower_sweep_back {
+    peak_tower_challenge new_data = 1;          //新天极之塔数据
+    formation_change_rev new_formation = 2;     //新阵型
+}
+
+message peak_tower_record_show_item {
+    uint64 fight_id = 1;                        //战斗Id
+    common_simple_play_info player_info = 2;    //玩家信息
+}
+
+//天极之塔记录
+message peak_tower_record_back {
+    repeated peak_tower_record_show_item record_list = 1;   //记录列表
+}
+
+//天极之塔领取成就奖励返回数据
+message peak_tower_achievement_back {
+    res_change res = 1;         //资源改变
+    bytes new_award_state = 2;  //新的奖励状态
+}
+
+//通行证数据
+message permit_info{
+    uint64 id = 1;      //通行证id
+    uint64 open_day = 2;    //开启时间
+    bool is_pay = 3;        //是否购买
+}
+
+//通行证奖励数据
+message permit_award {
+    uint64 id = 1;     //通行证ID
+    repeated permit_level levels = 2;    //等级数据
+}
+
+//通行证等级数据
+message permit_level{
+    uint32 level = 1;           //等级
+    bool receive_free = 2;      //领取免费奖励
+    bool receive_permit = 3;    //领取通行证奖励
+}
+
+
+
+//通行证返回前台数据
+message permit_to_client{
+    repeated permit_info infos = 1;         //通行证信息
+    repeated permit_award awards = 2;       //通行证奖励信息
+    res_change res = 3;						//资源改变
+}
+
+// 传道信息
+message preach_info{
+    int32 share_level = 1;              // 共享等级
+    int32 max_level = 2;                // 等级上限
+    repeated preach_grid grid_list = 3; // 格子列表
+    int32 up_lv_progress = 4;           // 升级进度(10升一级)
+}
+
+// 容器格子
+message preach_grid{
+    int32 index = 1;             // 格子索引
+    int64 hero_uid = 2;			// 放的英雄uid
+    int32 frozen_time = 3;      // 冷却结束时间
+}
+
+
+// 开启格子返回前台
+message open_grid_back{
+    res_change res = 1;             // 改变的资源
+}
+
+
+// 解冻格子返回前台
+message un_freeze_grid_back{
+    res_change res = 1;             // 改变的资源
+}
+
+// 圣殿升级返回前台
+message preach_up_lv_back{
+    res_change res = 1;             // 改变的资源
+    int32 share_lv = 2;             // 新的共享等级
+    int32 progress = 3;             // 新的进度
+}
+
+
+
+
+// 单个月卡数据
+message privilege_card {
+    int32 id = 1; //月卡ID
+    int32 recharge_amount = 2; //累计充值金额
+    bool active = 3; //是否激活
+    int32 invalid_day = 4; //失效日期(失效日期不可领奖)
+    int32 last_get_reward_day = 5; //上一次领奖的日期
+}
+
+
+
+
+//月卡登陆数据
+message res_privilege_card_login {
+    repeated privilege_card cards = 1; //月卡数据列表
+}
+
+//领取月卡奖励回调
+message res_get_privilege_card_reward{
+    privilege_card card = 1;//月卡数据
+    res_change res_change = 2; //资源改变
+}
+
+//首充奖励状态结构
+message first_recharge_reward_state{
+    bool has_get = 1; //是否已领取
+    int32 enable_time = 2;   //激活时间
+}
+
+//充值记录结构
+message recharge_record{
+    int32 time = 1; //充值时间
+    int32 recharge_id = 2;  //付费档位ID
+}
+
+//首充档位
+message first_recharge_level {
+    int32 level = 1; //档位标识（ID）
+    bool active = 2; //该档位是否激活
+    repeated first_recharge_reward_state reward_states = 3; //领奖状态列表
+}
+
+// 充值单号信息
+message recharge_order_info{
+    bytes order_no = 1; // 订单号
+    int32 amount = 2;   // 充值金额（单位：元）
+    int64 product_id = 3;   // 充值产品TID
+}
+
+
+
+
+//充值成功消息
+message res_recharge_success {
+    recharge_record max_record = 1; //最高充值记录
+    recharge_record record = 2; //当前充值记录
+    res_change res_change = 3; //玩家资源改变
+    int32 total_amount = 4; //累计充值金额
+    string order = 5; //订单号
+}
+
+//登陆消息
+message res_recharge_login {
+    recharge_record max_record = 1; //最大记录
+    int32 total_amount = 2; //累计充值金额
+    repeated first_recharge_level first_recharge_infos = 3; //首充数据
+    int32 first_recharge_open_day = 4; //首充功能开启的天时间戳
+    bytes diamond_first_state = 5; //钻石直充首次充值状态
+}
+
+
+
+//日月周礼包购买记录
+message regular_gift_buy_record {
+    int32 gift_id = 1; //礼包ID
+    int32 buy_times = 2; //已购买次数
+}
+
+//日月周礼包结构
+message regular_gift {
+    int32 gift_type = 1; //礼包类型
+    int32 last_refresh_time = 2; //上一次的刷新时间
+    repeated regular_gift_buy_record buy_records = 3; //购买记录列表
+}
+
+
+
+
+//日月周礼包购买记录
+message res_regular_gift_login {
+    repeated regular_gift gift_list = 1; //日月周礼包数据列表
+}
+
+//领取免费礼包回调
+message res_rev_free_regular_gift {
+    res_change res_change = 1; //资源改变
+}
+
+
+
+
+
+// 主角每日状态表
+message role_daily_state {
+    uint32 flush_time = 1; // 刷新时间（秒）
+    bytes state = 2; // 状态表
+}
+
+//玩家登录天数信息表
+message role_login_day_count {
+    uint32 last_login_time = 1; //上次登录时间
+    uint32 login_day_count = 2; //登录天数
+}
+
+//通用玩家简单信息
+message common_simple_play_info {
+    sint64 id = 1; //ID
+    bytes alliance_info = 2; //联盟信息
+    int32 server_id = 3;    //服务器id
+    bytes name = 4; //名字
+    int32 level = 5; //等级
+    int32 icon_tid = 6; //头像id
+    int32 value = 7; //附加值
+    int32 power = 8; //战力
+    bool is_robot = 9; //是否是机器人
+}
+
+//通用玩家信息
+message common_play_info {
+    sint64 id = 1; //ID
+    bytes alliance_info = 2; //联盟信息
+    int32 server_id = 3; //服务器id
+    bytes name = 4; //名字
+    int32 level = 5; //等级
+    int32 icon_tid = 6; //头像id
+    int32 mission_progress = 7; //关卡进度
+    int32 value = 8; //附加值
+    bool is_robot = 9; //是否是机器人
+    string guild_name = 10; //公会名字
+    int32 tower_id = 11; //天极之塔记录ID
+    repeated formation formations = 12; //所有阵容信息
+    repeated hero hero_list = 13; //英雄信息
+    int32 vip = 14; //vip等级
+    repeated warcraft_info warcraft_list = 15; //魔兽列表
+}
+
+
+
+
+
+//后台传递前台角色数据
+message to_client_role_info {
+    bytes nick_name = 1; //昵称
+    uint32 set_name_times = 2; //设置名字的次数
+    uint32 figure_tid = 3; //角色形象信息
+    uint32 level = 4; //等级
+    uint32 exp = 5; //经验
+    uint32 create_time = 6; //角色创建时间
+    role_daily_state daily_states = 7; // 每日状态
+    role_login_day_count role_login_day_count = 8; //登录天数数据
+    repeated sundry_info sundry_data = 9; //玩家杂项数据
+    uint32 level_reward_record = 10; //玩家领取等级奖励的最高记录
+}
+
+//设置角色名称回调
+message res_set_role_name {
+    bytes nick_name = 1; //昵称
+    uint32 set_name_times = 2; //设置名字的次数
+    res_change res_change = 3; //玩家资源改变
+}
+
+//领取升级奖励回调
+message res_get_level_reward {
+    res_change res_change = 1; //资源改变
+}
+
+//本地数据存储结构
+message sundry_info {
+    string key = 1;
+    string value = 2;
+    uint32 type = 3;
+}
+
+
+// 七日目标信息
+message seven_day_info {
+    uint32 progress = 1;                    //进度
+    uint32 progress_award_state = 2;        //进度领奖状态
+    bytes adventure_award_state = 3;        //冒险征程分页任务领奖状态
+    bytes reward_award_state = 4;           //赏金任务分页任务领奖状态
+    bytes trial_award_state = 5;            //勇者试炼分页任务领奖状态
+    bytes tower_award_state = 6;            //天极之塔分页任务领奖状态
+    bool is_patch_mail = 7;                 //是否补发奖励邮件
+}
+
+
+// 七日目标领取任务奖励返回数据
+message seven_day_mission_award_back {
+    res_change res = 1;             // 改变的资源
+    bytes new_award_state = 2;      // 新的任务奖励领取状态
+    uint32 new_progress = 3;         // 新的进度
+}
+
+// 七日目标领取进度奖励返回数据
+message seven_day_progress_award_back {
+    res_change res = 1;             // 改变的资源
+    uint32 new_award_state = 2;     // 新的进度奖励领取状态
+}
+
+//商品信息
+message shop_item_info {
+    int32 tid = 1; //商品tid
+    int32 buy_count = 2; //已购买次数
+}
+
+// 商店信息
+message shop_info {
+    int32 shop_type = 1; //商店类型
+    int32 refresh_time = 2; //下次自动刷新的时间戳(秒)
+    int32 today_refresh_count = 3; //今日的刷新次数
+    repeated shop_item_info item_list = 4; //商品列表
+    int32 last_manual_refresh_time = 5; //上一次手动刷新的时间
+}
+
+
+
+//登录数据推送
+message res_shop_login{
+    repeated shop_info shop_info_list = 1; //商店信息列表
+}
+
+//商品购买回调
+message res_buy_shop_item{
+    int32 item_idx = 1;            //商品下标
+    int32 shop_type = 2;           //商店类型
+    shop_item_info shop_item = 3;  //商品信息
+    res_change res_change = 4;     //玩家资源改变
+}
+
+//商店刷新回调
+message res_refresh_shop{
+    shop_info shop = 1;            //商店信息
+    res_change res_change = 2;     //玩家资源改变
+}
+
+//请求购买商品
+message req_buy_shop_item{
+    int32 shop_type = 1;           //请求购买商品
+    int32 item_idx = 2;            //商品下标（从1开始）
+    int32 shop_item_id = 3;        // 商品id 这里由客户端发给服务器，免得服务器多读一次数据库
+    int32 count = 4;               //购买数量
+}
+
+// 签到信息
+message sign_in_info {
+    uint32 round = 1; //当前轮次
+    uint32 round_start_day = 2; //轮次开始日期
+    uint32 login_day = 3; //登录天数
+    bytes award_state = 4; //奖励领取状态
+    bytes advanced_award_state = 5; //高级奖励领取状态
+    bool is_advanced = 6; //是否解锁高级签到
+    uint32 privilege_end_day = 7; // 特权结束日期
+}
+
+
+
+// 领取签到奖励返回数据
+message request_sign_in_award_back {
+    res_change res = 1;
+    sign_in_info new_info = 2;
+}
+
+// 剧情数据
+message story_data {
+    uint32 tid = 1; // 当前的剧情组tid
+    repeated uint32 finish_story_list = 2; // 完成过的剧情
+}
+
+
+
+
+
+// 日常、周常单个任务数据
+message every_task_single {
+    uint64 tid = 1; // 任务tid
+    uint32 finished_count = 2; //完成次数
+    uint32 award_state = 3; //任务奖励领取状态
+}
+
+// 日常、周常任务数据
+message every_task {
+    repeated every_task_single task_list = 1; //任务列表
+    uint32 vitality = 2; //活跃度
+    uint32 vitality_tid = 3; //活跃度配置
+    bytes vitality_stage = 4; //已领取活跃度阶段(5个阶段,按二进制位计算)
+    uint64 refresh_time = 5; //刷新时间
+}
+
+// 主线任务数据
+message main_task_single {
+    uint64 tid = 1; //tid
+    uint64 group_id = 2; // 任务类型id
+    uint32 finished_count = 3; //完成次数
+}
+
+// 主线任务数据
+message main_task {
+    repeated main_task_single task_list = 1; //任务列表
+}
+
+
+
+
+
+
+// 日常、周常活跃度奖励
+message every_receive_vitality_back {
+    bytes new_vitality_stage = 1; //新活跃度
+    res_change res_change = 2; //奖励
+}
+
+//主线领取奖励返回数据
+message main_receive_award_back {
+    main_task main_task = 1; //主线任务数据
+    res_change res_change = 2; //奖励
+}
+
+//日常、周常、主线数据返回
+message task_data_back {
+    every_task daily_task_data = 1; //日常数据
+    every_task weekly_task_data = 2; //周常数据
+    main_task main_task_data = 3; //主线数据
+}
+
+
+// 神国试炼数据
+message trial_paradise_data {
+    repeated trial_paradise_guard guard_list = 1; // 防守方列表
+}
+
+// 英雄简易信息
+message trial_paradise_hero {
+    int64 tid = 1; // 英雄Tid
+    int32 level = 2; // 英雄等级
+    int32 star = 3; // 英雄星级
+    int64 uid = 4; // 英雄唯一ID
+    int32 loc = 5; //  站位
+}
+
+// 神国试炼关卡数据
+message trial_paradise_guard {
+    int32 index = 1; // 当前关卡下标
+    int64 role_id = 2; // 对手角色id
+    bytes role_name = 3; // 对手名称
+    int32 head_tid = 4; // 对手头像
+    int32 level = 5; // 对手等级
+    repeated trial_paradise_hero hero_list = 6; // 对方英雄列表
+    int64 fight_tid = 7; // 对应战斗tid
+    bool finish = 8; // 是否挑战成功
+    bool box_award = 9; // 是否领取宝箱
+    int32 power = 10; //当前战力
+    int32 warcraft_tid = 11; // 魔兽tid
+    int32 warcraft_star = 12; // 魔兽星级
+    int32 warcraft_level = 13; // 魔兽等级
+}
+
+// 对手详情
+message trial_paradise_role {
+    int32 index = 1; // 对手下标
+    int64 role_id = 2; // 对手角色id
+    repeated fighter_info fighter_list = 3; // 战斗者详情
+    int32 warcraft_tid = 4; // 魔兽tid
+    int32 warcraft_star = 5; // 魔兽星级
+    int32 warcraft_level = 6; // 魔兽等级
+}
+
+
+
+
+
+// 登录数据
+message trial_login {
+    trial_paradise_data data = 1; // 神国试炼数据
+    int32 update_time = 2;
+    int32 recover_count = 3;
+}
+
+// 获取神国试炼数据
+message trial_paradise_data_rev {
+    trial_paradise_data data = 1; // 神国试炼数据
+    int32 update_time = 2; // 重置时间
+    int32 recover_count = 3;
+    bool reset = 4; // 重置标识
+}
+
+// 获取对手详情
+message trial_paradise_enemy_data {
+    int32 index = 1;
+}
+
+// 发起挑战
+message trial_paradise_fight {
+    int32 index = 1; // 挑战关卡下标
+    int64 fight_id = 2; // 本场战斗ID
+}
+
+// 发起挑战返回值
+message trial_paradise_fight_rev {
+    res_change res_change = 1; // 资源变动
+}
+
+// 领取宝箱奖励
+message trial_paradise_box_award {
+    int32 index = 1; // 宝箱所在的关卡
+}
+
+// 领取宝箱奖励返回
+message trial_paradise_box_award_rev {
+    res_change res_change = 1; // 资源变动
+}
+
+// 复活英雄返回
+message trial_paradise_recover_rev {
+    int32 recover_count = 1; // 复活次数
+    res_change res_change = 2; // 资源变动
+}
+
+// 触发礼包奖励数据
+message trigger_gift_reward {
+    int32 recharge_id = 1; //付费ID
+    int32 buy_times = 2; //已购买次数
+}
+
+//触发礼包数据
+message trigger_gift {
+    int32 id = 1; //ID
+    int32 invalid_time = 2; //失效时间
+    repeated trigger_gift_reward rewards = 3; //奖励档位列表
+}
+
+
+
+
+// 触发礼包登陆数据
+message res_trigger_gift_login {
+    repeated int32 triggered_ids = 1; //已触发的触发id列表
+    repeated trigger_gift trigger_gifts = 2; //已触发并且未过期的触发礼包列表
+}
+
+// 领取触发礼包奖励回调
+message res_get_trigger_gift_reward {
+    trigger_gift gift = 1; //领取奖励的礼包
+    res_change res_change = 2; //资源改变
+}
+
+
+//vip登陆
+message res_vip_login {
+    int32 vip_level = 1; //vip等级
+    int32 vip_exp = 2; //vip经验
+    bytes reward_state = 3; //领奖状态
+}
+
+//vip奖励领取回调
+message res_get_vip_reward {
+    bytes reward_state = 1; //领奖状态
+    res_change res_change = 2; //资源改变
+}
+
+
+
+// 魔兽信息
+message warcraft_info {
+    uint32 tid = 1;         // 魔兽tid
+    uint32 star = 2;        // 魔兽星级
+    uint32 level = 3;       // 魔兽等级
+}
+
+// 魔兽副本信息
+message warcraft_dungeon_info {
+    uint32 tid = 1;                                         // 副本tid
+    uint32 day = 2;                                         // 上次攻打时间
+    sint32 attack_n = 3;                                    // 攻打次数
+    uint32 buy_n = 4;                                       // 购买次数
+    repeated dungeon_degree_info degree_infos = 5;          // 难度信息
+}
+
+// 魔兽副本难度信息
+message dungeon_degree_info {
+    uint32 degree = 1;                  // 难度
+    uint32 progress = 2;                 // 进度
+}
+
+
+
+// 魔兽养成通信数据
+message warcraft_back {
+    repeated warcraft_info warcrafts = 1;                   //魔兽信息
+    repeated warcraft_dungeon_info dungeons = 2;            // 魔兽副本信息
+    res_change res = 3;                                     // 改变的资源
+}

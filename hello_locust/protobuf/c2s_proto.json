@@ -1,0 +1,66 @@
+{
+
+"101": "LoginDev",
+
+"102": "LoginDev",
+
+"103": "Login",
+
+"201": "FightStart",
+
+"202": "FightExit",
+
+"203": "FormationChange",
+
+"204": "GetFightReport",
+
+"205": "ShareReport",
+
+"601": "DrawHero",
+
+"602": "HeroUpStage",
+
+"603": "HeroUpLv",
+
+"604": "HeroUpStarReq",
+
+"606": "HeroDiscomposeReq",
+
+"608": "HeroOneKeyUpStarReq",
+
+"701": "DispatchRequest",
+
+"1001": "WearEquipReq",
+
+"1002": "WearEquipReq",
+
+"1003": "EnhanceEquip",
+
+"1103": "FormationChange",
+
+"1201": "ReqBuyShopItem",
+
+"3003": "ToReadMail",
+
+"3004": "ToAwardMail",
+
+"3005": "ToDelMail",
+
+"11000": "ChatMsgContent",
+
+"11001": "ChatMsgContent",
+
+"11002": "ReqSendChatMsgToRole",
+
+"14000": "TrialParadiseFight",
+
+"14002": "TrialParadiseEnemyData",
+
+"14003": "TrialParadiseBoxAward",
+
+"21001": "ReqCreateGuild",
+
+"21003": "ReqHandleJoinApply",
+
+"30001": "TriggerEvent"
+}
