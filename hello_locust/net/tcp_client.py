@@ -20,27 +20,32 @@ import time
 
 s = socket.socket()
 
-# host = socket.gethostname()
-host = "localhost"
+host = socket.gethostname()
+# host = "localhost"
+port = 1234
 
-port = 7777
+HEADER_SIZE = 4
 
-print("host = ", host)
+print("(host, port) = ", (host, port))
 
 s.connect((host, port))
 
-print("Sending data ... ")
 msg = "Hello!! This is client talking"
-data = msg.encode('utf-8')
+data = msg.encode()
 size = len(data)
-header = size.to_bytes(4, byteorder='big')
-s.sendall(header + data)
+header = size.to_bytes(HEADER_SIZE, byteorder='big')
+s.sendall(header)
+s.sendall(data)
+print("sendall : header:{}, data:{}, msg:{}".format(len(header), len(data), msg))
 # print(s.recv(1024))
 
-time.sleep(2)
+time.sleep(1)
 
-msg = "This is the last message."
-data = msg.encode('utf-8')
+msg = "This is the last message.(Send normal and ancillary data to the socket, gathering the non-ancillary data from a series of buffers and concatenating it into a single message. The buffers argument specifies the non-ancillary data as an iterable of bytes-like objects (e.g. bytes objects); the operating system may set a limit (sysconf() value SC_IOV_MAX) on the number of buffers that can be used. The ancdata argument specifies the ancillary data (control messages) as an iterable of zero or more tuples (cmsg_level, cmsg_type, cmsg_data), where cmsg_level and cmsg_type are integers specifying the protocol level and protocol-specific type respectively, and cmsg_data is a bytes-like object holding the associated data. Note that some systems (in particular, systems without CMSG_SPACE()) might support sending only one control message per call. The flags argument defaults to 0 and has the same meaning as for send(). If address is supplied and not None, it sets a destination address for the message. The return value is the number of bytes of non-ancillary data sent.)"
+data = msg.encode()
 size = len(data)
-header = size.to_bytes(4, byteorder='big')
-s.sendall(header + data)
+header = size.to_bytes(HEADER_SIZE, byteorder='big')
+s.sendall(header)
+s.sendall(data[0:len(data) // 2])
+s.sendall(data[len(data) // 2:])
+print("sendall : header:{}, data:{}, msg:{}".format(len(header), len(data), msg))
