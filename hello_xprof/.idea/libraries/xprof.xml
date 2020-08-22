@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="xprof" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/prod/lib/xprof/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/xprof/src" />
+    </SOURCES>
+  </library>
+</component>

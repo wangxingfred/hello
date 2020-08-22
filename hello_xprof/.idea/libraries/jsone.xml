@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jsone" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/prod/lib/jsone/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/jsone/src" />
+    </SOURCES>
+  </library>
+</component>

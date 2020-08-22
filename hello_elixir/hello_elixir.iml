@@ -12,5 +12,6 @@
     <orderEntry type="library" name="bson" level="project" />
     <orderEntry type="library" name="ex_doc" level="project" />
     <orderEntry type="library" name="earmark" level="project" />
+    <orderEntry type="library" name="xprof" level="project" />
   </component>
 </module>
