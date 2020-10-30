@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f84bd4ea-332a-4f1a-8891-d2b27aac7b41" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/xprof.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hello_xprof/hello_xprof.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hello_xprof/mix.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello_elixir.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello_elixir.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/mix.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_python/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_python/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_python/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_python/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_python/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
