@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f84bd4ea-332a-4f1a-8891-d2b27aac7b41" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/cowboy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/cowlib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/customized_hdr_histogram.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/goldrush.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsone.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lager.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/ranch.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/xprof_core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/xprof_gui.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/xprof.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/xprof.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello_elixir.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello_elixir.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/my_macros.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/my_macros.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/mix.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mix.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +29,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Elixir.Application" />
         <option value="Elixir Module" />
       </list>
     </option>
@@ -26,7 +41,9 @@
     <option name="directoryName" value="BlUaxRAu" />
   </component>
   <component name="ProjectId" id="1VQBkLkwwXmAfVnMU9yjKXMfkLx" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -35,7 +52,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="X:/P32/int/_idea" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -104,23 +121,31 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="716" y="285" key="FileChooserDialogImpl" timestamp="1597311884488">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state x="740" y="277" key="FileChooserDialogImpl" timestamp="1607589092518">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="740" y="277" key="FileChooserDialogImpl/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607589092518" />
     <state x="716" y="285" key="FileChooserDialogImpl/0.0.1858.1080/1920.0.1920.1040@0.0.1858.1080" timestamp="1597311884488" />
-    <state x="2660" y="274" key="FileChooserDialogImpl/0.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591324406891" />
     <state x="430" y="184" key="SettingsEditor" timestamp="1597311797058">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="430" y="184" key="SettingsEditor/0.0.1858.1080/1920.0.1920.1040@0.0.1858.1080" timestamp="1597311797058" />
+    <state x="-819" y="407" width="540" height="524" key="StructurePopup" timestamp="1604042658275">
+      <screen x="-1080" y="-263" width="1080" height="1890" />
+    </state>
+    <state x="-819" y="407" width="540" height="524" key="StructurePopup/-1080.-263.1080.1890/0.0.1920.1050@-1080.-263.1080.1890" timestamp="1604042658275" />
+    <state x="-833" y="399" width="585" height="534" key="find.popup" timestamp="1604042510628">
+      <screen x="-1080" y="-263" width="1080" height="1890" />
+    </state>
+    <state x="-833" y="399" width="585" height="534" key="find.popup/-1080.-263.1080.1890/0.0.1920.1050@-1080.-263.1080.1890" timestamp="1604042510628" />
     <state x="589" y="150" key="new project wizard" timestamp="1597311897304">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="589" y="150" key="new project wizard/0.0.1858.1080/1920.0.1920.1040@0.0.1858.1080" timestamp="1597311897304" />
-    <state x="603" y="234" width="672" height="705" key="search.everywhere.popup" timestamp="1597311766471">
-      <screen x="0" y="0" width="1858" height="1080" />
+    <state x="-729" y="147" width="672" height="1234" key="search.everywhere.popup" timestamp="1606806085808">
+      <screen x="-1080" y="-263" width="1080" height="1890" />
     </state>
+    <state x="-729" y="147" width="672" height="1234" key="search.everywhere.popup/-1080.-263.1080.1890/0.0.1920.1050@-1080.-263.1080.1890" timestamp="1606806085808" />
     <state x="603" y="234" width="672" height="705" key="search.everywhere.popup/0.0.1858.1080/1920.0.1920.1040@0.0.1858.1080" timestamp="1597311766471" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591000759748" />
   </component>
 </project>

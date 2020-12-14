@@ -17,7 +17,7 @@ defmodule Mage.MixProject do
     def application do
         [
             extra_applications: [:logger],
-            mod: {Application, []}
+            mod: {Hello.Application, []}
         ]
     end
     
