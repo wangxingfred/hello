@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="xprof_gui" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/xprof_gui/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/xprof_gui/src" />
+      <root url="file://$PROJECT_DIR$/deps/xprof_gui/priv" />
+    </SOURCES>
+  </library>
+</component>
