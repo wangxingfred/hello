@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3697813-f8f2-43c3-9459-f3aff85cd0ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/$CACHE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/hello_rust.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_ml/.idea/hello_ml.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_ml/.idea/hello_ml.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_ml/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_ml/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_ml/Housing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_ml/Housing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/wangxing.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello_rust.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cli.rs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="language.rust" />
   </component>
@@ -60,6 +47,18 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="run" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="run" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="ErlangRemoteDebugRunConfiguration" factoryName="Erlang Remote Node" show_console_on_std_err="false" show_console_on_std_out="false">
@@ -80,10 +79,14 @@
       <option name="workDirectory" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.run" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
-    <option name="explicitPathToStdlib" value="N:\SDK\rustup\toolchains\stable-x86_64-pc-windows-msvc\lib\rustlib\src\rust" />
-    <option name="toolchainHomeDirectory" value="$PROJECT_DIR$/../../../SDK/rustup/toolchains/stable-x86_64-pc-windows-msvc/bin" />
+    <option name="toolchainHomeDirectory" value="D:/SDK/cargo/bin" />
     <option name="version" value="2" />
   </component>
   <component name="SvnConfiguration">
@@ -100,17 +103,39 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="845" y="387" key="#Notifications" timestamp="1607994972238">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="845" y="387" key="#Notifications/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607994972238" />
     <state x="1478" y="556" key="#Rust" timestamp="1607764317941">
       <screen x="0" y="0" width="2498" height="1440" />
     </state>
     <state x="1478" y="556" key="#Rust/2560.0.1018.1920/0.0.2498.1440@0.0.2498.1440" timestamp="1607764317941" />
-    <state x="1621" y="575" key="FileChooserDialogImpl" timestamp="1607764264537">
-      <screen x="0" y="0" width="2498" height="1440" />
+    <state x="222" y="508" key="FileChooserDialogImpl" timestamp="1607995188861">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="222" y="508" key="FileChooserDialogImpl/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607995188861" />
     <state x="1621" y="575" key="FileChooserDialogImpl/2560.0.1018.1920/0.0.2498.1440@0.0.2498.1440" timestamp="1607764264537" />
-    <state x="911" y="459" width="998" height="708" key="SettingsEditor" timestamp="1607766366014">
-      <screen x="0" y="0" width="2498" height="1440" />
+    <state width="1876" height="436" key="GridCell.Tab.0.bottom" timestamp="1607998627195">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1876" height="436" key="GridCell.Tab.0.bottom/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607998627195" />
+    <state width="1876" height="436" key="GridCell.Tab.0.center" timestamp="1607998627195">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="436" key="GridCell.Tab.0.center/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607998627195" />
+    <state width="1876" height="436" key="GridCell.Tab.0.left" timestamp="1607998627195">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="436" key="GridCell.Tab.0.left/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607998627195" />
+    <state width="1876" height="436" key="GridCell.Tab.0.right" timestamp="1607998627195">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="436" key="GridCell.Tab.0.right/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607998627195" />
+    <state x="358" y="268" width="916" height="708" key="SettingsEditor" timestamp="1607995934356">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="358" y="268" width="916" height="708" key="SettingsEditor/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607995934356" />
     <state x="911" y="459" width="998" height="708" key="SettingsEditor/2560.0.1018.1920/0.0.2498.1440@0.0.2498.1440" timestamp="1607766366014" />
   </component>
 </project>

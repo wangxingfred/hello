@@ -1,15 +1,68 @@
 fn main() {
-    let tuple = (1, 2.2, b'a');
+    let mut counter = 0;
 
-    println!("tuple = ({}, {}, {})", tuple.0, tuple.1, tuple.2);
+    let result = loop {
+        counter += 1;
 
-    let array1: [u32; 5] = [1, 2, 3, 4, 5];
-    let array2: [u32; 5] = [9; 5];
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
 
-    let index = 6;
+    println!("loop result = {}", result);
 
-    println!("element at {} : {}", index, array1[index]);
+    while counter < 11 {
+        counter += 1;
+    };
+
+    let arr = [1,2,3];
+    for element in 1..5 {
+        println!("element : {}", element)
+    }
 }
+
+// fn main() {
+//     let num = 3;
+//
+//     if num == 0 {
+//         println!("num = {}", num);
+//     }
+//
+//     let x = if num > 0 { "positive" } else { false };
+//
+//     println!("x = {}", x);
+// }
+
+// fn main() {
+//     let r = another_function();
+//     println!("another return : {}", r);
+// }
+//
+// fn another_function() -> i32 {
+//     println!("Another function.");
+//
+//     let y = {
+//         let x = 5;
+//         x + 1
+//     };
+//
+//     println!("y = {}", y);
+//
+//     return y
+// }
+
+// fn main() {
+//     let tuple = (1, 2.2, b'a');
+//
+//     println!("tuple = ({}, {}, {})", tuple.0, tuple.1, tuple.2);
+//
+//     let array1: [u32; 5] = [1, 2, 3, 4, 5];
+//     let array2: [u32; 5] = [9; 5];
+//
+//     let index = 6;
+//
+//     println!("element at {} : {}", index, array1[index]);
+// }
 
 // use std::io;
 // use rand::Rng;
