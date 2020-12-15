@@ -1,19 +1,11 @@
 [package]
-name = "grrs"
+name = "hello_rust"
 version = "0.1.0"
-authors = ["fred <wangxingfred@outlook.com>"]
+authors = ["fred <wangxingfred@gmail.com>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-structopt = "0.2.10"
-failure = "0.1.5"
-exitfailure = "0.5.1"
-indicatif = "0.12.0"
-log = ""
-
-[dev-dependencies]
-assert_cmd = "0.10"
-predicates = "1"
-tempfile = "3"
+ferris-says = "0.2"
+rand = "0.5.5"
