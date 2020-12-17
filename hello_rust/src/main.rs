@@ -1,25 +1,91 @@
-fn main() {
-    let mut counter = 0;
+#[derive(Debug)]
+struct User {
+    name: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool
+}
 
-    let result = loop {
-        counter += 1;
+fn main () {
+    let user0 = build_user(
+    String::from("fred@gmail.com"),
+    String::from("fred"));
 
-        if counter == 10 {
-            break counter * 2;
-        }
+    let mut user1 = User {
+        name: String::from("jack"),
+        email: String::from("jack@xx.com"),
+        sign_in_count: 0,
+        active: false
+    };
+    user1.sign_in_count = 1;
+
+    let user2 = User {
+        name: String::from("john"),
+        email: String::from("john@gmail.com"),
+        ..user0
     };
 
-    println!("loop result = {}", result);
+    println!("user2 = {:#?}", user2)
+}
 
-    while counter < 11 {
-        counter += 1;
-    };
-
-    let arr = [1,2,3];
-    for element in 1..5 {
-        println!("element : {}", element)
+fn build_user(email: String, name: String) -> User {
+    User {
+        email,
+        name,
+        sign_in_count: 0,
+        active: false
     }
 }
+
+// fn main() {
+//     let s1 = String::from("first string");
+//     let mut s2 = String::from("second string");
+//
+//     let word = first_word(&s1, &s2);
+//
+//     s2.clear();
+//
+//     println!("word = {}", word)
+// }
+//
+// fn first_word(s1: &str, s2: &str) -> &str {
+//     for (i, &char) in s1.as_bytes().iter().enumerate() {
+//         if char == b' ' {
+//             return &s1[..i];
+//         }
+//     }
+//     &s1
+// }
+
+// fn main() {
+//     let s1 = String::from("Hello world");
+//     let s2 = s1.clone();
+//
+//     println!("s1 = {}, s2 = {}", s1, s2);
+// }
+
+// fn main() {
+//     let mut counter = 0;
+//
+//     let result = loop {
+//         counter += 1;
+//
+//         if counter == 10 {
+//             break counter * 2;
+//         }
+//     };
+//
+//     println!("loop result = {}", result);
+//
+//     while counter < 11 {
+//         counter += 1;
+//     };
+//
+//     let arr = [1,2,3];
+//     for element in 1..5 {
+//         println!("element : {}", element)
+//     }
+// }
 
 // fn main() {
 //     let num = 3;
