@@ -1,41 +1,81 @@
-#[derive(Debug)]
-struct User {
-    name: String,
-    email: String,
-    sign_in_count: u64,
-    active: bool
+enum IpAddrKind {
+    V4(String),
+    V6(String)
 }
 
-fn main () {
-    let user0 = build_user(
-    String::from("fred@gmail.com"),
-    String::from("fred"));
+fn main() {
+    let home = IpAddrKind::V4(String::from("localhost"));
 
-    let mut user1 = User {
-        name: String::from("jack"),
-        email: String::from("jack@xx.com"),
-        sign_in_count: 0,
-        active: false
-    };
-    user1.sign_in_count = 1;
+    let loopback = IpAddrKind::V6(String::from("::1"));
 
-    let user2 = User {
-        name: String::from("john"),
-        email: String::from("john@gmail.com"),
-        ..user0
-    };
-
-    println!("user2 = {:#?}", user2)
 }
 
-fn build_user(email: String, name: String) -> User {
-    User {
-        email,
-        name,
-        sign_in_count: 0,
-        active: false
-    }
-}
+
+
+// struct Rect {
+//     width: u32,
+//     height: u32
+// }
+//
+// impl Rect {
+//     fn area(&self) -> u32 {
+//         self.width * self.height
+//     }
+//
+//     fn can_hold(&self, other: &Rect) -> bool {
+//         self.width > other.width && self.height > other.height
+//     }
+//
+//     fn square(size: u32) -> Rect {
+//         Rect {
+//             width: size,
+//             height: size
+//         }
+//     }
+// }
+//
+// fn main() {
+//
+// }
+
+// #[derive(Debug)]
+// struct User {
+//     name: String,
+//     email: String,
+//     sign_in_count: u64,
+//     active: bool
+// }
+//
+// fn main () {
+//     let user0 = build_user(
+//     String::from("fred@gmail.com"),
+//     String::from("fred"));
+//
+//     let mut user1 = User {
+//         name: String::from("jack"),
+//         email: String::from("jack@xx.com"),
+//         sign_in_count: 0,
+//         active: false
+//     };
+//     user1.sign_in_count = 1;
+//
+//     let user2 = User {
+//         name: String::from("john"),
+//         email: String::from("john@gmail.com"),
+//         ..user0
+//     };
+//
+//     println!("user2 = {:#?}", user2)
+// }
+//
+// fn build_user(email: String, name: String) -> User {
+//     User {
+//         email,
+//         name,
+//         sign_in_count: 0,
+//         active: false
+//     }
+// }
 
 // fn main() {
 //     let s1 = String::from("first string");
