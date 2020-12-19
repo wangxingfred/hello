@@ -1,14 +1,69 @@
-enum IpAddrKind {
-    V4(String),
-    V6(String)
+use std::collections::HashMap;
+
+fn main () {
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Red"), 20);
+
+    println!("scores = {:?}", scores);
+
+    let teams = vec![String::from("Blue"), String::from("Yellow")];
+    let initial_scores = vec![10, 50, 60];
+
+    let mut scores: HashMap<_, _> =
+        teams.into_iter().zip(initial_scores.into_iter()).collect();
+
+    println!("scores = {:?}", scores);
 }
 
-fn main() {
-    let home = IpAddrKind::V4(String::from("localhost"));
+// #![allow(unused)]
+// fn main() {
+//     for c in "नमस्ते".chars() {
+//         println!("{}", c);
+//     }
+//
+//     for b in "नमस्ते".bytes() {
+//         println!("{}", b)
+//     }
+// }
 
-    let loopback = IpAddrKind::V6(String::from("::1"));
+// fn main() {
+//     let mut s1 = String::from("foo");
+//     let s2 = "bar";
+//     s1.push_str(s2);
+//     println!("s2 is {}", s2);
+// }
 
-}
+
+// fn main () {
+//     let mut v = vec![1,2,3];
+//
+//     v.push(4);
+//     v.push(5);
+//
+//     println!("v.get(100) = {:?}", v.get(100));
+//     println!("v[100] = {}", v[100]);
+//
+//     let first = &v[0];
+//
+//     v.push(6);
+//
+//     println!("first = {}", first);
+//     // println!("v = {}", v);
+// }
+
+// enum IpAddrKind {
+//     V4(String),
+//     V6(String)
+// }
+//
+// fn main() {
+//     let home = IpAddrKind::V4(String::from("localhost"));
+//
+//     let loopback = IpAddrKind::V6(String::from("::1"));
+//
+// }
 
 
 
