@@ -1,21 +1,97 @@
-use std::collections::HashMap;
+fn main() {
+    let mut x = 5;
+    let r = &mut x;
 
-fn main () {
-    let mut scores = HashMap::new();
+    *r = 6;
+// x = 7;
 
-    scores.insert(String::from("Blue"), 10);
-    scores.insert(String::from("Red"), 20);
-
-    println!("scores = {:?}", scores);
-
-    let teams = vec![String::from("Blue"), String::from("Yellow")];
-    let initial_scores = vec![10, 50, 60];
-
-    let mut scores: HashMap<_, _> =
-        teams.into_iter().zip(initial_scores.into_iter()).collect();
-
-    println!("scores = {:?}", scores);
+    println!("r = {:#?}", r);
+    println!("x = {:#?}", x);
 }
+
+// fn set(x: &mut String) {
+//     // x = String::from("xx");
+//     x.clear();
+// }
+
+// fn largest<T: PartialOrd>(list: &[T]) -> &T {
+//     let mut largest = &list[0];
+//     for item in list.iter() {
+//         if item > largest {
+//             largest = item
+//         }
+//     }
+//
+//     return largest
+// }
+//
+// fn main () {
+//     let list = [1,2,5,3];
+//
+//     println!("largest of list : {}", largest(&list));
+//     println!("list = {:?}", list);
+//
+//     let s = 3.to_string();
+// }
+
+
+// use std::fs::File;
+// use std::io::{Error, ErrorKind, Read};
+//
+// fn main() {
+//     // panic!("crash an burn!")
+//
+//     // let v = vec![1, 2, 3];
+//     // v[88];
+//
+//     match File::open("hello.txt") {
+//         Ok(f) => println!("f = {:?}", f),
+//         Err(e) => println!("e = {:?}", e)
+//     }
+//
+//     // File::open("hello.txt").unwrap();
+//
+//     File::open("hello.txt").expect("Failed to open hello.txt");
+//
+//     let f = File::open("hello.txt").unwrap_or_else(|error| {
+//         if error.kind() == ErrorKind::NotFound {
+//             File::create("hello.txt").unwrap_or_else(|error| {
+//                 panic!("Problem creating the file : {:?}",error);
+//             })
+//         } else {
+//             panic!("Problem opening the file: {:?}", error)
+//         }
+//     });
+// }
+//
+// fn read_username_from_file() -> Result<String, Error> {
+//     let mut username = String::new();
+//
+//     File::open("hello.txt")?.read_to_string(&mut username)?;
+//
+//     Ok(username);
+//
+//     std::fs::read_to_string("hello.txt")
+// }
+
+// use std::collections::HashMap;
+//
+// fn main () {
+//     let mut scores = HashMap::new();
+//
+//     scores.insert(String::from("Blue"), 10);
+//     scores.insert(String::from("Red"), 20);
+//
+//     println!("scores = {:?}", scores);
+//
+//     let teams = vec![String::from("Blue"), String::from("Yellow")];
+//     let initial_scores = vec![10, 50, 60];
+//
+//     let mut scores: HashMap<_, _> =
+//         teams.into_iter().zip(initial_scores.into_iter()).collect();
+//
+//     println!("scores = {:?}", scores);
+// }
 
 // #![allow(unused)]
 // fn main() {
@@ -64,7 +140,6 @@ fn main () {
 //     let loopback = IpAddrKind::V6(String::from("::1"));
 //
 // }
-
 
 
 // struct Rect {

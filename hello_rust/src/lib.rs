@@ -2,6 +2,7 @@ mod front_of_house;
 
 mod back_of_house {
     pub struct Breakfast {
+        pub appetizer: Appetizer,
         pub toast: String,
         seasonal_fruit: String
     }
@@ -9,12 +10,19 @@ mod back_of_house {
     impl Breakfast {
         pub fn summer(toast: &str) -> Breakfast {
             Breakfast {
+                appetizer: Appetizer::Soup,
                 toast: String::from(toast),
                 seasonal_fruit: String::from("banana")
             }
         }
+
+        pub fn take(&self) {
+            println!("take breakfast : appetizer = {:?}, toast = {}, fruit = {}",
+                     self.appetizer, self.toast, self.seasonal_fruit)
+        }
     }
 
+    #[derive(Debug)]
     pub enum Appetizer {
         Soup,
         Salad,
@@ -22,17 +30,20 @@ mod back_of_house {
 }
 
 use front_of_house::hosting;
-use back_of_house::Breakfast;
+use back_of_house::{Breakfast, Appetizer};
 
-use std::collections::LinkedList;
+// use std::collections::LinkedList;
 
-use std::fmt::Result;
-use std::io::Result as IoResult;
+// use std::fmt::Result;
+// use std::io::Result as IoResult;
 
 pub fn eat_at_restaurant() {
     hosting::seat_at_table();
 
     let mut meal = Breakfast::summer("Rye");
 
+    meal.appetizer = Appetizer::Salad;
     meal.toast = String::from("white");
+
+    meal.take()
 }
