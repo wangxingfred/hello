@@ -1,19 +1,46 @@
-pub fn greeting(name: &str) -> String {
-    // format!("Hello {}!", name)
-    String::from("Hello!")
+pub mod adder {
+    pub fn add_two(a: i32) -> i32 {
+        a + 2
+    }
 }
+
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn greeting_contains_name() {
-        let result = greeting("Carol");
-        assert!(result.contains("Carol"),
-        "Greeting did not contain name, value was `{}`", result);
+    fn add_two_and_two() {
+        assert_eq!(4, adder::add_two(2));
+    }
+
+    #[test]
+    fn add_three_and_two() {
+        assert_eq!(5, adder::add_two(3));
+    }
+
+    #[test]
+    fn one_hundred() {
+        assert_eq!(102, adder::add_two(100));
     }
 }
+
+// pub fn greeting(name: &str) -> String {
+//     // format!("Hello {}!", name)
+//     String::from("Hello!")
+// }
+//
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+//
+//     #[test]
+//     fn greeting_contains_name() {
+//         let result = greeting("Carol");
+//         assert!(result.contains("Carol"),
+//         "Greeting did not contain name, value was `{}`", result);
+//     }
+// }
 
 
 // #[cfg(test)]
