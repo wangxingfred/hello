@@ -1,29 +1,122 @@
-pub mod adder {
-    pub fn add_two(a: i32) -> i32 {
-        a + 2
+use std::error::Error;
+use std::env;
+
+#[derive(Debug)]
+pub struct Config {
+    pattern: String,
+    filename: String,
+    case_sensitive: bool
+}
+
+impl Config {
+    pub fn new(args: &[String]) -> Result<Config, &'static str> {
+        if args.len() < 3 {
+            return Err("not enough arguments");
+        }
+
+        let sensitive = match env::var("CASE_SENSITIVE") {
+            Ok(value) => !value.eq("false"),
+            _ => true
+        };
+
+        Ok(Config {
+            pattern: args[1].clone(),
+            filename: args[2].clone(),
+            case_sensitive: sensitive
+        })
     }
 }
 
+pub fn run(config: &Config) -> Result<(), Box<dyn Error>> {
+    let content = std::fs::read_to_string(&config.filename)?;
+
+    let list;
+
+    if config.case_sensitive {
+        list = search_sensitive(&config.pattern, &content);
+    } else {
+        list = search_insensitive(&config.pattern, &content);
+    }
+
+    for line in list {
+        println!("{}", line);
+    }
+
+    Ok(())
+}
+
+fn search_sensitive<'a>(pattern: &str, content: &'a str) -> Vec<&'a str> {
+    let mut list = Vec::new();
+
+    for line in content.lines() {
+        if line.contains(pattern) {
+            list.push(line);
+        }
+    }
+
+    list
+}
+
+fn search_insensitive<'a>(pattern: &str, content: &'a str) -> Vec<&'a str> {
+    let mut list = Vec::new();
+
+    let pattern = pattern.to_lowercase();
+
+    for line in content.lines() {
+        if line.to_lowercase().contains(&pattern) {
+            list.push(line);
+        }
+    }
+
+    list
+}
 
 #[cfg(test)]
 mod tests {
-    use super::*;
 
     #[test]
-    fn add_two_and_two() {
-        assert_eq!(4, adder::add_two(2));
+    fn search_sensitive() {
+        let pattern = "duct";
+        let contents = "Rust:\nsafe, fast, productive.\nPick three.";
+
+        assert_eq!(vec!["safe, fast, productive."], super::search_sensitive(pattern, &contents))
     }
 
     #[test]
-    fn add_three_and_two() {
-        assert_eq!(5, adder::add_two(3));
-    }
+    fn search_insensitive() {
+        let pattern = "rUsT";
+        let contents = "Rust:\nsafe, fast, productive.\nPick three.\nTrust me.";
 
-    #[test]
-    fn one_hundred() {
-        assert_eq!(102, adder::add_two(100));
+        assert_eq!(vec!["Rust:", "Trust me."], super::search_insensitive(pattern, &contents))
     }
 }
+
+// pub mod adder {
+//     pub fn add_two(a: i32) -> i32 {
+//         a + 2
+//     }
+// }
+//
+//
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+//
+//     #[test]
+//     fn add_two_and_two() {
+//         assert_eq!(4, adder::add_two(2));
+//     }
+//
+//     #[test]
+//     fn add_three_and_two() {
+//         assert_eq!(5, adder::add_two(3));
+//     }
+//
+//     #[test]
+//     fn one_hundred() {
+//         assert_eq!(102, adder::add_two(100));
+//     }
+// }
 
 // pub fn greeting(name: &str) -> String {
 //     // format!("Hello {}!", name)

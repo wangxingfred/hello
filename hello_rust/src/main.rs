@@ -1,13 +1,31 @@
-fn main() {
-    let mut x = 5;
-    let r = &mut x;
+use std::process;
 
-    *r = 6;
-// x = 7;
+fn main () {
+    let args: Vec<String> = std::env::args().collect();
 
-    println!("r = {:#?}", r);
-    println!("x = {:#?}", x);
+    let config = hello_rust::Config::new(&args).unwrap_or_else(|err| {
+        eprintln!("Failed to parse arguments: {}", err);
+        process::exit(1);
+    });
+
+    println!("config = {:?}", config);
+
+    if let Err(e) = hello_rust::run(&config) {
+        eprintln!("Application error: {}", e);
+        process::exit(2);
+    }
 }
+
+// fn main() {
+//     let mut x = 5;
+//     let r = &mut x;
+//
+//     *r = 6;
+// // x = 7;
+//
+//     println!("r = {:#?}", r);
+//     println!("x = {:#?}", x);
+// }
 
 // fn set(x: &mut String) {
 //     // x = String::from("xx");
