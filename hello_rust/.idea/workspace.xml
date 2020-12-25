@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3697813-f8f2-43c3-9459-f3aff85cd0ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/poem.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/common/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/common/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration_test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration_test.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +153,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1736" height="866" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1608692213661" />
+    <state x="718" y="326" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608694121336">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="718" y="326" key="#com.intellij.fileTypes.FileTypeChooser/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1608694121336" />
     <state x="92" y="92" width="1736" height="866" key="DiffContextDialog" timestamp="1608514399991">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -1,9 +1,8 @@
+use std::env;
 use std::process;
 
 fn main () {
-    let args: Vec<String> = std::env::args().collect();
-
-    let config = hello_rust::Config::new(&args).unwrap_or_else(|err| {
+    let config = hello_rust::Config::new(env::args()).unwrap_or_else(|err| {
         eprintln!("Failed to parse arguments: {}", err);
         process::exit(1);
     });

@@ -5,24 +5,32 @@ use std::env;
 pub struct Config {
     pattern: String,
     filename: String,
-    case_sensitive: bool
+    case_sensitive: bool,
 }
 
 impl Config {
-    pub fn new(args: &[String]) -> Result<Config, &'static str> {
-        if args.len() < 3 {
-            return Err("not enough arguments");
-        }
+    pub fn new(mut args: env::Args) -> Result<Config, &'static str> {
+        args.next();
 
-        let sensitive = match env::var("CASE_SENSITIVE") {
+        let pattern = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a 'pattern' string")
+        };
+
+        let filename = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a 'filename' string")
+        };
+
+        let case_sensitive = match env::var("CASE_SENSITIVE") {
             Ok(value) => !value.eq("false"),
             _ => true
         };
 
         Ok(Config {
-            pattern: args[1].clone(),
-            filename: args[2].clone(),
-            case_sensitive: sensitive
+            pattern,
+            filename,
+            case_sensitive,
         })
     }
 }
@@ -46,15 +54,17 @@ pub fn run(config: &Config) -> Result<(), Box<dyn Error>> {
 }
 
 fn search_sensitive<'a>(pattern: &str, content: &'a str) -> Vec<&'a str> {
-    let mut list = Vec::new();
+    // let mut list = Vec::new();
+    //
+    // for line in content.lines() {
+    //     if line.contains(pattern) {
+    //         list.push(line);
+    //     }
+    // }
+    //
+    // list
 
-    for line in content.lines() {
-        if line.contains(pattern) {
-            list.push(line);
-        }
-    }
-
-    list
+    return content.lines().filter(|line| line.contains(pattern)).collect();
 }
 
 fn search_insensitive<'a>(pattern: &str, content: &'a str) -> Vec<&'a str> {
@@ -73,7 +83,6 @@ fn search_insensitive<'a>(pattern: &str, content: &'a str) -> Vec<&'a str> {
 
 #[cfg(test)]
 mod tests {
-
     #[test]
     fn search_sensitive() {
         let pattern = "duct";
