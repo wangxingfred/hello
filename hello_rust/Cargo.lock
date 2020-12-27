@@ -126,10 +126,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f6503fe142514ca4799d4c26297c4248239fe8838d827db6bd6065c6ed29a6ce"
 
 [[package]]
-name = "hello_rust"
+name = "hello"
 version = "0.1.0"
 dependencies = [
  "ferris-says",
+ "hi",
  "rand",
 ]
 
@@ -141,6 +142,10 @@ checksum = "5aca5565f760fb5b220e499d72710ed156fdb74e631659e99377d9ebfbd13ae8"
 dependencies = [
  "libc",
 ]
+
+[[package]]
+name = "hi"
+version = "0.1.0"
 
 [[package]]
 name = "libc"

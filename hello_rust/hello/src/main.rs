@@ -1,19 +1,24 @@
-use std::env;
-use std::process;
+use hi;
 
 fn main () {
-    let config = hello_rust::Config::new(env::args()).unwrap_or_else(|err| {
-        eprintln!("Failed to parse arguments: {}", err);
-        process::exit(1);
-    });
-
-    println!("config = {:?}", config);
-
-    if let Err(e) = hello_rust::run(&config) {
-        eprintln!("Application error: {}", e);
-        process::exit(2);
-    }
+    hi::hi();
 }
+// use std::env;
+// use std::process;
+//
+// fn main () {
+//     let config = hello_rust::Config::new(env::args()).unwrap_or_else(|err| {
+//         eprintln!("Failed to parse arguments: {}", err);
+//         process::exit(1);
+//     });
+//
+//     println!("config = {:?}", config);
+//
+//     if let Err(e) = hello_rust::run(&config) {
+//         eprintln!("Application error: {}", e);
+//         process::exit(2);
+//     }
+// }
 
 // fn main() {
 //     let mut x = 5;

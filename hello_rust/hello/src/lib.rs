@@ -35,6 +35,14 @@ impl Config {
     }
 }
 
+/// Run search with config
+///
+/// # Example
+///
+/// ```
+/// let config = hello_rust::Config::new(std::env::args())?;
+/// hello_rust::run(&config)?
+/// ```
 pub fn run(config: &Config) -> Result<(), Box<dyn Error>> {
     let content = std::fs::read_to_string(&config.filename)?;
 

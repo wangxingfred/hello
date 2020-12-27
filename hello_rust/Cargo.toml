@@ -1,11 +1,13 @@
-[package]
-name = "hello_rust"
-version = "0.1.0"
-authors = ["fred <wangxingfred@gmail.com>"]
-edition = "2018"
+[workspace]
+members = [
+    "hello",
+    "hi"
+]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
-ferris-says = "0.2"
-rand = "0.5.5"
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
