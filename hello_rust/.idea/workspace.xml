@@ -171,6 +171,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="718" y="326" key="#com.intellij.fileTypes.FileTypeChooser/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1608694121336" />
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1609297673464">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1609297673464" />
     <state x="92" y="92" width="1736" height="866" key="DiffContextDialog" timestamp="1608514399991">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -201,10 +205,10 @@
     </state>
     <state x="268" y="235" width="916" height="708" key="SettingsEditor/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1609117980562" />
     <state x="911" y="459" width="998" height="708" key="SettingsEditor/2560.0.1018.1920/0.0.2498.1440@0.0.2498.1440" timestamp="1609053996909" />
-    <state x="701" y="237" width="672" height="495" key="search.everywhere.popup" timestamp="1609122390743">
+    <state x="701" y="237" width="672" height="495" key="search.everywhere.popup" timestamp="1609132103219">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="701" y="237" width="672" height="495" key="search.everywhere.popup/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1609122390743" />
+    <state x="701" y="237" width="672" height="495" key="search.everywhere.popup/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1609132103219" />
     <state x="912" y="325" width="672" height="678" key="search.everywhere.popup/2560.0.1018.1920/0.0.2498.1440@0.0.2498.1440" timestamp="1608459394739" />
   </component>
 </project>

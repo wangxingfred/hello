@@ -1,46 +1,87 @@
-use std::thread;
-use std::time::Duration;
-use std::sync::mpsc;
-use std::thread::JoinHandle;
+use std::ops::Add;
+
+#[derive(Debug, Clone, PartialEq)]
+struct Point {
+    x: i32,
+    y: i32
+}
+
+impl Add for Point {
+    type Output = Point;
+
+    fn add(self, rhs: Self) -> Self::Output {
+        Point {
+            x: self.x + rhs.x,
+            y: self.y + rhs.y
+        }
+    }
+}
+
+impl Add<i32> for Point {
+    type Output = Point;
+
+    fn add(self, rhs: i32) -> Self::Output {
+        Point {
+            x: self.x + rhs,
+            y: self.y + rhs
+        }
+    }
+}
 
 fn main () {
-    let v = vec![1,2,3];
-    let v2 = vec![4,5,6];
+    let a = Point {x: 1, y: 0};
+    let b = Point {x: 2, y: 1};
+    assert_eq!(a.clone() + b.clone(), Point {x: 3, y: 1});
 
-    let (tx, rx) = mpsc::channel();
+    println!("a = {:?}", a);
+    println!("b = {:?}", b);
 
-    let mut handle= Option::None;
-    // for _i in 1..2 {
-    //     handle = Option::Some(thread::spawn(move || {
-    //         println!("spawned thread, v : {:?}", v);
-    //         for i in 1..10 {
-    //             tx.send(i).unwrap();
-    //             // println!("spawned thread, hi number {}", i);
-    //             thread::sleep(Duration::from_millis(1));
-    //         }
-    //     }));
-    // }
-
-    handle = Option::Some(thread::spawn(move || {
-        println!("spawned thread, v : {:?}", v);
-        for i in 1..10 {
-            tx.send(i).unwrap();
-            // println!("spawned thread, hi number {}", i);
-            thread::sleep(Duration::from_millis(1));
-        }
-    }));
-
-    println!("main thread, v2 : {:?}", v2);
-    for val in rx {
-        println!("main thread, received : {}", val);
-    }
-    // for i in 1..5 {
-    //     println!("main thread, hi number {}", i);
-    //     thread::sleep(Duration::from_millis(1));
-    // }
-
-    handle.unwrap().join().unwrap();
+    println!("a + 3 = {:?}", a + 3);
 }
+
+// use std::thread;
+// use std::time::Duration;
+// use std::sync::mpsc;
+// use std::thread::JoinHandle;
+//
+// fn main () {
+//     let v = vec![1,2,3];
+//     let v2 = vec![4,5,6];
+//
+//     let (tx, rx) = mpsc::channel();
+//
+//     let mut handle= Option::None;
+//     // for _i in 1..2 {
+//     //     handle = Option::Some(thread::spawn(move || {
+//     //         println!("spawned thread, v : {:?}", v);
+//     //         for i in 1..10 {
+//     //             tx.send(i).unwrap();
+//     //             // println!("spawned thread, hi number {}", i);
+//     //             thread::sleep(Duration::from_millis(1));
+//     //         }
+//     //     }));
+//     // }
+//
+//     handle = Option::Some(thread::spawn(move || {
+//         println!("spawned thread, v : {:?}", v);
+//         for i in 1..10 {
+//             tx.send(i).unwrap();
+//             // println!("spawned thread, hi number {}", i);
+//             thread::sleep(Duration::from_millis(1));
+//         }
+//     }));
+//
+//     println!("main thread, v2 : {:?}", v2);
+//     for val in rx {
+//         println!("main thread, received : {}", val);
+//     }
+//     // for i in 1..5 {
+//     //     println!("main thread, hi number {}", i);
+//     //     thread::sleep(Duration::from_millis(1));
+//     // }
+//
+//     handle.unwrap().join().unwrap();
+// }
 
 // use std::rc::Rc;
 //
