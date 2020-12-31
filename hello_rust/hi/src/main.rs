@@ -21,16 +21,18 @@ impl Add<i32> for Point {
     type Output = Point;
 
     fn add(self, rhs: i32) -> Self::Output {
-        Point {
+        return Point {
             x: self.x + rhs,
             y: self.y + rhs
-        }
+        };
     }
 }
 
 fn main () {
     let a = Point {x: 1, y: 0};
     let b = Point {x: 2, y: 1};
+
+    println!("{}", stringify!(assert_eq!(a.clone() + b.clone(), Point {x: 3, y: 1})));
     assert_eq!(a.clone() + b.clone(), Point {x: 3, y: 1});
 
     println!("a = {:?}", a);
