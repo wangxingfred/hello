@@ -2,6 +2,7 @@
   <library name="benchee" type="mix">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/_build/prod/lib/benchee/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/benchee/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
