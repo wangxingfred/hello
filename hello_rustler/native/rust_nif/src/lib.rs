@@ -1,4 +1,9 @@
 mod scene;
+mod obj;
+mod battle;
+mod tb;
+mod team;
+mod record;
 
 use std::collections::HashMap;
 
@@ -18,4 +23,9 @@ fn hashmap(count: u64) {
     }
 }
 
-rustler::init!("Elixir.RustNif", [add, hashmap]);
+#[rustler::nif]
+fn ft() {
+    scene::create();
+}
+
+rustler::init!("Elixir.RustNif", [add, hashmap, ft]);
