@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3697813-f8f2-43c3-9459-f3aff85cd0ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/battle.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/obj/mod.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/scene.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/ftb.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hi/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/hi/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee_html.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee_html.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee_json.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee_json.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/deep_merge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/deep_merge.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/jason.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/jason.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/bench/add.exs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/bench/add.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/hello_rustler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/hello_rustler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/lib/hello_rustler.ex" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/lib/hello_rustler.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/lib/rust_nif.ex" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/lib/rust_nif.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/mix.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/priv/native/librust_nif.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/priv/native/librust_nif.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/record.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/record.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/scene.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/scene.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/tb.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/team.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/team.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/projectFilesBackup/hello_rustler.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,17 +51,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="G:/P32/int/_idea" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="org.rust.disableDetachedFileInspectionI:/GitHub/hello/hello_rust/src/front_of_house/hosting.rs" value="true" />
-    <property name="settings.editor.selected.configurable" value="language.rust" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="N:\GitHub\hello\hello_rust\hello" />
     </key>
   </component>
-  <component name="RunManager" selected="Cargo.test">
+  <component name="RunManager" selected="Cargo.run">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -82,25 +75,29 @@
       </method>
     </configuration>
     <configuration name="run" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="channel" value="DEFAULT" />
       <option name="command" value="run" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
     <configuration name="test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="channel" value="DEFAULT" />
       <option name="command" value="test" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
@@ -119,6 +116,9 @@
       </option>
       <option name="host" value="" />
       <option name="remoteErlangNodeName" value="dev@localhost" />
+      <option name="selectedOptions">
+        <list />
+      </option>
       <option name="useShortNames" value="true" />
       <option name="workDirectory" />
       <method v="2" />
@@ -133,20 +133,12 @@
       <option name="showConsole" value="true" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Cargo.test" />
-        <item itemvalue="Cargo.test" />
-        <item itemvalue="Cargo.test" />
-        <item itemvalue="Cargo.test" />
-        <item itemvalue="Cargo.test" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
-    <option name="toolchainHomeDirectory" value="D:/SDK/cargo/bin" />
+    <option name="toolchainHomeDirectory" value="$PROJECT_DIR$/../../../SDK/cargo/bin" />
     <option name="version" value="2" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -170,66 +162,8 @@
       </list>
     </option>
   </component>
-  <component name="WindowStateProjectService">
-    <state x="845" y="387" key="#Notifications" timestamp="1607994972238">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="845" y="387" key="#Notifications/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1607994972238" />
-    <state x="1478" y="556" key="#Rust" timestamp="1608988176514">
-      <screen x="0" y="0" width="2498" height="1440" />
-    </state>
-    <state x="466" y="372" key="#Rust/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1608513255358" />
-    <state x="1478" y="556" key="#Rust/2560.0.1018.1920/0.0.2498.1440@0.0.2498.1440" timestamp="1608988176514" />
-    <state x="92" y="92" width="1736" height="866" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1608692213661">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="92" y="92" width="1736" height="866" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1608692213661" />
-    <state x="718" y="326" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608694121336">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="718" y="326" key="#com.intellij.fileTypes.FileTypeChooser/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1608694121336" />
-    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1609297673464">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="765" y="240" key="#com.intellij.ide.util.MemberChooser/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1609297673464" />
-    <state x="92" y="92" width="1736" height="866" key="DiffContextDialog" timestamp="1608514399991">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="92" y="92" width="1736" height="866" key="DiffContextDialog/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1608514399991" />
-    <state x="222" y="468" key="FileChooserDialogImpl" timestamp="1609899377038">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="222" y="468" key="FileChooserDialogImpl/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1609899377038" />
-    <state x="1621" y="575" key="FileChooserDialogImpl/2560.0.1018.1920/0.0.2498.1440@0.0.2498.1440" timestamp="1607764264537" />
-    <state width="1876" height="417" key="GridCell.Tab.0.bottom" timestamp="1608692265562">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1876" height="417" key="GridCell.Tab.0.bottom/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1608692265562" />
-    <state width="1876" height="417" key="GridCell.Tab.0.center" timestamp="1608692265562">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1876" height="417" key="GridCell.Tab.0.center/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1608692265562" />
-    <state width="1876" height="417" key="GridCell.Tab.0.left" timestamp="1608692265562">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1876" height="417" key="GridCell.Tab.0.left/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1608692265562" />
-    <state width="1876" height="417" key="GridCell.Tab.0.right" timestamp="1608692265562">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1876" height="417" key="GridCell.Tab.0.right/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1608692265562" />
-    <state x="625" y="229" key="NewModule_or_Project.wizard" timestamp="1609899389528">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="625" y="229" key="NewModule_or_Project.wizard/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1609899389528" />
-    <state x="268" y="235" width="916" height="708" key="SettingsEditor" timestamp="1609117980562">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="268" y="235" width="916" height="708" key="SettingsEditor/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1609117980562" />
-    <state x="911" y="459" width="998" height="708" key="SettingsEditor/2560.0.1018.1920/0.0.2498.1440@0.0.2498.1440" timestamp="1609053996909" />
-    <state x="701" y="237" width="672" height="495" key="search.everywhere.popup" timestamp="1609132103219">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="701" y="237" width="672" height="495" key="search.everywhere.popup/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1609132103219" />
-    <state x="912" y="325" width="672" height="678" key="search.everywhere.popup/2560.0.1018.1920/0.0.2498.1440@0.0.2498.1440" timestamp="1608459394739" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

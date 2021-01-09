@@ -1,9 +1,10 @@
 mod scene;
 mod obj;
 mod battle;
-mod tb;
+mod ftb;
 mod team;
 mod record;
+mod tb;
 
 use std::collections::HashMap;
 
