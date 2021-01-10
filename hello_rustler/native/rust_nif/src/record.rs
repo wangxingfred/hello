@@ -158,7 +158,7 @@ impl Record for FightCfg {
 pub(crate) struct FightTypeCfg {
     pub(crate) tid              : i64,
     pub(crate) database         : i64,
-    pub(crate) priority         : i64,
+    pub(crate) priority         : bool,
     pub(crate) level_repress    : bool,
     pub(crate) star_repress     : bool,
     pub(crate) inherit          : i64,

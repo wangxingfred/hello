@@ -8,21 +8,21 @@ use std::borrow::Borrow;
 use std::ops::Deref;
 
 // 配置数据类型（主要是用来缓存战斗配置表中的数据类型）
-const FIGHT_BUFF_EFFECT_CTX: i32 = 16;
-const FIGHT_BUFF_CTX: i32 = 17;
-const FIGHT_EVENT_EFFECT_CTX: i32 = 18;
-const FIGHT_EVENT_CTX: i32 = 19;
-const FIGHT_REPRESS_TYPE_CTX: i32 = 20;
-const FIGHT_STAR_REPRESS_CTX: i32 = 21;
-const FIGHT_LEVEL_REPRESS_CTX: i32 = 22;
-const ABILITY_EFFECT_TYPE_CTX: i32 = 23;
-const ABILITY_EFFECT_CTX: i32 = 24;
-const ABILITY_CTX: i32 = 25;
-const FIGHT_ABILITY_TYPE_CTX: i32 = 26;
-const LIMIT_RULE_CTX: i32 = 27;
-const TARGET_RULE_CTX: i32 = 28;
-const FIGHT_POINT_CTX: i32 = 29;
-const ABILITY_EXTRA_ATTR_CTX: i32 = 30;
+pub(crate) const FIGHT_BUFF_EFFECT_CTX: i32 = 16;
+pub(crate) const FIGHT_BUFF_CTX: i32 = 17;
+pub(crate) const FIGHT_EVENT_EFFECT_CTX: i32 = 18;
+pub(crate) const FIGHT_EVENT_CTX: i32 = 19;
+pub(crate) const FIGHT_REPRESS_TYPE_CTX: i32 = 20;
+pub(crate) const FIGHT_STAR_REPRESS_CTX: i32 = 21;
+pub(crate) const FIGHT_LEVEL_REPRESS_CTX: i32 = 22;
+pub(crate) const ABILITY_EFFECT_TYPE_CTX: i32 = 23;
+pub(crate) const ABILITY_EFFECT_CTX: i32 = 24;
+pub(crate) const ABILITY_CTX: i32 = 25;
+pub(crate) const FIGHT_ABILITY_TYPE_CTX: i32 = 26;
+pub(crate) const LIMIT_RULE_CTX: i32 = 27;
+pub(crate) const TARGET_RULE_CTX: i32 = 28;
+pub(crate) const FIGHT_POINT_CTX: i32 = 29;
+pub(crate) const ABILITY_EXTRA_ATTR_CTX: i32 = 30;
 
 const TID_BUFF_VALUE_SHIELD: i64 = 1612;
 
@@ -66,6 +66,12 @@ pub(crate) fn insert(s: &mut Scene, tab: Tab, tab_key: i32, tid: i64) {
     let cfg = tb::get(tab, tid);
     insert_record(s, cfg, tab_key, tid);
 }
+
+pub(crate) fn get(s: &Scene, tab_key: i32, tid: i64) -> &MapValue {
+    let id = (tid << TID_BIT) | (tab_key << TYPE_BIT);
+    s.get(id)
+}
+
 
 fn init_team(s: &mut Scene, team_info: &TeamInfo) {
     let TeamInfo {
@@ -193,9 +199,8 @@ fn init_fight_points(s: &mut Scene) {
 
 fn insert_record(s: &mut Scene, record: Box<Cfg>, table_key: i32, tid: i64) {
     let id = (tid << TID_BIT) | ((table_key as i64) << TYPE_BIT);
-    if let false = s.rec_contains(id) {
-        let map_value = Box::new(MapValue::Cfg(*record));
-        s.rec_put(id, map_value)
+    if let false = s.contains(id) {
+        s.put(id, MapValue::Cfg(record))
     }
 }
 

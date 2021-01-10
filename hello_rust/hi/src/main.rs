@@ -1,9 +1,23 @@
 use std::ops::Add;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, PartialEq)]
 struct Point {
     x: i32,
     y: i32
+}
+
+impl Clone for Point {
+    fn clone(&self) -> Self {
+        println!("Point cloned : {:?}", self);
+        Point {
+            x: self.x,
+            y: self.y,
+        }
+    }
+}
+
+impl Copy for Point {
+
 }
 
 impl Add for Point {
@@ -28,17 +42,27 @@ impl Add<i32> for Point {
     }
 }
 
+fn create_point(x: i32, y: i32) -> Point {
+    Point {
+        x,
+        y,
+    }
+}
+
 fn main () {
-    let a = Point {x: 1, y: 0};
-    let b = Point {x: 2, y: 1};
+    // let a = Point {x: 1, y: 0};
+    // let b = Point {x: 2, y: 1};
+    //
+    // println!("{}", stringify!(assert_eq!(a.clone() + b.clone(), Point {x: 3, y: 1})));
+    // assert_eq!(a.clone() + b.clone(), Point {x: 3, y: 1});
+    //
+    // println!("a = {:?}", a);
+    // println!("b = {:?}", b);
+    //
+    // println!("a + 3 = {:?}", a + 3);
+    let point = create_point(1,2);
 
-    println!("{}", stringify!(assert_eq!(a.clone() + b.clone(), Point {x: 3, y: 1})));
-    assert_eq!(a.clone() + b.clone(), Point {x: 3, y: 1});
-
-    println!("a = {:?}", a);
-    println!("b = {:?}", b);
-
-    println!("a + 3 = {:?}", a + 3);
+    println!("point = {:?}", point)
 }
 
 // use std::thread;
