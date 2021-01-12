@@ -1,2 +1,2 @@
-mod ability;
+pub(crate) mod ability;
 mod effect;
