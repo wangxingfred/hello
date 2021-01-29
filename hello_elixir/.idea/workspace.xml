@@ -3,7 +3,34 @@
   <component name="ChangeListManager">
     <list default="true" id="f84bd4ea-332a-4f1a-8891-d2b27aac7b41" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rust/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rust/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello/hello_map.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/hello_map.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee_html.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee_json.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/credo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/deep_merge.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/dialyxir.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/earmark.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/ex_doc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/ex_guard.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/excoveralls.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/inch_ex.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/jason.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/mix_test_watch.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/rustler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/sorted_set_nif.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/stream_data.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/toml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/hello_rustler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/hello_rustler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/Cargo.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/limit_rule/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/limit_rule/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/obj/mach.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/obj/mach.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/record.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/record.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/scene.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/scene.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +66,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="X:/P32/int/_idea" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -94,6 +121,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>

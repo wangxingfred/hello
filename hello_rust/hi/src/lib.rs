@@ -1,3 +1,5 @@
+pub mod hi_vec;
+
 use std::collections::HashMap;
 
 pub fn hi() {

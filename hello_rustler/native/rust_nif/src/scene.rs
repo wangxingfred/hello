@@ -1,8 +1,8 @@
 use std::collections::HashMap;
 use std::hash::{Hash, Hasher};
 
-use super::*;
 use super::tb;
+use super::*;
 
 pub const ID_BIT: i32 = 40;
 pub const TID_BIT: i32 = 16;
@@ -32,7 +32,7 @@ impl Eq for Atom {}
 
 impl Hash for Atom {
     fn hash<H: Hasher>(&self, state: &mut H) {
-        let v = *self as i32;
+        let v = self as i32;
         v.hash(state)
     }
 }
@@ -41,11 +41,42 @@ pub(crate) enum MapValue {
     Bool(bool),
     Int64(i64),
     Cfg(Box<tb::Cfg>),
-    AllFighters(Box<Vec<i64>>)
+    AllFighters(Box<Vec<i64>>),
+}
+
+impl MapValue {
+    pub(crate) fn get_bool(&self) -> bool {
+        if let &MapValue::Bool(value) = self {
+            value
+        } else {
+            panic!(format!("not a bool : #{:?}", self))
+        }
+    }
+    pub(crate) fn get_i64(&self) -> i64 {
+        if let &MapValue::Int64(value) = self {
+            value
+        } else {
+            panic!(format!("not a i64 : #{:?}", self))
+        }
+    }
+    pub(crate) fn get_cfg(&self) -> &tb::Cfg {
+        if let &MapValue::Cfg(value) = self {
+            value
+        } else {
+            panic!(format!("not a cfg : #{:?}", self))
+        }
+    }
+    pub(crate) fn get_fighters(&self) -> &Vec<i64> {
+        if let &MapValue::AllFighters(value) = self {
+            value
+        } else {
+            panic!(format!("not fighters : #{:?}", self))
+        }
+    }
 }
 
 pub(crate) enum AtomMapValue {
-    Int64(i64)
+    Int64(i64),
 }
 
 pub struct Scene {
@@ -65,7 +96,7 @@ impl Scene {
     pub(crate) fn atom_put(&mut self, key: Atom, value: AtomMapValue) {
         self.atom_dic.insert(key, value);
     }
-    pub(crate) fn atom_get(&mut self, key: Atom) -> &AtomMapValue {
+    pub(crate) fn atom_get(&self, key: Atom) -> &AtomMapValue {
         &self.atom_dic[&key]
     }
 
@@ -82,7 +113,6 @@ impl Scene {
         self.box_dic.contains_key(&key)
     }
 }
-
 
 pub fn create() -> i64 {
     let mut s = Scene {

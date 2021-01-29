@@ -5,18 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3697813-f8f2-43c3-9459-f3aff85cd0ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/flow/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hi/src/hi_vec.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/lib/hello/hello_map.ex" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/lib/hello/hello_map.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hi/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/hi/src/lib.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hi/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/hi/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/battle.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/ftb.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/ftb.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee_html.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee_json.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/credo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/deep_merge.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/dialyxir.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/earmark.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/ex_doc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/ex_guard.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/excoveralls.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/inch_ex.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/jason.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/mix_test_watch.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/rustler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/sorted_set_nif.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/stream_data.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/toml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/hello_rustler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/hello_rustler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/Cargo.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/aim_rule/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/aim_rule/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/context/effect.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/context/effect.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/limit_rule/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/limit_rule/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/lib.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/obj/mach.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/obj/mach.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/obj/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/obj/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/record.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/record.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/scene.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/scene.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/team.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/team.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +50,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Rust File" />
         <option value="HTML File" />
+        <option value="Rust File" />
       </list>
     </option>
   </component>
@@ -53,7 +77,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hello_rustler" />
+    <property name="last_opened_file_path" value="D:/P32/demo_for_client_of_rcj/_idea" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="org.rust.disableDetachedFileInspectionI:/GitHub/hello/hello_rust/src/front_of_house/hosting.rs" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -77,29 +101,25 @@
       </method>
     </configuration>
     <configuration name="run" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="run" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="channel" value="DEFAULT" />
+      <option name="command" value="run" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
     <configuration name="test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="channel" value="DEFAULT" />
+      <option name="command" value="test" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
@@ -118,9 +138,6 @@
       </option>
       <option name="host" value="" />
       <option name="remoteErlangNodeName" value="dev@localhost" />
-      <option name="selectedOptions">
-        <list />
-      </option>
       <option name="useShortNames" value="true" />
       <option name="workDirectory" />
       <method v="2" />
@@ -137,10 +154,10 @@
     </configuration>
   </component>
   <component name="RustProjectSettings">
-    <option name="toolchainHomeDirectory" value="$PROJECT_DIR$/../../../SDK/cargo/bin" />
+    <option name="toolchainHomeDirectory" value="D:/SDK/cargo/bin" />
     <option name="version" value="2" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -163,6 +180,16 @@
         <option value="1" />
       </list>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="584" y="387" key="#Rust" timestamp="1610593105985">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="584" y="387" key="#Rust/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1610593105985" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1610674587587">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="279" key="FileChooserDialogImpl/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1610674587587" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

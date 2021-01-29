@@ -48,10 +48,13 @@ impl Record for AbilityCfg {
 // }
 
 // ----------------------------------
-pub(crate) struct LimitRule {
-    pub(crate) v1: i64,
-    pub(crate) v2: i64,
-    pub(crate) v3: Vec<i64>
+pub(crate) enum LimitRule {
+    Default(i64),
+    LimitSize(i64,i64),
+    LimitInterval(i64,i64),
+    LimitRound(i64),
+    FighterNum(i64, Vec<i64>),
+    FighterRoundNum(i64, i64, Vec<i64>)
 }
 pub(crate) enum LimitRuleInitFunc {
     InitDefault,
@@ -136,7 +139,6 @@ pub(crate) struct TargetAimRule {
     pub(crate) aim_tid: i64,
     pub(crate) target_n: i64,
     pub(crate) hp_less: i64,
-    pub(crate) params: Vec<i64>,
 }
 
 pub(crate) struct TargetRuleCfg {

@@ -83,7 +83,7 @@
       <textMaps />
     </LinkMapSettings>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" project-jdk-name="Elixir" project-jdk-type="Elixir SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
