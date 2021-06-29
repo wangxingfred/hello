@@ -2,6 +2,7 @@
   <library name="goldrush" type="mix">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/_build/dev/lib/goldrush/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/prod/lib/goldrush/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
