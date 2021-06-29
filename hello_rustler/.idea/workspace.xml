@@ -5,34 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4464451c-a7ef-42f3-96cf-10c99450c9ae" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowboy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowboy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowlib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowlib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/customized_hdr_histogram.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/customized_hdr_histogram.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/goldrush.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/goldrush.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/jsone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/jsone.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/lager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/lager.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/ranch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/ranch.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof_core.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof_core.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof_gui.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof_gui.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee_html.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee_json.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/credo.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/deep_merge.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/dialyxir.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/earmark.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ex_doc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ex_guard.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/excoveralls.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/inch_ex.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jason.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mix_test_watch.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/rustler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sorted_set_nif.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/stream_data.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/toml.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/hello_elixir.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/hello_elixir.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/mix.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/mix.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rust/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rust/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello_rustler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello_rustler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/Cargo.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/battle/limit_rule/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/native/rust_nif/src/battle/limit_rule/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/native/rust_nif/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/obj/mach.rs" beforeDir="false" afterPath="$PROJECT_DIR$/native/rust_nif/src/obj/mach.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/record.rs" beforeDir="false" afterPath="$PROJECT_DIR$/native/rust_nif/src/record.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/scene.rs" beforeDir="false" afterPath="$PROJECT_DIR$/native/rust_nif/src/scene.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +46,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/native/rust_nif/Cargo.toml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -111,17 +100,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1610506567887">
+    <state x="667" y="258" width="585" height="534" key="find.popup" timestamp="1619353979184">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1610506567887" />
-    <state x="259" y="222" width="1330" height="623" key="IDE.errors.dialog" timestamp="1610506247118">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="259" y="222" width="1330" height="623" key="IDE.errors.dialog/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1610506247118" />
-    <state x="461" y="169" key="SettingsEditor" timestamp="1610507879367">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="461" y="169" key="SettingsEditor/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1610507879367" />
+    <state x="667" y="258" width="585" height="534" key="find.popup/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1619353979184" />
   </component>
 </project>

@@ -1,0 +1,13 @@
+/_build
+/cover
+/deps
+/doc
+/log
+/.fetch
+erl_crash.dump
+*.ez
+*.beam
+/config/*.secret.exs
+.elixir_ls/
+.idea/$CACHE_FILE$
+.idea/$PRODUCT_WORKSPACE_FILE$
