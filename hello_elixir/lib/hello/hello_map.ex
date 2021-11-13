@@ -20,5 +20,13 @@ defmodule HelloMap do
         end
     end
 
+    # 错误写法
+    # 始终匹配到第一个分支
+    def match_empty_wrong(%{}), do: "empty"
+    def match_empty_wrong(_), do: "not empty"
+
+    # 正确写法
+    def match_empty_right(map) when map_size(map) === 0, do: "empty"
+    def match_empty_right(_), do: "not empty"
 
 end

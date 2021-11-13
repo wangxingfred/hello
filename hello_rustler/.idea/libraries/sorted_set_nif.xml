@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="sorted_set_nif" type="mix">
-    <CLASSES />
-    <JAVADOC />
-    <SOURCES>
-      <root url="file://$PROJECT_DIR$/deps/sorted_set_nif/lib" />
-    </SOURCES>
-  </library>
-</component>

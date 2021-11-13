@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/native/rust_nif/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4464451c-a7ef-42f3-96cf-10c99450c9ae" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowboy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowboy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowlib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowlib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/customized_hdr_histogram.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/customized_hdr_histogram.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/goldrush.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/goldrush.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/jsone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/jsone.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/lager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/lager.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/ranch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/ranch.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof_core.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof_core.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof_gui.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof_gui.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/hello_elixir.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/hello_elixir.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/mix.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/mix.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rust/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rust/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello_rustler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello_rustler.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="g439p42y" />
+  </component>
+  <component name="ProjectId" id="1mzpMoAOoLoMuU4rADzzyg8mJhF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ErlangRemoteDebugRunConfiguration" factoryName="Erlang Remote Node" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="cookie" value="" />
+      <option name="debugNodeArgs" value="" />
+      <option name="debugOptions">
+        <ErlangDebugOptions>
+          <option name="autoUpdateModulesNotToInterpret" value="true" />
+          <option name="modulesNotToInterpret">
+            <set />
+          </option>
+        </ErlangDebugOptions>
+      </option>
+      <option name="host" value="" />
+      <option name="remoteErlangNodeName" value="dev@localhost" />
+      <option name="useShortNames" value="true" />
+      <option name="workDirectory" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="D:/SDK/cargo/bin" />
+    <option name="version" value="2" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4464451c-a7ef-42f3-96cf-10c99450c9ae" name="Default Changelist" comment="" />
+      <created>1610506228779</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610506228779</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="667" y="258" width="585" height="534" key="find.popup" timestamp="1619353979184">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="667" y="258" width="585" height="534" key="find.popup/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1619353979184" />
+  </component>
+</project>

@@ -56,11 +56,11 @@ fn parse_sprite_(s: &mut Scene, team: i64, fighter_info: &FighterInfo, attr_l: &
         ..
     } = fighter_info;
 
-    ability::context::create(s, anger_ab);
-    ability::context::create(s, normal_ab);
-    ability::context::create(s, passive_ab);
-    ability::context::create(s, attr_ab);
-    ability::context::create(s, genius_ab);
+    battle::context::ability::create(s, anger_ab);
+    battle::context::ability::create(s, normal_ab);
+    battle::context::ability::create(s, passive_ab);
+    battle::context::ability::create(s, attr_ab);
+    battle::context::ability::create(s, genius_ab);
 
     for passive_ab in passive_ab_tid_l {
         if ability::cfg_type_equal(s, passive_ab, TID_FIGHT_AB_PASSIVE) {

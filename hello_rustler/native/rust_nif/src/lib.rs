@@ -1,13 +1,13 @@
-mod scene;
-mod obj;
 mod battle;
-mod ftb;
-mod team;
-mod record;
-mod tb;
+mod constants;
 mod flow;
 mod form;
-mod constants;
+mod ftb;
+mod obj;
+mod record;
+mod scene;
+mod tb;
+mod team;
 
 use std::collections::HashMap;
 
@@ -16,20 +16,20 @@ fn add(a: i64, b: i64) -> i64 {
     a + b
 }
 
-#[rustler::nif]
-fn hashmap(count: u64) {
-    let mut count = count;
-    let mut map = HashMap::with_capacity(count as usize);
-
-    while count > 0 {
-        map.insert(count, count);
-        count = count - 1;
-    }
-}
+// #[rustler::nif]
+// fn hashmap(count: u64) {
+//     let mut count = count;
+//     let mut map = HashMap::with_capacity(count as usize);
+//
+//     while count > 0 {
+//         map.insert(count, count);
+//         count = count - 1;
+//     }
+// }
 
 #[rustler::nif]
 fn ft() {
     scene::create();
 }
 
-rustler::init!("Elixir.RustNif", [add, hashmap, ft]);
+rustler::init!("Elixir.RustNif", [add, ft]);

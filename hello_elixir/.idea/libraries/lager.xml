@@ -2,6 +2,7 @@
   <library name="lager" type="mix">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/_build/dev/lib/lager/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/prod/lib/lager/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -1,8 +1,8 @@
 use super::*;
-use crate::scene::{Scene, Atom, AtomMapValue};
-use crate::team::*;
 use crate::obj;
 use crate::scene::Atom::FightMatchId;
+use crate::scene::{Atom, AtomMapValue, Scene};
+use crate::team::*;
 
 pub(crate) enum FightMatch {
     Tid = 2,
@@ -34,22 +34,38 @@ pub(crate) fn create(s: &mut Scene) -> i64 {
     mach_id
 }
 
-pub(crate) fn get_tid() -> i64 {
-    if let MapValue::Int64(&int_v) = get_field(FightMatchId::Tid) {
+pub(crate) fn get_tid(s: &Scene) -> i64 {
+    if let MapValue::Int64(&int_v) = get_field(s, FightMatchId::Tid) {
         return int_v;
     } else {
         panic!("FightMatch::Tid as is not MapValue::Int64")
     }
 }
 
-pub(crate) fn init(s: &mut Scene, atk_team: &TeamInfo, def_team: &TeamInfo, pool_fighters: Vec<i64>) {
+pub(crate) fn init(
+    s: &mut Scene,
+    atk_team: &TeamInfo,
+    def_team: &TeamInfo,
+    pool_fighters: Vec<i64>,
+) {
     if let AtomMapValue::Int64(&match_id) = s.atom_get(Atom::FightMatchId) {
         obj::set_value(s, match_id, FightMatch::Round as i64, MapValue::Int64(1));
         // init_team(s, atk_team, def_team, pool_fighters)
 
-        all_fighters = parser::parse(s: &mut Scene, atk_team: &TeamInfo, def_team: &TeamInfo, pool_fighters: Vec<i64>);
-        obj::set_value(s, match_id, FightMatch::FighterList as i64, MapValue::AllFighters(Box::new(all_fighters)));
-    } {
+        all_fighters = parser::parse(
+            s: &mut Scene,
+            atk_team: &TeamInfo,
+            def_team: &TeamInfo,
+            pool_fighters: Vec<i64>,
+        );
+        obj::set_value(
+            s,
+            match_id,
+            FightMatch::FighterList as i64,
+            MapValue::AllFighters(Box::new(all_fighters)),
+        );
+    }
+    {
         panic!("Atom::FightMatchId not exist")
     }
 }
@@ -86,11 +102,13 @@ pub(crate) fn get_def_role_id() -> i64 {
     }
 }
 
-fn get_field(field: FightMatch) -> &MapValue {
+pub(crate) fn round(s: &Scene) -> i64 {
+    get_field(s, FightMatch::Round).get_i64()
+}
+
+fn get_field(s: &Scene, field: FightMatch) -> &MapValue {
     match s.atom_get(Atom::FightMatchId) {
-        AtomMapValue::Int64(&match_id) => {
-            obj::get_value(match_id, field as i64)
-        }
+        AtomMapValue::Int64(&match_id) => obj::get_value(match_id, field as i64),
         _ => {
             panic!("Atom::FightMatchId not exist")
         }

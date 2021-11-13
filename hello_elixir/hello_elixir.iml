@@ -5,16 +5,36 @@
       <sourceFolder url="file://$MODULE_DIR$/lib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/deps" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/benchee" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/benchee_html" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/benchee_json" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/cowboy" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/cowlib" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/customized_hdr_histogram" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/deep_merge" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/goldrush" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/jason" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/jsone" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/lager" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ranch" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/xprof" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/xprof_core" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/xprof_gui" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/benchee" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/benchee_html" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/benchee_json" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/cowboy" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/cowlib" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/customized_hdr_histogram" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/deep_merge" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/goldrush" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/jason" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/jsone" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/lager" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/ranch" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/xprof" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/xprof_core" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/xprof_gui" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/bson" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -33,5 +53,16 @@
     <orderEntry type="library" name="goldrush" level="project" />
     <orderEntry type="library" name="cowlib" level="project" />
     <orderEntry type="library" name="ranch" level="project" />
+    <orderEntry type="library" name="benchee" level="project" />
+    <orderEntry type="library" name="deep_merge" level="project" />
+    <orderEntry type="library" name="ex_guard" level="project" />
+    <orderEntry type="library" name="credo" level="project" />
+    <orderEntry type="library" name="excoveralls" level="project" />
+    <orderEntry type="library" name="inch_ex" level="project" />
+    <orderEntry type="library" name="dialyxir" level="project" />
+    <orderEntry type="library" name="benchee_html" level="project" />
+    <orderEntry type="library" name="benchee_json" level="project" />
+    <orderEntry type="library" name="mix_test_watch" level="project" />
+    <orderEntry type="library" name="jason" level="project" />
   </component>
 </module>

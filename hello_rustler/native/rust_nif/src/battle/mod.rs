@@ -1,4 +1,6 @@
-mod context;
+pub(crate) mod context;
+mod aim_rule;
+mod limit_rule;
 
 use super::*;
 use super::team::*;
@@ -9,11 +11,11 @@ use super::scene::MapValue;
 
 pub(crate) fn create(s: &mut scene::Scene, role_id: i64, enemy_id: i64, fight_tid: i64, fight_id: i64,
                      atk_team: &TeamInfo, def_team: &TeamInfo, pool_fighters: Vec<i64>) {
-    ftb::init(s, fight_tid, atk_team, def_team);
+    ftb::ftb_init(s, fight_tid, atk_team, def_team);
     let match_id = scene::create();
-    if let Cfg::FightCfg(fight_cfg) = &*tb::get(Tab::FightCfg, fight_tid) {
+    if let Cfg::FightCfg(fight_cfg) = &*tb::tb_get(Tab::FightCfg, fight_tid) {
         let fight_type = fight_cfg.type_;
-        if let Cfg::FightTypeCfg(type_cfg) = &*tb::get(Tab::FightTypeCfg, fight_type) {
+        if let Cfg::FightTypeCfg(type_cfg) = &*tb::tb_get(Tab::FightTypeCfg, fight_type) {
             obj::insert(s, match_id, vec![
                 (FightMatch::Tid as i64, MapValue::Int64(fight_tid)),
                 (FightMatch::Type as i64, MapValue::Int64(fight_type)),

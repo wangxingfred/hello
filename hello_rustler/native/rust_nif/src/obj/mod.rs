@@ -2,6 +2,7 @@ pub(crate) mod mach;
 
 use super::*;
 use super::scene::*;
+use super::record::*;
 
 pub(crate) enum ObjMaxId {
     Match,
@@ -21,6 +22,22 @@ pub(crate) const OBJ_BUFF: i64 = 4;
 pub(crate) const OBJ_EFFECT: i64 = 5;
 pub(crate) const OBJ_EVENT: i64 = 6;
 pub(crate) const OBJ_ACTION: i64 = 7;
+
+pub(crate) struct Effect {
+    pub(crate) tid: i64,
+    pub(crate) source_id: i64,
+    pub(crate) point: i64,
+    pub(crate) last_eff: (i64, i64),
+    pub(crate) pre_aim_rule: TargetAimRule,
+    pub(crate) pre_limit_rule: Vec<(i64, LimitRule)>,
+    pub(crate) pre_aim_list: Vec<i64>,
+    pub(crate) do_aim_rule: TargetAimRule,
+    pub(crate) do_limit_rule: Vec<(i64, LimitRule)>,
+    pub(crate) do_aim_list: Vec<i64>,
+    pub(crate) do_round: i64,
+    pub(crate) parameter: Vec<i64>,
+    pub(crate) hit_aim_list: Vec<i64>,
+}
 
 pub(crate) fn create(s: &mut Scene, max_id_key: ObjMaxId) {
     s.put(max_id_key as i64, MapValue::Int64(1))
