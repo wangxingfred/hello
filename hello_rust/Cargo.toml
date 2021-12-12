@@ -1,8 +1,13 @@
 [workspace]
 members = [
+    "enumerate",
+    "functions",
+    "guessing",
     "hello",
     "hey",
-    "hi"
+    "hi",
+    "string",
+    "structure"
 ]
 
 

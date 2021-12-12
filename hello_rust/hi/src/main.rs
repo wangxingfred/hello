@@ -60,12 +60,12 @@ impl Add<i32> for Point {
     }
 }
 
-fn create_point(x: i32, y: i32) -> Point {
-    Point {
-        x,
-        y,
-    }
-}
+// fn create_point(x: i32, y: i32) -> Point {
+//     Point {
+//         x,
+//         y,
+//     }
+// }
 
 
 // use std::thread;
