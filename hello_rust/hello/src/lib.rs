@@ -35,14 +35,14 @@ impl Config {
     }
 }
 
-/// Run search with config
-///
-/// # Example
-///
-/// ```
-/// let config = hello_rust::Config::new(std::env::args())?;
-/// hello_rust::run(&config)?
-/// ```
+// /// Run search with config
+// ///
+// /// # Example
+// ///
+// /// ```
+// /// let config = hello_rust::Config::new(std::env::args())?;
+// /// hello_rust::run(&config)?
+// /// ```
 pub fn run(config: &Config) -> Result<(), Box<dyn Error>> {
     let content = std::fs::read_to_string(&config.filename)?;
 
@@ -201,7 +201,7 @@ mod tests {
 // use front_of_house::hosting;
 // use back_of_house::{Breakfast, Appetizer};
 //
-// // use std::collections::LinkedList;
+// // use std::c8_collections::LinkedList;
 //
 // // use std::fmt::Result;
 // // use std::io::Result as IoResult;

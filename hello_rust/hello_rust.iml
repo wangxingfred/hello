@@ -12,6 +12,13 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/structure/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/enumerate/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c10_generic/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c9_error/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c11_test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c12_minigrep/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c7_modules/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c8_collections/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c13_iterators_closures/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

@@ -1,5 +1,12 @@
 [workspace]
 members = [
+    "c7_modules",
+    "c8_collections",
+    "c9_error",
+    "c10_generic",
+    "c11_test",
+    "c12_minigrep",
+    "c13_iterators_closures",
     "enumerate",
     "functions",
     "guessing",

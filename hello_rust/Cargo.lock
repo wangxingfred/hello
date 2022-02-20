@@ -9,6 +9,37 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
 
 [[package]]
+name = "c10_generic"
+version = "0.1.0"
+
+[[package]]
+name = "c11_test"
+version = "0.1.0"
+
+[[package]]
+name = "c12_minigrep"
+version = "0.1.0"
+
+[[package]]
+name = "c13_iterators_closures"
+version = "0.1.0"
+dependencies = [
+ "rand 0.8.4",
+]
+
+[[package]]
+name = "c7_modules"
+version = "0.1.0"
+
+[[package]]
+name = "c8_collections"
+version = "0.1.0"
+
+[[package]]
+name = "c9_error"
+version = "0.1.0"
+
+[[package]]
 name = "cfg-if"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

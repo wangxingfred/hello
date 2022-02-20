@@ -97,7 +97,7 @@
 //     std::fs::read_to_string("hello.txt")
 // }
 
-// use std::collections::HashMap;
+// use std::c8_collections::HashMap;
 //
 // fn main () {
 //     let mut scores = HashMap::new();
