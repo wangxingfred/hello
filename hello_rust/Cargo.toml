@@ -7,6 +7,8 @@ members = [
     "c11_test",
     "c12_minigrep",
     "c13_iterators_closures",
+    "c14_cargo_crates",
+    "c15_smart_pointers",
     "enumerate",
     "functions",
     "guessing",

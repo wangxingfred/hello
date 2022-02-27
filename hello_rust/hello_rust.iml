@@ -19,6 +19,8 @@
       <sourceFolder url="file://$MODULE_DIR$/c7_modules/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/c8_collections/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/c13_iterators_closures/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c14_cargo_crates/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c15_smart_pointers/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
