@@ -36,6 +36,18 @@ name = "c15_smart_pointers"
 version = "0.1.0"
 
 [[package]]
+name = "c16_concurrency"
+version = "0.1.0"
+
+[[package]]
+name = "c17_oop_features"
+version = "0.1.0"
+
+[[package]]
+name = "c18_patterns_matching"
+version = "0.1.0"
+
+[[package]]
 name = "c7_modules"
 version = "0.1.0"
 

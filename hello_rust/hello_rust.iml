@@ -21,6 +21,9 @@
       <sourceFolder url="file://$MODULE_DIR$/c13_iterators_closures/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/c14_cargo_crates/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/c15_smart_pointers/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c16_concurrency/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c17_oop_features/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c18_patterns_matching/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
