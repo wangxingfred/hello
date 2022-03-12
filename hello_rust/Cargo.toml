@@ -12,6 +12,8 @@ members = [
     "c16_concurrency",
     "c17_oop_features",
     "c18_patterns_matching",
+    "c19_advanced_features",
+    "c20_web_server",
     "enumerate",
     "functions",
     "guessing",

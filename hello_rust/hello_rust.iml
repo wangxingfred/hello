@@ -24,6 +24,8 @@
       <sourceFolder url="file://$MODULE_DIR$/c16_concurrency/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/c17_oop_features/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/c18_patterns_matching/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c19_advanced_features/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c20_web_server/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
