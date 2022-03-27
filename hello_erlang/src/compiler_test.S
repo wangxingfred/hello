@@ -24,7 +24,7 @@
   {label,4}.
     {wait_timeout,{f,3},{integer,5000}}.
     timeout.
-    {move,{atom,timeout},{x,0}}.
+    {move,{literal,{error,timeout}},{x,0}}.
     {deallocate,0}.
     return.
 
@@ -47,7 +47,6 @@
     {func_info,{atom,compiler_test},{atom,module_info},0}.
   {label,8}.
     {move,{atom,compiler_test},{x,0}}.
-    {line,[]}.
     {call_ext_only,1,{extfunc,erlang,get_module_info,1}}.
 
 
@@ -58,5 +57,4 @@
   {label,10}.
     {move,{x,0},{x,1}}.
     {move,{atom,compiler_test},{x,0}}.
-    {line,[]}.
     {call_ext_only,2,{extfunc,erlang,get_module_info,2}}.
