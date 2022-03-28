@@ -32,7 +32,7 @@ a() ->
     receive
         _ -> ok
     after 5000 ->
-        timeout
+        {error, timeout}
     end.
 
 b() ->
