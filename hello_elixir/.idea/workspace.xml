@@ -53,8 +53,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/P32/int_server_lib/mage" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -96,6 +98,9 @@
       </option>
       <option name="host" value="" />
       <option name="remoteErlangNodeName" value="dev@localhost" />
+      <option name="selectedOptions">
+        <list />
+      </option>
       <option name="useShortNames" value="true" />
       <option name="workDirectory" />
       <method v="2" />
@@ -109,7 +114,7 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -122,15 +127,5 @@
       <updated>1577175580284</updated>
     </task>
     <servers />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="667" y="258" width="585" height="534" key="find.popup" timestamp="1619353736386">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="667" y="258" width="585" height="534" key="find.popup/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1619353736386" />
-    <state x="616" y="178" width="672" height="676" key="search.everywhere.popup" timestamp="1619354722038">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="616" y="178" width="672" height="676" key="search.everywhere.popup/-1080.-263.1080.1890/0.0.1920.1050@0.0.1920.1050" timestamp="1619354722038" />
   </component>
 </project>

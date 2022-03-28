@@ -1,0 +1,38 @@
+-file("macro_test.erl", 1).
+
+-module(macro_test).
+
+-copyright({jzyx, 'www.jzyx.com'}).
+
+-author({fred, 'wangxingfred@gmail.com'}).
+
+-vsn(1).
+
+-record(throw_err,{id :: integer(), vars :: term(), log :: tuple()}).
+
+-export([assert/2]).
+
+assert(A, B) ->
+    case A =:= B of
+        true ->
+            ok;
+        _ ->
+            throw(#throw_err{id = 1})
+    end,
+    case A > B of
+        true ->
+            ok;
+        _ ->
+            throw(setelement(#throw_err.log, #throw_err{id = 1}, {A, B}))
+    end,
+    case A < B of
+        true ->
+            ok;
+        _ ->
+            throw(setelement(#throw_err.log,
+                             #throw_err{id = 1},
+                             [{"A", A}, {"B", B}]))
+    end.
+
+
+
