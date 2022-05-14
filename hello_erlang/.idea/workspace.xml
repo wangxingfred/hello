@@ -2,11 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa08db1f-c77b-4be3-afb7-5aeac75e6dcc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee_html.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/benchee_json.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/credo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/deep_merge.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/dialyxir.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/earmark.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/ex_doc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/ex_guard.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/excoveralls.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/inch_ex.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/jason.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/mix_test_watch.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/rustler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/statistex.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/stream_data.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rustler/.idea/libraries/toml.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello_erlang.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello_erlang.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler_test.S" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.S" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler_test.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rust/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rust/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rust/hi/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rust/hi/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rust/hi/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rust/hi/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/hello_rustler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/hello_rustler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/lib/hello_rustler.ex" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/lib/hello_rustler.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/lib/rust_nif.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/mix.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rustler/mix.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/.cargo/config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/.idea/$CACHE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/.idea/dictionaries" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/Cargo.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/Cargo.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/rust_nif.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/aim_rule/mod.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/context/ability.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/context/effect.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/context/mod.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/limit_rule/mod.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/battle/mod.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/constants.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/flow/mod.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/flow/parser.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/form/form_pool.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/form/mod.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/ftb.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/lib.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/obj/mach.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/obj/mod.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/record.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/scene.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/tb.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/native/rust_nif/src/team.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_rustler/priv/native/librust_nif.dll" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
