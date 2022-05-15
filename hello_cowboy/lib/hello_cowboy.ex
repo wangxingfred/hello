@@ -20,7 +20,7 @@ defmodule HelloCowboy do
             response_text = try do
 
                 qs = :cowboy_req.match_qs([{:name, :nonempty}, {:seat, :int}], req0)
-                IO.puts "qs = #{inspect qs}"
+#                IO.puts "qs = #{inspect qs}"
 
                 %{name: name, seat: seat} = qs
                 case SeatServer.take_seat(name, seat) do
