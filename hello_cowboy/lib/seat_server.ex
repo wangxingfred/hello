@@ -49,11 +49,11 @@ defmodule SeatServer do
                     _ ->
                         :dets.insert_new(dets, {seat, name})
                         map2 = :maps.put(seat, name, map)
-                        IO.puts "------------#{__ENV__.file}:#{__ENV__.line}-----------"
-                        IO.puts "map = #{inspect map}"
-                        IO.puts "map2 = #{inspect map2}"
-                        IO.puts "_select_dets(dets) = #{inspect _select_dets(dets)}"
-                        IO.puts "-----------------------------------------------------------~n"
+#                        IO.puts "------------#{__ENV__.file}:#{__ENV__.line}-----------"
+#                        IO.puts "map = #{inspect map}"
+#                        IO.puts "map2 = #{inspect map2}"
+#                        IO.puts "_select_dets(dets) = #{inspect _select_dets(dets)}"
+#                        IO.puts "-----------------------------------------------------------~n"
                         state2 = :maps.put(:map, map2, state)
                         {:reply, {:ok, map2}, state2}
                 end
