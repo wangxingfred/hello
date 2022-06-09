@@ -1,3 +1,5 @@
+mod hi_lru;
+
 use std::ops::Add;
 
 fn main () {
@@ -15,7 +17,8 @@ fn main () {
     //
     // println!("point = {:?}", point)
 
-    hi::hi_vec::iterator();
+    // hi::hi_vec::iterator();
+    hi_lru::hi_lru();
 }
 
 #[derive(Debug, PartialEq)]
