@@ -22,6 +22,8 @@
 %% c(compiler_test, ['E']).  ->  compiler_test.E
 %% c(compiler_test, ['S']).  ->  compiler_test.S
 
+-import(lists, [reverse/1]).
+
 %%%================================EXPORT================================
 -export([a/0, b/0]).
 -export([if_/3, case_/3]).
@@ -58,6 +60,7 @@ macro_ignore(A, B) ->
     A + B.
 
 reserve_list(List) ->
+    reverse(List),
     reserve_list1(List, []),
     reserve_list2(List, []).
 

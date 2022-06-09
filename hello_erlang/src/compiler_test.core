@@ -1,0 +1,137 @@
+module 'compiler_test' ['a'/0,
+			'b'/0,
+			'case_'/3,
+			'if_'/3,
+			'macro_ignore'/2,
+			'module_info'/0,
+			'module_info'/1,
+			'reserve_list'/1]
+    attributes [%% Line 1
+		'file' =
+		    %% Line 1
+		    [{[99|[111|[109|[112|[105|[108|[101|[114|[95|[116|[101|[115|[116|[46|[101|[114|[108]]]]]]]]]]]]]]]]],1}],
+		%% Line 11
+		'copyright' =
+		    %% Line 11
+		    [{'jzyx','www.jzyx.com'}],
+		%% Line 12
+		'author' =
+		    %% Line 12
+		    [{'fred','wangxingfred@gmail.com'}],
+		%% Line 13
+		'vsn' =
+		    %% Line 13
+		    [1]]
+'a'/0 =
+    %% Line 33
+    fun () ->
+	%% Line 34
+	receive
+	  %% Line 35
+	  <_0> when 'true' ->
+	      'ok'
+	after %% Line 36
+	      5000 ->
+	  %% Line 37
+	  {'error','timeout'}
+'b'/0 =
+    %% Line 40
+    fun () ->
+	let <_0> =
+	    call %% Line 41
+		 'erlang':%% Line 41
+			  'self'
+		()
+	in  %% Line 41
+	    call 'erlang':'send_after'
+		(5000, _0, 'timeout')
+'if_'/3 =
+    %% Line 43
+    fun (_0,_1,_2) ->
+	%% Line 44
+	case <> of
+	  <>
+	      when call 'erlang':'=:='
+		    (_0,
+		     _1) ->
+	      _2
+	  %% Line 45
+	  <> when 'true' ->
+	      _0
+	end
+'case_'/3 =
+    %% Line 48
+    fun (_0,_1,_2) ->
+	%% Line 49
+	case _0 of
+	  %% Line 50
+	  <_7>
+	      when call 'erlang':'=:='
+		    (_0,
+		     _1) ->
+	      _2
+	  %% Line 51
+	  <_8> when 'true' ->
+	      _0
+	end
+'macro_ignore'/2 =
+    %% Line 54
+    fun (_0,_1) ->
+	%% Line 60
+	call 'erlang':'+'
+	    (_0, _1)
+'reserve_list'/1 =
+    %% Line 62
+    fun (_0) ->
+	do  %% Line 63
+	    call 'lists':'reverse'
+		(_0)
+	    do  %% Line 64
+		apply 'reserve_list1'/2
+		    (_0, [])
+		%% Line 65
+		apply 'reserve_list2'/2
+		    (_0, [])
+'reserve_list1'/2 =
+    %% Line 67
+    fun (_0,_1) ->
+	case <_0,_1> of
+	  <[H|T],RL> when 'true' ->
+	      %% Line 68
+	      apply 'reserve_list1'/2
+		  (T, [H|RL])
+	  %% Line 69
+	  <[],RL> when 'true' ->
+	      RL
+	  ( <_3,_2> when 'true' ->
+		( primop 'match_fail'
+		      ({'function_clause',_3,_2})
+		  -| [{'function_name',{'reserve_list1',2}}] )
+	    -| ['compiler_generated'] )
+	end
+'reserve_list2'/2 =
+    %% Line 71
+    fun (_0,_1) ->
+	case <_0,_1> of
+	  <[],RL> when 'true' ->
+	      RL
+	  %% Line 72
+	  <[H|T],RL> when 'true' ->
+	      %% Line 73
+	      apply 'reserve_list2'/2
+		  (T, [H|RL])
+	  ( <_3,_2> when 'true' ->
+		( primop 'match_fail'
+		      ({'function_clause',_3,_2})
+		  -| [{'function_name',{'reserve_list2',2}}] )
+	    -| ['compiler_generated'] )
+	end
+'module_info'/0 =
+    fun () ->
+	call 'erlang':'get_module_info'
+	    ('compiler_test')
+'module_info'/1 =
+    fun (_0) ->
+	call 'erlang':'get_module_info'
+	    ('compiler_test', _0)
+end
