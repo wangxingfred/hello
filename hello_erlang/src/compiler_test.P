@@ -18,6 +18,8 @@
 
 -export([reserve_list/1]).
 
+-export([maybe_expression/2]).
+
 a() ->
     receive
         _ ->
@@ -64,6 +66,20 @@ reserve_list2([], RL) ->
     RL;
 reserve_list2([H | T], RL) ->
     reserve_list2(T, [H | RL]).
+
+maybe_expression(Term, Default) ->
+    maybe
+        default ?= if_(Term, nil, default),
+        default ?= case_(Term, nil, default),
+        Default
+    else
+        {error, Y} ->
+            {ok, "default"};
+        {ok, _Term} ->
+            {error, "unexpected wrapper"};
+        Else ->
+            {"else", Else}
+    end.
 
 
 

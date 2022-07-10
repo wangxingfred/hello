@@ -8,6 +8,8 @@
 %%%-------------------------------------------------------------------
 -module(compiler_test).
 
+-feature(maybe_expr, enable).
+
 -copyright({jzyx, 'www.jzyx.com'}).
 -author({fred, 'wangxingfred@gmail.com'}).
 -vsn(1).
@@ -29,6 +31,7 @@
 -export([if_/3, case_/3]).
 -export([macro_ignore/2]).
 -export([reserve_list/1]).
+-export([maybe_expression/2]).
 
 a() ->
     receive
@@ -71,3 +74,18 @@ reserve_list1([], RL) -> RL.
 reserve_list2([], RL) -> RL;
 reserve_list2([H|T], RL) ->
     reserve_list2(T, [H|RL]).
+
+
+maybe_expression(Term, Default) ->
+    maybe
+        default ?= if_(Term, nil, default),
+        default ?= case_(Term, nil, default),
+        Default
+    else
+        {error, Y} ->
+            {ok, "default"};
+        {ok, _Term} ->
+            {error, "unexpected wrapper"};
+        Else ->
+            {"else", Else}
+    end.
