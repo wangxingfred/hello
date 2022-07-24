@@ -20,6 +20,17 @@
 %% 不需要给其它模块用的宏定义可以写到这里，避免放到头文件中修改后增加编译时间
 -define(IGNORE(_), ignore).
 
+%%-define(MAYBE, maybe).
+%%-define(ELSE, else).
+%%-define(END, end).
+%%-define(MATCH(Left, Right), Left ?= Right).
+%%-define(MAYBE_ELSE(Maybe, Else), maybe Maybe else Else end).
+%%
+%%-define(MAYBE_BEGIN(Left, Right), maybe Left ?= Right).
+%%-define(MAYBE_MATCH(Left, Right), Left ?= Right).
+%%-define(MAYBE_RETURN(Expr), Expr).
+%%-define(MAYBE_ELSE_END(Expr), else Expr end).
+
 %% c(compiler_test, ['P']).  ->  compiler_test.P
 %% c(compiler_test, ['E']).  ->  compiler_test.E
 %% c(compiler_test, ['S']).  ->  compiler_test.S
@@ -89,3 +100,9 @@ maybe_expression(Term, Default) ->
         Else ->
             {"else", Else}
     end.
+
+%%maybe_expr(Term, Default) ->
+%%    ?MAYBE_BEGIN(default, if_(Term, nil, default)),
+%%    ?MAYBE_MATCH(default, case_(Term, nil, default)),
+%%    ?MAYBE_MATCH(default, case_(Term, nil, default)),
+%%    ?MAYBE_ELSE_END({error, Y} -> {ok, "default"}; {ok, _Term} -> {error, "unexpected wrapper"}; Else -> {"else", Else}).

@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa08db1f-c77b-4be3-afb7-5aeac75e6dcc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello_erlang.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello_erlang.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler_test.E" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.E" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler_test.P" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.P" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler_test.S" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.S" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler_test.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.erl" afterDir="false" />
-    </list>
+    <list default="true" id="fa08db1f-c77b-4be3-afb7-5aeac75e6dcc" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Erlang Header" />
-        <option value="Erlang Module" />
         <option value="Erlang EUnit Tests" />
+        <option value="Erlang Module" />
       </list>
     </option>
   </component>
@@ -42,9 +34,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/mnesia_test.erl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/compiler_test.erl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/map_test.erl" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/mnesia_test.erl" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="nmc8pefj" />
@@ -61,14 +53,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+  </component>
   <component name="RunManager">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
@@ -86,7 +79,6 @@
       <module name="hello_erlang" />
       <option name="allowRunningInParallel" value="false" />
       <option name="consoleArgs" value="+C multi_time_warp" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -106,7 +98,6 @@
         </ErlangDebugOptions>
       </option>
       <option name="host" value="" />
-      <option name="projectPathOnTarget" />
       <option name="remoteErlangNodeName" value="dev@localhost" />
       <option name="selectedOptions">
         <list />
