@@ -1,0 +1,188 @@
+module 'compiler_core' ['module_info'/0,
+			'module_info'/1]
+    attributes [%% Line 1
+		'file' =
+		    %% Line 1
+		    [{[99|[111|[109|[112|[105|[108|[101|[114|[95|[99|[111|[114|[101|[46|[101|[114|[108]]]]]]]]]]]]]]]]],1}]]
+'simplest'/0 =
+    %% Line 29
+    ( fun () ->
+	  'ok'
+      -| [{'function',{'simplest',0}}] )
+'id'/1 =
+    %% Line 31
+    ( fun (_0) ->
+	  ( _0
+	    -| [{'function',{'id',1}}] )
+      -| [{'function',{'id',1}}] )
+'a'/1 =
+    %% Line 33
+    ( fun (_0) ->
+	  ( case ( _0
+		   -| [{'function',{'a',1}}] ) of
+	      <42> when 'true' ->
+		  'ok'
+	      %% Line 34
+	      <_2> when 'true' ->
+		  'error'
+	    end
+	    -| [{'function',{'a',1}}] )
+      -| [{'function',{'a',1}}] )
+'b'/1 =
+    %% Line 36
+    ( fun (_0) ->
+	  %% Line 37
+	  case ( _0
+		 -| [{'function',{'b',1}}] ) of
+	    %% Line 38
+	    <42> when 'true' ->
+		'ok'
+	    %% Line 39
+	    <_3> when 'true' ->
+		'error'
+	  end
+      -| [{'function',{'b',1}}] )
+'c'/3 =
+    %% Line 42
+    ( fun (_0,_1,_2) ->
+	  ( case <_0,_1,_2> of
+	      <'inc',Base,N> when 'true' ->
+		  %% Line 43
+		  call 'erlang':'+'
+		      (Base, N)
+	      %% Line 44
+	      <_6,Base,_7> when 'true' ->
+		  %% Line 45
+		  Base
+	    end
+	    -| [{'function',{'c',3}}] )
+      -| [{'function',{'c',3}}] )
+'d'/2 =
+    %% Line 48
+    ( fun (_0,_1) ->
+	  %% Line 49
+	  case <> of
+	    %% Line 50
+	    <>
+		when call 'erlang':'>'
+		      (_0,
+		       _1) ->
+		%% Line 51
+		'greater'
+	    %% Line 52
+	    <> when 'true' ->
+		%% Line 53
+		'not_greater'
+	  end
+      -| [{'function',{'d',2}}] )
+'cmp'/2 =
+    %% Line 56
+    ( fun (_0,_1) ->
+	  ( case <_0,_1> of
+	      <Same,_4>
+		  when call 'erlang':'=:='
+			(_4,
+			 Same) ->
+		  'same'
+	      %% Line 57
+	      <_5,_6> when 'true' ->
+		  'different'
+	    end
+	    -| [{'function',{'cmp',2}}] )
+      -| [{'function',{'cmp',2}}] )
+'e'/1 =
+    %% Line 60
+    ( fun (_0) ->
+	  ( case ( _0
+		   -| [{'function',{'e',1}}] ) of
+	      <42> when 'true' ->
+		  'ok'
+	      ( <_1> when 'true' ->
+		    ( primop 'match_fail'
+			  (( {'function_clause',_1}
+			     -| [{'function',{'e',1}}] ))
+		      -| [{'function',{'e',1}}] )
+		-| ['compiler_generated'] )
+	    end
+	    -| [{'function',{'e',1}}] )
+      -| [{'function',{'e',1}}] )
+'f'/1 =
+    %% Line 61
+    ( fun (_0) ->
+	  %% Line 62
+	  case ( _0
+		 -| [{'function',{'f',1}}] ) of
+	    %% Line 63
+	    <42> when 'true' ->
+		'ok'
+	    ( <_1> when 'true' ->
+		  primop 'match_fail'
+		      ({'case_clause',_1})
+	      -| ['compiler_generated'] )
+	  end
+      -| [{'function',{'f',1}}] )
+'g'/1 =
+    %% Line 65
+    ( fun (_0) ->
+	  %% Line 66
+	  case ( _0
+		 -| [{'function',{'g',1}}] ) of
+	    <42> when 'true' ->
+		%% Line 67
+		'ok'
+	    ( <_1> when 'true' ->
+		  primop 'match_fail'
+		      ({'badmatch',_1})
+	      -| ['compiler_generated'] )
+	  end
+      -| [{'function',{'g',1}}] )
+'h'/1 =
+    %% Line 69
+    ( fun (_0) ->
+	  let <I> =
+	      apply %% Line 70
+		    'id'/1
+		  (( _0
+		     -| [{'function',{'h',1}}] ))
+	  in  %% Line 71
+	      call 'erlang':'+'
+		  (I, ( _0
+			-| [{'function',{'h',1}}] ))
+      -| [{'function',{'h',1}}] )
+'i'/1 =
+    %% Line 73
+    ( fun (_0) ->
+	  let <_9,_10> =
+	      case ( _0
+		     -| [{'function',{'i',1}}] ) of
+		%% Line 76
+		<'a'> when 'true' ->
+		    %% Line 79
+		    <1,10>
+		%% Line 80
+		<'b'> when 'true' ->
+		    %% Line 83
+		    <23,17>
+		( <_5> when 'true' ->
+		      %% Line 75
+		      primop 'match_fail'
+			  ({'case_clause',_5})
+		  -| ['compiler_generated'] )
+	      end
+	  in  %% Line 85
+	      [( _9
+		 -| ['compiler_generated'] )|[( _10
+						-| ['compiler_generated'] )|[]]]
+      -| [{'function',{'i',1}}] )
+'module_info'/0 =
+    ( fun () ->
+	  call 'erlang':'get_module_info'
+	      ('compiler_core')
+      -| [{'function',{'module_info',0}}] )
+'module_info'/1 =
+    ( fun (_0) ->
+	  call 'erlang':'get_module_info'
+	      ('compiler_core', ( _0
+				  -| [{'function',{'module_info',1}}] ))
+      -| [{'function',{'module_info',1}}] )
+end
