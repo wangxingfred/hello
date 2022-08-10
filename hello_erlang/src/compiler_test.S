@@ -3,6 +3,7 @@
 {exports, [{a,0},
            {b,0},
            {case_,3},
+           {empty_branch,4},
            {if_,3},
            {macro_ignore,2},
            {module_info,0},
@@ -13,7 +14,7 @@
               {author,[{fred,'wangxingfred@gmail.com'}]},
               {vsn,[1]}]}.
 
-{labels, 27}.
+{labels, 31}.
 
 
 {function, a, 0, 2}.
@@ -72,84 +73,103 @@
     return.
 
 
-{function, macro_ignore, 2, 14}.
+{function, empty_branch, 4, 14}.
   {label,13}.
     {line,[{location,"compiler_test.erl",54}]}.
-    {func_info,{atom,compiler_test},{atom,macro_ignore},2}.
+    {func_info,{atom,compiler_test},{atom,empty_branch},4}.
   {label,14}.
-    {line,[{location,"compiler_test.erl",60}]}.
+    {test,is_eq_exact,{f,15},[{x,0},{x,1}]}.
+    {move,{atom,case1},{x,0}}.
+    {line,[{location,"compiler_test.erl",57}]}.
+    {call_ext,1,{extfunc,erlang,throw,1}}.
+  {label,15}.
+    {test,is_eq_exact,{f,16},[{x,0},{x,2}]}.
+    {move,{atom,ok},{x,0}}.
+    return.
+  {label,16}.
+    {move,{x,3},{x,0}}.
+    {line,[{location,"compiler_test.erl",61}]}.
+    {call_ext,1,{extfunc,erlang,throw,1}}.
+
+
+{function, macro_ignore, 2, 18}.
+  {label,17}.
+    {line,[{location,"compiler_test.erl",65}]}.
+    {func_info,{atom,compiler_test},{atom,macro_ignore},2}.
+  {label,18}.
+    {line,[{location,"compiler_test.erl",71}]}.
     {gc_bif,'+',{f,0},2,[{x,0},{x,1}],{x,0}}.
     return.
 
 
-{function, reserve_list, 1, 16}.
-  {label,15}.
-    {line,[{location,"compiler_test.erl",62}]}.
+{function, reserve_list, 1, 20}.
+  {label,19}.
+    {line,[{location,"compiler_test.erl",73}]}.
     {func_info,{atom,compiler_test},{atom,reserve_list},1}.
-  {label,16}.
+  {label,20}.
     {allocate,1,1}.
     {move,{x,0},{y,0}}.
-    {line,[{location,"compiler_test.erl",63}]}.
+    {line,[{location,"compiler_test.erl",74}]}.
     {call_ext,1,{extfunc,lists,reverse,1}}.
     {move,nil,{x,1}}.
     {move,{y,0},{x,0}}.
-    {line,[{location,"compiler_test.erl",64}]}.
-    {call,2,{f,18}}.
+    {line,[{location,"compiler_test.erl",75}]}.
+    {call,2,{f,22}}.
     {'%',{type_info,{x,0},list}}.
     {move,nil,{x,1}}.
     {move,{y,0},{x,0}}.
-    {call_last,2,{f,21},1}.
+    {call_last,2,{f,25},1}.
 
 
-{function, reserve_list1, 2, 18}.
-  {label,17}.
-    {line,[{location,"compiler_test.erl",67}]}.
-    {func_info,{atom,compiler_test},{atom,reserve_list1},2}.
-  {label,18}.
-    {'%',{type_info,{x,1},list}}.
-    {test,is_nonempty_list,{f,19},[{x,0}]}.
-    {test_heap,2,2}.
-    {get_list,{x,0},{x,2},{x,0}}.
-    {put_list,{x,2},{x,1},{x,1}}.
-    {call_only,2,{f,18}}.
-  {label,19}.
-    {test,is_nil,{f,17},[{x,0}]}.
-    {move,{x,1},{x,0}}.
-    return.
-
-
-{function, reserve_list2, 2, 21}.
-  {label,20}.
-    {line,[{location,"compiler_test.erl",71}]}.
-    {func_info,{atom,compiler_test},{atom,reserve_list2},2}.
+{function, reserve_list1, 2, 22}.
   {label,21}.
+    {line,[{location,"compiler_test.erl",78}]}.
+    {func_info,{atom,compiler_test},{atom,reserve_list1},2}.
+  {label,22}.
     {'%',{type_info,{x,1},list}}.
-    {test,is_nonempty_list,{f,22},[{x,0}]}.
+    {test,is_nonempty_list,{f,23},[{x,0}]}.
     {test_heap,2,2}.
     {get_list,{x,0},{x,2},{x,0}}.
     {put_list,{x,2},{x,1},{x,1}}.
-    {call_only,2,{f,21}}.
-  {label,22}.
-    {test,is_nil,{f,20},[{x,0}]}.
+    {call_only,2,{f,22}}.
+  {label,23}.
+    {test,is_nil,{f,21},[{x,0}]}.
     {move,{x,1},{x,0}}.
     return.
 
 
-{function, module_info, 0, 24}.
-  {label,23}.
+{function, reserve_list2, 2, 25}.
+  {label,24}.
+    {line,[{location,"compiler_test.erl",82}]}.
+    {func_info,{atom,compiler_test},{atom,reserve_list2},2}.
+  {label,25}.
+    {'%',{type_info,{x,1},list}}.
+    {test,is_nonempty_list,{f,26},[{x,0}]}.
+    {test_heap,2,2}.
+    {get_list,{x,0},{x,2},{x,0}}.
+    {put_list,{x,2},{x,1},{x,1}}.
+    {call_only,2,{f,25}}.
+  {label,26}.
+    {test,is_nil,{f,24},[{x,0}]}.
+    {move,{x,1},{x,0}}.
+    return.
+
+
+{function, module_info, 0, 28}.
+  {label,27}.
     {line,[]}.
     {func_info,{atom,compiler_test},{atom,module_info},0}.
-  {label,24}.
+  {label,28}.
     {move,{atom,compiler_test},{x,0}}.
     {line,[]}.
     {call_ext_only,1,{extfunc,erlang,get_module_info,1}}.
 
 
-{function, module_info, 1, 26}.
-  {label,25}.
+{function, module_info, 1, 30}.
+  {label,29}.
     {line,[]}.
     {func_info,{atom,compiler_test},{atom,module_info},1}.
-  {label,26}.
+  {label,30}.
     {move,{x,0},{x,1}}.
     {move,{atom,compiler_test},{x,0}}.
     {line,[]}.

@@ -26,7 +26,7 @@
 
 %%%================================EXPORT================================
 -export([a/0, b/0]).
--export([if_/3, case_/3]).
+-export([if_/3, case_/3, empty_branch/4]).
 -export([macro_ignore/2]).
 -export([reserve_list/1]).
 
@@ -50,6 +50,17 @@ case_(Term, Nil, Default) ->
         Nil -> Default;
         _ -> Term
     end.
+
+empty_branch(Term, Case1, Case2, Default) ->
+    case Term of
+        Case1 ->
+            throw(case1);
+        Case2 ->
+            empty;
+        _  ->
+            throw(Default)
+    end,
+    ok.
 
 macro_ignore(A, B) ->
     List = [
