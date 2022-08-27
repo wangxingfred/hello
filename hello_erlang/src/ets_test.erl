@@ -46,7 +46,33 @@ create_ets() ->
         {{a, 1}, 1, 100},
         {{a, 2}, 2, 200},
         {{b, 11}, 11, 1100},
-        {{b, 22, 22}, 22, 2200}
+        {{b, 22, 22}, 22, 2200},
+        {c, 11, 100}
     ],
     ets:insert(Ets, Objects),
     Ets.
+
+
+select_by_element(Ets, Pos, Value) ->
+    MatchHead = '_',
+    MatchConditions = [{'=:=', {element, Pos, '$_'}, Value}],
+    MatchBody = ['$_'],
+    MatchSpec = [{MatchHead, MatchConditions, MatchBody}],
+    ets:select(Ets, MatchSpec).
+
+spec_compiled_example(Ets, Pos, Value) ->
+    MatchHead = '_',
+    MatchConditions = [{'=:=', {element, Pos, '$_'}, Value}],
+    MatchBody = ['$_'],
+    MatchSpec = [{MatchHead, MatchConditions, MatchBody}],
+
+    Compiled = ets:match_spec_compile(MatchSpec),
+
+    %% TODO delete
+    io:format("~n------------------~p:~p-----------------~n", [?MODULE, ?LINE]),
+    io:format("MatchSpec = ~p~n", [MatchSpec]),
+    io:format("Compiled = ~p~n", [Compiled]),
+    io:format("-----------------------------------------------------------------~n"),
+
+    ets:match_spec_run(ets:tab2list(Ets), Compiled).
+

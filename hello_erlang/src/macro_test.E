@@ -10,7 +10,7 @@
 
 -record(throw_err,{id :: integer(), vars :: term(), log :: tuple()}).
 
--export([assert/2]).
+-export([assert/2,catch_throw/3]).
 
 assert(A, B) ->
     case A =:= B of
@@ -34,6 +34,21 @@ assert(A, B) ->
             throw(setelement(4,
                              {throw_err, 1, undefined, undefined},
                              [{"A", A}, {"B", B}]))
+    end.
+
+catch_throw(A, B, C) ->
+    try
+        begin
+            begin
+                A1 = A + B,
+                A2 = A + C,
+                assert(A, B),
+                A1 + A2
+            end
+        end
+    catch
+        throw:{throw_err, _, _, _} = __Err__ ->
+            __Err__
     end.
 
 

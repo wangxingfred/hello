@@ -24,6 +24,7 @@
 %%%================================EXPORT================================
 -export([external_mf/0, local_fun1/0, local_fun2/0]).
 -export([do_sth/0]).
+-export([bind_not_exported/0]).
 
 % erlang:fun_info(external_mf(), type) = {type,external}
 external_mf() ->
@@ -40,3 +41,13 @@ local_fun2() ->
 
 do_sth() ->
     io:format("~p:~p:~p ccc ~n", [?MODULE, ?FUNCTION_NAME, ?LINE]).
+
+bind_not_exported() ->
+    %% 此函数可以正常返回
+    %% 但是：由于not_exported未导出，执行返回函数会报undefined function
+    %% 如果在执行返回函数前，把not_exported导出，则可以正常执行
+    %% 结论就是：下面这种形式，基本相当于{M,F,[]}，唯一的区别是限定了参数数量
+    fun ?MODULE:not_exported/0.
+
+not_exported() ->
+    not_exported.

@@ -12,6 +12,10 @@
 -author({fred, 'wangxingfred@gmail.com'}).
 -vsn(1).
 
+%% c(macro_test, ['P']).  ->  world.P
+%% c(macro_test, ['E']).  ->  world.E
+%% c(macro_test, ['S']).  ->  world.S
+
 %%%===============================INCLUDE================================
 
 %%%================================DEFINE================================
@@ -32,8 +36,16 @@
 -define(ASSERT(BoolExpr, Err), case (BoolExpr) of true -> ok; _ -> ?THROW_ERR(Err) end).
 -define(ASSERT(BoolExpr, Err, Log), case (BoolExpr) of true -> ok; _ -> ?THROW_ERR(Err, Log) end).
 
+-define(CATCH_THROW_ERR(CodeBlock),
+    try
+        CodeBlock
+    catch
+        throw:#throw_err{} = __Err__ ->
+            __Err__
+    end).
+
 %%%================================EXPORT================================
--export([assert/2]).
+-export([assert/2, catch_throw/3]).
 
 %% c(macro_test, ['P']).  ->  world.P
 %% c(macro_test, ['E']).  ->  world.E
@@ -45,3 +57,13 @@ assert(A, B) ->
     ?ASSERT(A > B, #throw_err{id = 1}, {A, B}),
 
     ?ASSERT(A < B, #throw_err{id = 1}, [{"A", A}, {"B", B}]).
+
+catch_throw(A, B, C) ->
+    ?CATCH_THROW_ERR(
+        begin
+            A1 = A + B,
+            A2 = A + C,
+            assert(A, B),
+            A1 + A2
+        end
+    ).
