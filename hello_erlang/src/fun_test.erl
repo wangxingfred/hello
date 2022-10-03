@@ -22,7 +22,7 @@
 %% 不需要给其它模块用的宏定义可以写到这里，避免放到头文件中修改后增加编译时间
 
 %%%================================EXPORT================================
--export([external_mf/0, local_fun1/0, local_fun2/0]).
+-export([external_mf/0, local_fun1/0, local_fun2/0, local_fun3/0, local_fun4/0]).
 -export([do_sth/0]).
 -export([bind_not_exported/0]).
 
@@ -38,9 +38,21 @@ local_fun1() ->
 local_fun2() ->
     fun () -> do_sth() end.
 
+local_fun3() ->
+    fun do_sth_/0.
+
+local_fun4() ->
+    fun do_sth_/1.
+
 
 do_sth() ->
+    io:format("~p:~p:~p bbb ~n", [?MODULE, ?FUNCTION_NAME, ?LINE]).
+
+do_sth_() ->
     io:format("~p:~p:~p ccc ~n", [?MODULE, ?FUNCTION_NAME, ?LINE]).
+
+do_sth_(Arg) ->
+    io:format("~p:~p:~p Arg = ~p~n", [?MODULE, ?FUNCTION_NAME, ?LINE, Arg]).
 
 bind_not_exported() ->
     %% 此函数可以正常返回

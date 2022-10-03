@@ -60,6 +60,16 @@ select_by_element(Ets, Pos, Value) ->
     MatchSpec = [{MatchHead, MatchConditions, MatchBody}],
     ets:select(Ets, MatchSpec).
 
+select_key_by_element(Ets, Pos, Value) ->
+    KeyPos = ets:info(Ets, keypos),
+    MatchHead = '_',
+    MatchConditions = [{'=:=', {element, Pos, '$_'}, Value}],
+    MatchBody = [{element, KeyPos, '$_'}],
+    MatchSpec = [{MatchHead, MatchConditions, MatchBody}],
+    ets:select(Ets, MatchSpec).
+
+
+
 spec_compiled_example(Ets, Pos, Value) ->
     MatchHead = '_',
     MatchConditions = [{'=:=', {element, Pos, '$_'}, Value}],
