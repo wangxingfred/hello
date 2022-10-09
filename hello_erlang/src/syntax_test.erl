@@ -19,6 +19,7 @@
 
 %%%================================EXPORT================================
 -export([add/2, catch_add/2, try_after/2]).
+-export([try_catch_throw/3, try_catch/4]).
 
 %% c(syntax_test, ['P']).  ->  world.P
 %% c(syntax_test, ['E']).  ->  world.E
@@ -35,4 +36,22 @@ try_after(A, B) ->
         A + B
     after
         io:format("A=~p,B=~p~n", [A, B])
+    end.
+
+try_catch_throw(A, B, Reason) ->
+    try
+        C = A + B,
+        throw(C)
+    catch
+        Reason ->
+            {throw, Reason}
+    end.
+
+try_catch(A, B, Kind, Reason) ->
+    try
+        C = A + B,
+        throw(C)
+    catch
+        Kind:Reason ->
+            {Kind, Reason}
     end.
