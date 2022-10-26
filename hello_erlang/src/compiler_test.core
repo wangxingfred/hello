@@ -1,8 +1,12 @@
 module 'compiler_test' ['a'/0,
 			'b'/0,
 			'case_'/3,
+			'empty_branch'/4,
 			'if_'/3,
 			'macro_ignore'/2,
+			'maybe2'/2,
+			'maybe2_identical'/2,
+			'maybe_expression'/2,
 			'module_info'/0,
 			'module_info'/1,
 			'reserve_list'/1]
@@ -10,128 +14,371 @@ module 'compiler_test' ['a'/0,
 		'file' =
 		    %% Line 1
 		    [{[99|[111|[109|[112|[105|[108|[101|[114|[95|[116|[101|[115|[116|[46|[101|[114|[108]]]]]]]]]]]]]]]]],1}],
-		%% Line 11
-		'copyright' =
-		    %% Line 11
-		    [{'jzyx','www.jzyx.com'}],
-		%% Line 12
-		'author' =
-		    %% Line 12
-		    [{'fred','wangxingfred@gmail.com'}],
 		%% Line 13
-		'vsn' =
+		'copyright' =
 		    %% Line 13
+		    [{'jzyx','www.jzyx.com'}],
+		%% Line 14
+		'author' =
+		    %% Line 14
+		    [{'fred','wangxingfred@gmail.com'}],
+		%% Line 15
+		'vsn' =
+		    %% Line 15
 		    [1]]
 'a'/0 =
-    %% Line 33
-    fun () ->
-	%% Line 34
-	receive
-	  %% Line 35
-	  <_0> when 'true' ->
-	      'ok'
-	after %% Line 36
-	      5000 ->
-	  %% Line 37
-	  {'error','timeout'}
-'b'/0 =
-    %% Line 40
-    fun () ->
-	let <_0> =
-	    call %% Line 41
-		 'erlang':%% Line 41
-			  'self'
-		()
-	in  %% Line 41
-	    call 'erlang':'send_after'
-		(5000, _0, 'timeout')
-'if_'/3 =
-    %% Line 43
-    fun (_0,_1,_2) ->
-	%% Line 44
-	case <> of
-	  <>
-	      when call 'erlang':'=:='
-		    (_0,
-		     _1) ->
-	      _2
-	  %% Line 45
-	  <> when 'true' ->
-	      _0
-	end
-'case_'/3 =
     %% Line 48
-    fun (_0,_1,_2) ->
-	%% Line 49
-	case _0 of
-	  %% Line 50
-	  <_7>
-	      when call 'erlang':'=:='
-		    (_0,
-		     _1) ->
-	      _2
-	  %% Line 51
-	  <_8> when 'true' ->
-	      _0
-	end
+    ( fun () ->
+	  ( letrec
+		'recv$^0'/0 =
+		    fun () ->
+			let <_3,_1> =
+			    primop 'recv_peek_message'
+				()
+			in  case _3 of
+			      <'true'> when 'true' ->
+				  do  primop 'remove_message'
+					  ()
+				      %% Line 50
+				      'ok'
+			      <'false'> when 'true' ->
+				  let <_2> =
+				      primop 'recv_wait_timeout'
+					  (%% Line 51
+					   5000)
+				  in  case _2 of
+					<'true'> when 'true' ->
+					    %% Line 52
+					    {'error','timeout'}
+					( <'false'> when 'true' ->
+					      ( apply 'recv$^0'/0
+						    ()
+						-| ['dialyzer_ignore'] )
+					  -| ['dialyzer_ignore'] )
+				      end
+			    end
+	    in  ( apply 'recv$^0'/0
+		      ()
+		  -| ['dialyzer_ignore'] )
+	    -| ['letrec_goto','no_inline'] )
+      -| [{'function',{'a',0}}] )
+'b'/0 =
+    %% Line 55
+    ( fun () ->
+	  let <_0> =
+	      call %% Line 56
+		   'erlang':%% Line 56
+			    'self'
+		  ()
+	  in  %% Line 56
+	      call 'erlang':'send_after'
+		  (5000, _0, 'timeout')
+      -| [{'function',{'b',0}}] )
+'if_'/3 =
+    %% Line 58
+    ( fun (_0,_1,_2) ->
+	  %% Line 59
+	  case <> of
+	    <>
+		when call 'erlang':'=:='
+		      (_0,
+		       _1) ->
+		_2
+	    %% Line 60
+	    <> when 'true' ->
+		_0
+	  end
+      -| [{'function',{'if_',3}}] )
+'case_'/3 =
+    %% Line 63
+    ( fun (_0,_1,_2) ->
+	  %% Line 64
+	  case _0 of
+	    %% Line 65
+	    <_7>
+		when call 'erlang':'=:='
+		      (_0,
+		       _1) ->
+		_2
+	    %% Line 66
+	    <_8> when 'true' ->
+		_0
+	  end
+      -| [{'function',{'case_',3}}] )
+'empty_branch'/4 =
+    %% Line 69
+    ( fun (_0,_1,_2,_3) ->
+	  do  %% Line 70
+	      case _0 of
+		%% Line 71
+		<_9>
+		    when call 'erlang':'=:='
+			  (_0,
+			   _1) ->
+		    %% Line 72
+		    call 'erlang':'throw'
+			('case1')
+		%% Line 73
+		<_10>
+		    when call 'erlang':'=:='
+			  (_0,
+			   _2) ->
+		    'ok'
+		%% Line 75
+		<_11> when 'true' ->
+		    %% Line 76
+		    call 'erlang':'throw'
+			(_3)
+	      end
+	      %% Line 78
+	      'ok'
+      -| [{'function',{'empty_branch',4}}] )
 'macro_ignore'/2 =
-    %% Line 54
-    fun (_0,_1) ->
-	%% Line 60
-	call 'erlang':'+'
-	    (_0, _1)
+    %% Line 80
+    ( fun (_0,_1) ->
+	  %% Line 86
+	  call 'erlang':'+'
+	      (_0, _1)
+      -| [{'function',{'macro_ignore',2}}] )
 'reserve_list'/1 =
-    %% Line 62
-    fun (_0) ->
-	do  %% Line 63
-	    call 'lists':'reverse'
-		(_0)
-	    do  %% Line 64
-		apply 'reserve_list1'/2
-		    (_0, [])
-		%% Line 65
-		apply 'reserve_list2'/2
-		    (_0, [])
+    %% Line 88
+    ( fun (_0) ->
+	  do  %% Line 89
+	      call 'lists':'reverse'
+		  (( _0
+		     -| [{'function',{'reserve_list',1}}] ))
+	      do  %% Line 90
+		  apply 'reserve_list1'/2
+		      (( _0
+			 -| [{'function',{'reserve_list',1}}] ), [])
+		  %% Line 91
+		  apply 'reserve_list2'/2
+		      (( _0
+			 -| [{'function',{'reserve_list',1}}] ), [])
+      -| [{'function',{'reserve_list',1}}] )
 'reserve_list1'/2 =
-    %% Line 67
-    fun (_0,_1) ->
-	case <_0,_1> of
-	  <[H|T],RL> when 'true' ->
-	      %% Line 68
-	      apply 'reserve_list1'/2
-		  (T, [H|RL])
-	  %% Line 69
-	  <[],RL> when 'true' ->
-	      RL
-	  ( <_3,_2> when 'true' ->
-		( primop 'match_fail'
-		      ({'function_clause',_3,_2})
-		  -| [{'function_name',{'reserve_list1',2}}] )
-	    -| ['compiler_generated'] )
-	end
+    %% Line 93
+    ( fun (_0,_1) ->
+	  ( case <_0,_1> of
+	      <[H|T],RL> when 'true' ->
+		  %% Line 94
+		  apply 'reserve_list1'/2
+		      (T, [H|RL])
+	      %% Line 95
+	      <[],RL> when 'true' ->
+		  RL
+	      ( <_3,_2> when 'true' ->
+		    ( primop 'match_fail'
+			  (( {'function_clause',_3,_2}
+			     -| [{'function',{'reserve_list1',2}}] ))
+		      -| [{'function',{'reserve_list1',2}}] )
+		-| ['compiler_generated'] )
+	    end
+	    -| [{'function',{'reserve_list1',2}}] )
+      -| [{'function',{'reserve_list1',2}}] )
 'reserve_list2'/2 =
-    %% Line 71
-    fun (_0,_1) ->
-	case <_0,_1> of
-	  <[],RL> when 'true' ->
-	      RL
-	  %% Line 72
-	  <[H|T],RL> when 'true' ->
-	      %% Line 73
-	      apply 'reserve_list2'/2
-		  (T, [H|RL])
-	  ( <_3,_2> when 'true' ->
-		( primop 'match_fail'
-		      ({'function_clause',_3,_2})
-		  -| [{'function_name',{'reserve_list2',2}}] )
-	    -| ['compiler_generated'] )
-	end
+    %% Line 97
+    ( fun (_0,_1) ->
+	  ( case <_0,_1> of
+	      <[],RL> when 'true' ->
+		  RL
+	      %% Line 98
+	      <[H|T],RL> when 'true' ->
+		  %% Line 99
+		  apply 'reserve_list2'/2
+		      (T, [H|RL])
+	      ( <_3,_2> when 'true' ->
+		    ( primop 'match_fail'
+			  (( {'function_clause',_3,_2}
+			     -| [{'function',{'reserve_list2',2}}] ))
+		      -| [{'function',{'reserve_list2',2}}] )
+		-| ['compiler_generated'] )
+	    end
+	    -| [{'function',{'reserve_list2',2}}] )
+      -| [{'function',{'reserve_list2',2}}] )
+'maybe_expression'/2 =
+    %% Line 102
+    ( fun (_0,_1) ->
+	  %% Line 103
+	  ( letrec
+		'maybe_else_fail'/1 =
+		    fun (_4) ->
+			case _4 of
+			  %% Line 108
+			  <{'error',_X_Y}> when 'true' ->
+			      %% Line 109
+			      {'ok',[100|[101|[102|[97|[117|[108|[116]]]]]]]}
+			  %% Line 110
+			  <{'ok',_X_Term}> when 'true' ->
+			      %% Line 111
+			      {'error',[117|[110|[101|[120|[112|[101|[99|[116|[101|[100|[32|[119|[114|[97|[112|[112|[101|[114]]]]]]]]]]]]]]]]]]}
+			  %% Line 112
+			  <Else> when 'true' ->
+			      %% Line 113
+			      {[101|[108|[115|[101]]]],Else}
+			end
+	    in  %% Line 104
+		case apply 'if_'/3
+			 (_0, 'nil', 'default') of
+		  <'default'> when 'true' ->
+		      %% Line 105
+		      case apply 'case_'/3
+			       (_0, 'nil', 'default') of
+			<'default'> when 'true' ->
+			    _1
+			( <_5> when 'true' ->
+			      apply 'maybe_else_fail'/1
+				  (_5)
+			  -| ['dialyzer_ignore','compiler_generated'] )
+		      end
+		  ( <_6> when 'true' ->
+			apply 'maybe_else_fail'/1
+			    (_6)
+		    -| ['dialyzer_ignore','compiler_generated'] )
+		end
+	    -| ['letrec_goto','no_inline'] )
+      -| [{'function',{'maybe_expression',2}}] )
+'add_'/2 =
+    %% Line 117
+    ( fun (_0,_1) ->
+	  ( case <_0,_1> of
+	      <A,B>
+		  when let <_2> =
+			call 'erlang':'is_number'
+			    (A)
+		    in  let <_3> =
+			    call 'erlang':'is_number'
+				(B)
+			in  call 'erlang':'and'
+				(_2, _3) ->
+		  let <_4> =
+		      call 'erlang':'+'
+			  (A, B)
+		  in  {'ok',_4}
+	      %% Line 118
+	      <_X_A,_X_B> when 'true' ->
+		  'error'
+	    end
+	    -| [{'function',{'add_',2}}] )
+      -| [{'function',{'add_',2}}] )
+'sub_'/2 =
+    %% Line 120
+    ( fun (_0,_1) ->
+	  ( case <_0,_1> of
+	      <A,B>
+		  when call 'erlang':'>='
+			(A,
+			 B) ->
+		  let <_2> =
+		      call 'erlang':'-'
+			  (A, B)
+		  in  {'ok',_2}
+	      %% Line 121
+	      <_X_A,_X_B> when 'true' ->
+		  'wrong'
+	    end
+	    -| [{'function',{'sub_',2}}] )
+      -| [{'function',{'sub_',2}}] )
+'maybe2'/2 =
+    %% Line 123
+    ( fun (_0,_1) ->
+	  %% Line 124
+	  ( letrec
+		'maybe_else_fail'/1 =
+		    fun (_4) ->
+			case _4 of
+			  %% Line 130
+			  <'error'> when 'true' ->
+			      'error'
+			  %% Line 131
+			  <'wrong'> when 'true' ->
+			      'error'
+			  ( <_2> when 'true' ->
+				primop 'match_fail'
+				    ({'else_clause',_2})
+			    -| ['compiler_generated'] )
+			end
+	    in  %% Line 125
+		case apply 'add_'/2
+			 (_0, _1) of
+		  <{'ok',Sum}> when 'true' ->
+		      %% Line 126
+		      case call 'erlang':'>='
+			       (Sum, 0) of
+			<'true'> when 'true' ->
+			    %% Line 127
+			    case apply 'sub_'/2
+				     (_0, _1) of
+			      <{'ok',Sub}> when 'true' ->
+				  %% Line 128
+				  {Sum,Sub}
+			      ( <_6> when 'true' ->
+				    apply 'maybe_else_fail'/1
+					(_6)
+				-| ['dialyzer_ignore','compiler_generated'] )
+			    end
+			( <_5> when 'true' ->
+			      primop 'match_fail'
+				  ({'badmatch',_5})
+			  -| ['compiler_generated'] )
+		      end
+		  ( <_7> when 'true' ->
+			apply 'maybe_else_fail'/1
+			    (_7)
+		    -| ['dialyzer_ignore','compiler_generated'] )
+		end
+	    -| ['letrec_goto','no_inline'] )
+      -| [{'function',{'maybe2',2}}] )
+'maybe2_identical'/2 =
+    %% Line 134
+    ( fun (_0,_1) ->
+	  %% Line 135
+	  case apply 'add_'/2
+		   (_0, _1) of
+	    %% Line 136
+	    <{'ok',Sum}> when 'true' ->
+		%% Line 137
+		case call 'erlang':'>='
+			 (Sum, 0) of
+		  <'true'> when 'true' ->
+		      %% Line 138
+		      case apply 'sub_'/2
+			       (_0, _1) of
+			%% Line 139
+			<{'ok',Sub}> when 'true' ->
+			    %% Line 140
+			    {Sum,Sub}
+			%% Line 141
+			<'wrong'> when 'true' ->
+			    'wrong'
+			( <_3> when 'true' ->
+			      primop 'match_fail'
+				  ({'case_clause',_3})
+			  -| ['compiler_generated'] )
+		      end
+		  ( <_2> when 'true' ->
+			primop 'match_fail'
+			    ({'badmatch',_2})
+		    -| ['compiler_generated'] )
+		end
+	    %% Line 143
+	    <'error'> when 'true' ->
+		'error'
+	    ( <_4> when 'true' ->
+		  primop 'match_fail'
+		      ({'case_clause',_4})
+	      -| ['compiler_generated'] )
+	  end
+      -| [{'function',{'maybe2_identical',2}}] )
 'module_info'/0 =
-    fun () ->
-	call 'erlang':'get_module_info'
-	    ('compiler_test')
+    ( fun () ->
+	  call 'erlang':'get_module_info'
+	      ('compiler_test')
+      -| [{'function',{'module_info',0}}] )
 'module_info'/1 =
-    fun (_0) ->
-	call 'erlang':'get_module_info'
-	    ('compiler_test', _0)
+    ( fun (_0) ->
+	  call 'erlang':'get_module_info'
+	      ('compiler_test', ( _0
+				  -| [{'function',{'module_info',1}}] ))
+      -| [{'function',{'module_info',1}}] )
 end

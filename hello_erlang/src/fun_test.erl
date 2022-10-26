@@ -46,7 +46,7 @@ local_fun4() ->
 
 
 do_sth() ->
-    io:format("~p:~p:~p bbb ~n", [?MODULE, ?FUNCTION_NAME, ?LINE]).
+    io:format("~p:~p:~p 222 ~n", [?MODULE, ?FUNCTION_NAME, ?LINE]).
 
 do_sth_() ->
     io:format("~p:~p:~p ccc ~n", [?MODULE, ?FUNCTION_NAME, ?LINE]).

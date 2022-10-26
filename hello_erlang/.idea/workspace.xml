@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="fa08db1f-c77b-4be3-afb7-5aeac75e6dcc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/syntax_test.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/syntax_test.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compiler_test.E" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.E" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compiler_test.P" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.P" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compiler_test.S" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.S" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compiler_test.core" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.core" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compiler_test.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fun_test.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/fun_test.erl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +56,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;D:/P32/int/_idea&quot;
+  }
+}</component>
   <component name="RunManager" selected="Erlang Console.hello">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
@@ -74,6 +78,7 @@
       <module name="hello_erlang" />
       <option name="allowRunningInParallel" value="false" />
       <option name="consoleArgs" value="-name hello@localhost" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -93,6 +98,7 @@
         </ErlangDebugOptions>
       </option>
       <option name="host" value="" />
+      <option name="projectPathOnTarget" />
       <option name="remoteErlangNodeName" value="dev@localhost" />
       <option name="selectedOptions">
         <list />
@@ -115,6 +121,7 @@
         </ErlangDebugOptions>
       </option>
       <option name="host" value="" />
+      <option name="projectPathOnTarget" />
       <option name="remoteErlangNodeName" value="hello@localhost" />
       <option name="selectedOptions">
         <list />

@@ -34,6 +34,7 @@
 %% c(compiler_test, ['P']).  ->  compiler_test.P
 %% c(compiler_test, ['E']).  ->  compiler_test.E
 %% c(compiler_test, ['S']).  ->  compiler_test.S
+%% c(compiler_core, [time, 'to_core']).  ->  compiler_core.core
 
 -import(lists, [reverse/1]).
 
@@ -42,7 +43,7 @@
 -export([if_/3, case_/3, empty_branch/4]).
 -export([macro_ignore/2]).
 -export([reserve_list/1]).
--export([maybe_expression/2]).
+-export([maybe_expression/2, maybe2/2, maybe2_identical/2]).
 
 a() ->
     receive
@@ -104,13 +105,44 @@ maybe_expression(Term, Default) ->
         default ?= case_(Term, nil, default),
         Default
     else
-        {error, Y} ->
+        {error, _Y} ->
             {ok, "default"};
         {ok, _Term} ->
             {error, "unexpected wrapper"};
         Else ->
             {"else", Else}
     end.
+
+
+add_(A, B) when is_number(A), is_number(B) -> {ok, A + B};
+add_(_A, _B) -> error.
+
+sub_(A, B) when A >= B -> {ok, A - B};
+sub_(_A, _B) -> wrong.
+
+maybe2(A, B) ->
+    maybe
+        {ok, Sum} ?= add_(A, B),
+        true = Sum >= 0,
+        {ok, Sub} ?= sub_(A, B),
+        {Sum, Sub}
+    else
+        error -> error;
+        wrong -> error
+    end.
+
+maybe2_identical(A, B) ->
+    case add_(A, B) of
+        {ok, Sum} ->
+            true = Sum >= 0,
+            case sub_(A, B) of
+                {ok, Sub} ->
+                    {Sum, Sub};
+                wrong -> wrong
+            end;
+        error -> error
+    end.
+
 
 %%maybe_expr(Term, Default) ->
 %%    ?MAYBE_BEGIN(default, if_(Term, nil, default)),
