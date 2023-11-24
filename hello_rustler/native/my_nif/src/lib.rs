@@ -21,4 +21,6 @@ fn crash() {
     }
 }
 
-rustler::init!("Elixir.HelloRustler.MyNif", [add, panic, crash]);
+rustler::init!("Elixir.HelloRustler.My", [add, panic, crash]);
+
+

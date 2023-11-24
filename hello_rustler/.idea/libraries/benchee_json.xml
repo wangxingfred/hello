@@ -3,9 +3,20 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/_build/dev/lib/benchee_json/ebin" />
       <root url="file://$PROJECT_DIR$/_build/dev/lib/benchee_json/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/benchee_json/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/benchee_json/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/benchee_json/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/benchee_json/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/benchee_json/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/benchee_json/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/benchee_json/lib" />
+      <root url="file://$PROJECT_DIR$/deps/benchee_json/lib" />
+      <root url="file://$PROJECT_DIR$/deps/benchee_json/lib" />
+      <root url="file://$PROJECT_DIR$/deps/benchee_json/lib" />
+      <root url="file://$PROJECT_DIR$/deps/benchee_json/lib" />
       <root url="file://$PROJECT_DIR$/deps/benchee_json/lib" />
       <root url="file://$PROJECT_DIR$/deps/benchee_json/lib" />
     </SOURCES>

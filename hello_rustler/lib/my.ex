@@ -1,4 +1,4 @@
-defmodule HelloRustler.MyNif do
+defmodule HelloRustler.My do
     @moduledoc ~S"""
     History:
         2022-04-03 15:53, fred 'wangxingfred@gmail.com', create module

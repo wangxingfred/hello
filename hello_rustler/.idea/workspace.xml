@@ -10,67 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4464451c-a7ef-42f3-96cf-10c99450c9ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/benchee.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/benchee_html.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/benchee_json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/credo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/deep_merge.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/dialyxir.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/earmark.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ex_doc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ex_guard.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/excoveralls.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/inch_ex.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jason.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mix_test_watch.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/rustler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/statistex.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/stream_data.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/toml.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_erlang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_erlang/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rust/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rust/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rust/hi/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rust/hi/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hello_rust/hi/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_rust/hi/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/benchee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee_html.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/benchee_html.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee_json.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/benchee_json.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/deep_merge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/deep_merge.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jason.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jason.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/rustler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/rustler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/statistex.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/statistex.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/toml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/toml.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello_rustler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello_rustler.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello_rustler.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_rustler.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/rust_nif.ex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/my_nif.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/my.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/mix.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mix.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/.cargo/config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/.idea/$CACHE_FILE$" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/.idea/dictionaries" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/Cargo.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/rust_nif.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/battle/aim_rule/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/battle/context/ability.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/battle/context/effect.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/battle/context/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/battle/limit_rule/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/battle/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/constants.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/flow/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/flow/parser.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/form/form_pool.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/form/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/ftb.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/lib.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/obj/mach.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/obj/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/record.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/scene.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/tb.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/rust_nif/src/team.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/native/librust_nif.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/my_nif/Cargo.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/my_nif/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/native/my_nif/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/native/my_nif/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/native/my_nif/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectFilesBackup/hello_rustler.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +38,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Elixir Module" />
+        <option value="Rust File" />
       </list>
     </option>
   </component>
@@ -93,6 +51,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="1mzpMoAOoLoMuU4rADzzyg8mJhF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -103,15 +64,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/native/my_nif/Cargo.toml" />
-    <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/GitHub/hello/hello_rustler&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RunManager">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
@@ -149,8 +117,7 @@
     </configuration>
   </component>
   <component name="RustProjectSettings">
-    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
-    <option name="version" value="2" />
+    <option name="toolchainHomeDirectory" value="E:/SDK/.cargo/bin" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -163,8 +130,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610506228779</updated>
+      <workItem from="1700832471163" duration="989000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

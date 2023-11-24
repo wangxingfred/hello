@@ -9,12 +9,10 @@ defmodule HelloRustler do
     ## Examples
     
         iex> HelloRustler.hello()
-        :world
+        "world"
     
     """
-    def hello do
-        :world
-    end
+    def hello, do: :erlang.nif_error(:nif_not_loaded)
     
 #    def add(a, b), do: a + b
 #

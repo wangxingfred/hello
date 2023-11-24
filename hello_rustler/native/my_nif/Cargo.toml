@@ -2,7 +2,7 @@
 name = "my_nif"
 version = "0.1.0"
 authors = []
-edition = "2018"
+edition = "2021"
 
 [lib]
 name = "my_nif"
@@ -10,4 +10,4 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-rustler = "0.24.0"
+rustler = "0.30.0"

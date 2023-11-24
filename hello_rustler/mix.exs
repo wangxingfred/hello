@@ -5,7 +5,7 @@ defmodule HelloRustler.MixProject do
         [
             app: :hello_rustler,
             version: "0.1.0",
-            elixir: "~> 1.13",
+            elixir: "~> 1.15",
             start_permanent: Mix.env() == :prod,
             deps: deps(),
 
@@ -31,8 +31,8 @@ defmodule HelloRustler.MixProject do
             #            {:benchee_html, "~> 1.0", only: [:dev]},
 
             #      {:rustler, github: "hansihe/rustler", sparse: "rustler_mix"},
-            {:rustler, "~> 0.24.0"},
-            {:benchee, "~> 1.0"},
+            {:rustler, "~> 0.30.0"},
+            {:benchee, "~> 1.1"},
             {:benchee_html, "~> 1.0"},
         ]
     end
