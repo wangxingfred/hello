@@ -10,24 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4464451c-a7ef-42f3-96cf-10c99450c9ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/benchee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee_html.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/benchee_html.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee_json.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/benchee_json.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/deep_merge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/deep_merge.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jason.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jason.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/rustler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/rustler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/statistex.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/statistex.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/toml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/toml.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello_rustler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello_rustler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_rustler.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_rustler.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/my_nif.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/my.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/mix.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mix.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/my_nif/Cargo.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/my_nif/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/native/my_nif/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/native/my_nif/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/native/my_nif/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectFilesBackup/hello_rustler.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,14 +52,14 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;H:/GitHub/hello/hello_rustler&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/P32/int_server_lib/elixir_proj/apps/cache/native/cache_lru&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -131,6 +114,9 @@
       <option name="presentableId" value="Default" />
       <updated>1610506228779</updated>
       <workItem from="1700832471163" duration="989000" />
+      <workItem from="1701243491441" duration="190000" />
+      <workItem from="1701256897760" duration="706000" />
+      <workItem from="1701854556511" duration="30000" />
     </task>
     <servers />
   </component>

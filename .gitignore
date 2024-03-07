@@ -11,3 +11,5 @@ erl_crash.dump
 /hello_elixir/_build
 /hello_elixir/.idea/$CACHE_FILE$
 /hello_elixir/.idea/$PRODUCT_WORKSPACE_FILE$
+*.exe
+*.pdb
