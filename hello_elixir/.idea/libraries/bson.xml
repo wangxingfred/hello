@@ -6,6 +6,8 @@
     <JAVADOC />
     <SOURCES>
       <root url="file://$PROJECT_DIR$/deps/bson/lib" />
+      <root url="file://$PROJECT_DIR$/deps/bson/lib" />
+      <root url="file://$PROJECT_DIR$/deps/bson/lib" />
     </SOURCES>
   </library>
 </component>

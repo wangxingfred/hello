@@ -31,9 +31,9 @@
 %%-define(MAYBE_RETURN(Expr), Expr).
 %%-define(MAYBE_ELSE_END(Expr), else Expr end).
 
-%% c(compiler_test, ['P']).  ->  compiler_test.P
-%% c(compiler_test, ['E']).  ->  compiler_test.E
-%% c(compiler_test, ['S']).  ->  compiler_test.S
+%% c(compiler_test, ['P']).  ->  compiler_test.P    'P' = Preprocessor
+%% c(compiler_test, ['E']).  ->  compiler_test.E    'E' = Expanded
+%% c(compiler_test, ['S']).  ->  compiler_test.S    'S' = Assembly
 %% c(compiler_core, [time, 'to_core']).  ->  compiler_core.core
 
 -import(lists, [reverse/1]).

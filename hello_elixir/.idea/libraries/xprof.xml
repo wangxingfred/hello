@@ -7,6 +7,9 @@
     <JAVADOC />
     <SOURCES>
       <root url="file://$PROJECT_DIR$/deps/xprof/src" />
+      <root url="file://$PROJECT_DIR$/deps/xprof/src" />
+      <root url="file://$PROJECT_DIR$/deps/xprof/src" />
+      <root url="file://$PROJECT_DIR$/deps/xprof/src" />
     </SOURCES>
   </library>
 </component>

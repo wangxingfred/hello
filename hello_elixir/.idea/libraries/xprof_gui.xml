@@ -3,9 +3,21 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/_build/dev/lib/xprof_gui/ebin" />
       <root url="file://$PROJECT_DIR$/_build/prod/lib/xprof_gui/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/xprof_gui/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/xprof_gui/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/xprof_gui/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/xprof_gui/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/xprof_gui/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/xprof_gui/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/xprof_gui/src" />
+      <root url="file://$PROJECT_DIR$/deps/xprof_gui/priv" />
+      <root url="file://$PROJECT_DIR$/deps/xprof_gui/src" />
+      <root url="file://$PROJECT_DIR$/deps/xprof_gui/priv" />
+      <root url="file://$PROJECT_DIR$/deps/xprof_gui/src" />
+      <root url="file://$PROJECT_DIR$/deps/xprof_gui/priv" />
       <root url="file://$PROJECT_DIR$/deps/xprof_gui/src" />
       <root url="file://$PROJECT_DIR$/deps/xprof_gui/priv" />
     </SOURCES>

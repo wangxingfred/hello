@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="beam_file" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/beam_file/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/beam_file/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/beam_file/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/beam_file/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/beam_file/lib" />
+      <root url="file://$PROJECT_DIR$/deps/beam_file/lib" />
+    </SOURCES>
+  </library>
+</component>

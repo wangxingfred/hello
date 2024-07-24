@@ -5,13 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa08db1f-c77b-4be3-afb7-5aeac75e6dcc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../hello_rust_moka/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rust_moka/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rust_moka/.idea/hello_rust_moka.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rust_moka/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rust_moka/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rust_moka/Cargo.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rust_moka/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rust_moka/src/cache.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rust_moka/src/cache_mini.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hello_rust_moka/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/benchee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/benchee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/benchee_html.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/benchee_html.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/benchee_json.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/benchee_json.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/bson.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/bson.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowboy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowboy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowlib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/cowlib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/customized_hdr_histogram.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/customized_hdr_histogram.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/deep_merge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/deep_merge.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/goldrush.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/goldrush.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/jason.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/jason.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/jsone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/jsone.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/lager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/lager.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/ranch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/ranch.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof_gui.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/libraries/xprof_gui.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/hello_elixir.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/hello_elixir.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/mix.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello_elixir/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../hello_elixir/mix.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler_test.E" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.E" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler_test.P" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.P" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler_test.S" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.S" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler_test.core" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.core" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/compiler_test.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/compiler_test.erl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fun_test.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/fun_test.erl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +80,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;D:/P32/int/_idea&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "H:/GitHub/hello/hello_elixir"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Erlang Console.hello">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />

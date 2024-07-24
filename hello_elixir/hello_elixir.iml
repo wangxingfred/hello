@@ -36,6 +36,8 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/xprof_core" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/xprof_gui" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/bson" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/statistex" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/beam_file" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -64,5 +66,9 @@
     <orderEntry type="library" name="benchee_json" level="project" />
     <orderEntry type="library" name="mix_test_watch" level="project" />
     <orderEntry type="library" name="jason" level="project" />
+    <orderEntry type="library" name="decompile" level="project" />
+    <orderEntry type="library" name="beam_file" level="project" />
+    <orderEntry type="library" name="maxo_decompile" level="project" />
+    <orderEntry type="library" name="recode" level="project" />
   </component>
 </module>
